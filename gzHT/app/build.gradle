@@ -1,0 +1,27 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "27.0.3"
+
+    defaultConfig {
+        applicationId "com.elegps.gz_customerservice"
+        minSdkVersion 8
+        targetSdkVersion 11
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:18.0.0'
+    compile files('libs/android-query-full.0.21.4-beta.jar')
+    compile files('libs/baidumapapi_v2_1_3.jar')
+    compile files('libs/ksoap2.jar')
+    compile files('libs/locSDK_3.1.jar')
+}

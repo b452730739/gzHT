@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/note_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/f"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/note_titlebg" >
+
+        <TextView
+            android:id="@+id/b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="   " />
+
+        <ImageView
+            android:id="@+id/error_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/b"
+            android:background="@drawable/note_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="故障查询"
+            android:textColor="@android:color/white"
+            android:textSize="25dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/f"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp" >
+
+            <!-- 第一对 -->
+
+            <EditText
+                android:id="@+id/error_num"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/qq_edit_login"
+                android:paddingLeft="110sp"
+                android:singleLine="true"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/error_numfind"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/error_num"
+                android:layout_alignLeft="@+id/error_num"
+                android:layout_alignTop="@+id/error_num"
+                android:gravity="center_vertical"
+                android:paddingLeft="5sp"
+                android:text="工单号查询:   "
+                android:textColor="@android:color/black"
+                android:textSize="18dp" />
+                        <!-- 第一对 -->
+
+            <EditText
+                android:id="@+id/kehu"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                                android:layout_below="@+id/error_num"
+                
+                android:background="@drawable/qq_edit_login"
+                android:paddingLeft="110sp"
+                android:singleLine="true"
+                android:textSize="18dp" />
+	
+            <TextView
+                android:id="@+id/error_numfind"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/kehu"
+                android:layout_alignLeft="@+id/kehu"
+                android:layout_alignTop="@+id/kehu"
+                android:gravity="center_vertical"
+                android:paddingLeft="5sp"
+                android:text="客 户 名 称:   "
+                android:textColor="@android:color/black"
+                android:textSize="18dp" />
+            
+            
+                        <!-- 第2对 -->
+
+            <EditText
+                android:id="@+id/error_gongdan"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/kehu"
+                android:background="@drawable/qq_edit_login"
+                android:paddingLeft="110sp"
+                android:singleLine="true"
+                android:visibility="gone"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/error_gongdan1"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/error_gongdan"
+                android:layout_alignLeft="@+id/error_gongdan"
+                android:layout_alignTop="@+id/error_gongdan"
+                android:gravity="center_vertical"
+                android:paddingLeft="5sp"
+                android:text="产 品 分 类:   "
+                                android:visibility="gone"
+                
+                android:textColor="@android:color/black"
+                android:textSize="18dp" />
+            
+            <!-- 第二对 -->
+
+            <EditText
+                android:id="@+id/error_begin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/error_gongdan"
+                android:background="@drawable/qq_edit_login"
+                android:cursorVisible="false"
+                android:editable="false"
+                android:paddingLeft="110sp"
+                android:singleLine="true"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/button2"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/error_begin"
+                android:layout_alignLeft="@+id/error_begin"
+                android:layout_alignTop="@+id/error_begin"
+                android:gravity="center_vertical"
+                android:paddingLeft="5sp"
+                android:text="开 始 日 期:   "
+                android:textColor="@android:color/black"
+                android:textSize="18dp" />
+            <!-- 第三对 -->
+
+            <EditText
+                android:id="@+id/error_end"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/error_begin"
+                android:background="@drawable/qq_edit_login"
+                android:cursorVisible="false"
+                android:editable="false"
+                android:paddingLeft="110sp"
+                android:singleLine="true"
+                android:textSize="18dp" />
+
+            <TextView
+                android:id="@+id/button3"
+                style="@style/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/error_end"
+                android:layout_alignLeft="@+id/error_end"
+                android:layout_alignTop="@+id/error_end"
+                android:gravity="center_vertical"
+                android:paddingLeft="5sp"
+                android:text="结 束 日 期:   "
+                android:textColor="@android:color/black"
+                android:textSize="18dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="7dp"
+            android:paddingRight="7dp" >
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/anniubj"
+                android:text="开始查询" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text=" " />
+
+            <ListView
+                android:id="@+id/error_list1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:divider="#00000000"
+                android:dividerHeight="18dp"
+                android:paddingLeft="3dp"
+                android:paddingRight="3dp" >
+            </ListView>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

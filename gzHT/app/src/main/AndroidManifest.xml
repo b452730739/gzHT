@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.elegps.gz_customerservice"
+    android:versionCode="27"
+    android:versionName="2.7" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="11" />
+		
+    <application
+        android:icon="@drawable/lognr"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.NoTitleBar"
+        android:windowSoftInputMode="adjustPan|stateHidden" >
+        <activity
+            android:name="com.elegps.gz_customerservice.LogingActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.elegps.gz_customerservice.CreateAccountActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.gz_customerservice.MainActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.gz_customerservice.Find_PasswordActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.notebook.Note_BookActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.notebook.Add_NoteActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+                <activity
+            android:name="com.elegps.notebook.Note_PingTaiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+  
+        <activity
+            android:name="com.elegps.notebook.Note_PaiGong"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.elegps.notebook.Note_paiG"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.elegps.photo.Photo_NativeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+          <activity
+            android:name="com.elegps.gz_customerservice.LianXi_Activity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.photo.Photo_LookActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+                <activity
+            android:name="com.elegps.Complaints_proposals.Complaints_ProposalsActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+           <activity
+            android:name="com.elegps.Complaints_proposals.Complaints_ProposalsAdd_Activity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.errorfind.Error_DemadFindActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+          <activity
+            android:name="com.elegps.gz_customerservice.PaiZhao_LiShi"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.errorfind.Error_information"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+        </activity>
+        <activity
+            android:name="com.elegps.errorfind.Error_findActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|stateAlwaysHidden" >
+        </activity>
+        <activity
+            android:name="com.elegps.vedio.LoginActivity"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="com.elegps.vedio.LoginActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.elegps.buy.Buy_FittingActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.buy.Buy_PeiJianActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.buy.Buy_LishiActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.buy.AddProductBuyInfo_Activity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.gz_customerservice.Change_passwordActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.vedio.RoomActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" >
+            <intent-filter>
+                <action android:name="com.elegps.vedio.RoomActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.elegps.vedio.EnterRoomBuffActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.getLocation.LocationOverlayDemo"
+            android:screenOrientation="portrait" >
+        </activity>
+             <activity
+            android:name="com.elegps.warranty.BaiXiu_AddActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.elegps.warranty.BaoXiu_Activity"
+            android:screenOrientation="portrait" >
+        </activity>
+         <activity
+            android:name="com.elegps.warranty.BaoXiu_InfoActivity"
+            android:screenOrientation="portrait" 
+            android:windowSoftInputMode="adjustPan|stateHidden">
+        </activity>
+        <activity
+            android:name="com.elegps.vedio.VideoActivity"
+            android:screenOrientation="landscape" >
+            <intent-filter>
+                <action android:name="com.elegps.vedio.VideoActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+        </service>
+              <!-- //注册服务 -->
+                <service android:name="cn.elegps.service.StartService"></service>
+<!--                 //为了获取开机启动这个动作，必须注册加上android.intent.action.BOOT_COMPLETED
+ -->  <receiver android:name="cn.elegps.service.BootCompletedReceiver">
+   <intent-filter>
+    <action android:name="android.intent.action.BOOT_COMPLETED">         
+    </action>
+   </intent-filter>
+  </receiver>
+    </application>
+	<uses-permission android:name="android.permission.CALL_PHONE"/>
+    <!-- 百度地图的权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+
+    <!-- 视频通话的权限 -->
+	
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <uses-permission android:name="android.permission.ACCESS_SURFACE_FLINGER" />
+		
+    <!--  获取开机启动动作的权限permission -->
+ <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
+    <!--
+         <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+    -->
+
+</manifest>

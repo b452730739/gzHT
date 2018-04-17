@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Black">#000000</color>
+    <color name="White">#FFFFFF</color>
+    <color name="grey">#D7D4D4</color>
+    <color name="red">#FF0000</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <drawable name="white">#FFFFFF</drawable>
+    <string name="account">请输入帐户</string>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">广州海天</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="networkeerror">网络已断开...</string>
+    <string name="password">请输入密码</string>
+    <style name="AppTheme" parent="android:Theme.Light"/>
+    <style name="button">
+		<item name="android:textSize">20sp</item>
+		<item name="android:textColor">#001100</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+    <style name="text">
+		<item name="android:textSize">18sp</item>
+		<item name="android:textColor">#001100</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+</resources>

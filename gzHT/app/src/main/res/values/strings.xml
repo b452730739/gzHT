@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">广州海天</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="account">请输入帐户</string>
+    <string name="password">请输入密码</string>
+    <string name="networkeerror">网络已断开...</string>
+</resources>
