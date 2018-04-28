@@ -93,15 +93,18 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-runtime-classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-verifier" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-apk" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-resources" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/instant-run-support" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/jniLibs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/lint" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifest-checker" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/prebuild" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/reload-dex" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/resources" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/rs" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/shaders" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/split-apk" />
@@ -114,10 +117,10 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 18 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="__local_aars__:/Users/lichendong/project/git/gzHT/app/libs/android-query-full.0.21.4-beta.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="com.android.support:support-v4:18.0.0@jar" level="project" />
-    <orderEntry type="library" name="__local_aars__:/Users/lichendong/project/git/gzHT/app/libs/ksoap2.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="__local_aars__:/Users/lichendong/project/git/gzHT/app/libs/locSDK_3.1.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="__local_aars__:/Users/lichendong/project/git/gzHT/app/libs/baidumapapi_v2_1_3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/lichendong/project/git/gzHT/app/libs/locSDK_3.1.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: com.android.support:support-v4:18.0.0@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/lichendong/project/git/gzHT/app/libs/baidumapapi_v2_1_3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/lichendong/project/git/gzHT/app/libs/android-query-full.0.21.4-beta.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:/Users/lichendong/project/git/gzHT/app/libs/ksoap2.jar:unspecified@jar" level="project" />
   </component>
 </module>

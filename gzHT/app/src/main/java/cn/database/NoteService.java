@@ -22,7 +22,7 @@ public class NoteService {
 		
 	public void save(Note person){
 		SQLiteDatabase db = null;
-		//Èç¹ûÒª¶ÔÊı¾İ½øĞĞ¸ü¸Ä£¬¾Íµ÷ÓÃ´Ë·½·¨µÃµ½ÓÃÓÚ²Ù×÷Êı¾İ¿âµÄÊµÀı,¸Ã·½·¨ÒÔ¶ÁºÍĞ´·½Ê½´ò¿ªÊı¾İ¿â
+		//å¦‚æœè¦å¯¹æ•°æ®è¿›è¡Œæ›´æ”¹ï¼Œå°±è°ƒç”¨æ­¤æ–¹æ³•å¾—åˆ°ç”¨äºæ“ä½œæ•°æ®åº“çš„å®ä¾‹,è¯¥æ–¹æ³•ä»¥è¯»å’Œå†™æ–¹å¼æ‰“å¼€æ•°æ®åº“
 		try {
 			db = dbOpenHelper.getWritableDatabase();
 			db.execSQL(
@@ -76,7 +76,7 @@ public class NoteService {
 	}
 	
 	public Note find(Integer id){
-		//Èç¹ûÖ»¶ÔÊı¾İ½øĞĞ¶ÁÈ¡£¬½¨ÒéÊ¹ÓÃ´Ë·½·¨
+		//å¦‚æœåªå¯¹æ•°æ®è¿›è¡Œè¯»å–ï¼Œå»ºè®®ä½¿ç”¨æ­¤æ–¹æ³•
 		Cursor cursor = null;
 		SQLiteDatabase db = null;
 		try {

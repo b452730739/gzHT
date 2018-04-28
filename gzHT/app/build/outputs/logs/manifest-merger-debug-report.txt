@@ -55,7 +55,7 @@ ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:1
 		ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:20:13-64
 	android:name
 		ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:17:13-72
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:21:13-24:29
 action#android.intent.action.MAIN
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:22:17-69
@@ -181,7 +181,7 @@ ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:9
 		ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:101:13-49
 	android:name
 		ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:100:13-58
-intent-filter#android.intent.category.DEFAULT+com.elegps.vedio.LoginActivity
+intent-filter#action:name:com.elegps.vedio.LoginActivity+category:name:android.intent.category.DEFAULT
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:102:13-106:29
 action#com.elegps.vedio.LoginActivity
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:103:17-73
@@ -229,7 +229,7 @@ ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:1
 		ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:131:13-64
 	android:name
 		ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:129:13-57
-intent-filter#android.intent.category.DEFAULT+com.elegps.vedio.RoomActivity
+intent-filter#action:name:com.elegps.vedio.RoomActivity+category:name:android.intent.category.DEFAULT
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:132:13-136:29
 action#com.elegps.vedio.RoomActivity
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:133:17-72
@@ -273,7 +273,7 @@ ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:1
 		ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:161:13-50
 	android:name
 		ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:160:13-58
-intent-filter#android.intent.category.DEFAULT+com.elegps.vedio.VideoActivity
+intent-filter#action:name:com.elegps.vedio.VideoActivity+category:name:android.intent.category.DEFAULT
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:162:13-166:29
 action#com.elegps.vedio.VideoActivity
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:163:17-73
@@ -295,7 +295,7 @@ receiver#cn.elegps.service.BootCompletedReceiver
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:177:7-182:14
 	android:name
 		ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:177:17-71
-intent-filter#android.intent.action.BOOT_COMPLETED
+intent-filter#action:name:android.intent.action.BOOT_COMPLETED
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:178:4-181:20
 action#android.intent.action.BOOT_COMPLETED
 ADDED from /Users/lichendong/project/git/gzHT/app/src/main/AndroidManifest.xml:179:5-180:14

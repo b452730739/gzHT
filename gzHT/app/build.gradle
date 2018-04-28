@@ -19,9 +19,9 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
-    compile files('libs/android-query-full.0.21.4-beta.jar')
-    compile files('libs/baidumapapi_v2_1_3.jar')
-    compile files('libs/ksoap2.jar')
-    compile files('libs/locSDK_3.1.jar')
+    api 'com.android.support:support-v4:18.0.0'
+    api files('libs/android-query-full.0.21.4-beta.jar')
+    api files('libs/baidumapapi_v2_1_3.jar')
+    api files('libs/ksoap2.jar')
+    api files('libs/locSDK_3.1.jar')
 }
