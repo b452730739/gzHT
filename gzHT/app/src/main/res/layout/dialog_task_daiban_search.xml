@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/send_bg"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/text_bg"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="查询 "
+                    android:textColor="@android:color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp" />
+            </LinearLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                <EditText
+                    android:layout_width="1dp"
+                    android:layout_height="1dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+         										   >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" 
+                                       >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" 机器序列号："
+                                android:textColor="@android:color/black"
+                                android:textSize="20dp" />
+
+                            <EditText
+                                android:id="@+id/et_strMachineNO"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10" >
+                            </EditText>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" 机           型："
+                                android:textColor="@android:color/black"
+                                android:textSize="20dp" />
+
+                            <EditText
+                                android:id="@+id/et_strMachineModel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10" >
+                            </EditText>
+                        </LinearLayout>
+
+
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" 开始时间："
+                                android:textColor="@android:color/black"
+                                android:textSize="20dp" />
+
+                            <com.view.DateEditTextForData
+                                android:id="@+id/startData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10" >
+                            </com.view.DateEditTextForData>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text=" 结束时间："
+                                android:textColor="@android:color/black"
+                                android:textSize="20dp" />
+
+                            <com.view.DateEditTextForData
+                                android:id="@+id/endData"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <Button
+                            android:id="@+id/search"
+                            android:layout_width="wrap_content"
+                            android:layout_height="80dp"
+                            android:layout_alignParentTop="true"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/jiansuo"
+                            android:text="查  询"
+                            android:textColor="@android:color/white"
+                            android:textSize="20dp" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
