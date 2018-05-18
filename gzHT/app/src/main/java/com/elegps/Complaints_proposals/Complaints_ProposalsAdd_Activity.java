@@ -50,7 +50,7 @@ public class Complaints_ProposalsAdd_Activity extends Activity implements OnClic
 			switch (v.getId()) {
 
 			case R.id.addnote:
-				final Dialog_UI dialog_UI = new Dialog_UI(Complaints_ProposalsAdd_Activity.this, "ÕıÔÚÌí¼Ó...");
+				final Dialog_UI dialog_UI = new Dialog_UI(Complaints_ProposalsAdd_Activity.this, "æ­£åœ¨æ·»åŠ ...");
 				dialog_UI.show();
 				dialog_UI.setCancelable(false);
 				new AsyncTask<Void, Void, String>() {
@@ -102,7 +102,7 @@ public class Complaints_ProposalsAdd_Activity extends Activity implements OnClic
 		public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 			if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-				// ÕâÀïÖØĞ´·µ»Ø¼ü
+				// è¿™é‡Œé‡å†™è¿”å›é”®
 				Intent intent = new Intent(Complaints_ProposalsAdd_Activity.this,
 						Complaints_ProposalsActivity.class);
 				startActivity(intent);

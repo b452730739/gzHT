@@ -70,22 +70,22 @@ public class Error_findActivity extends Activity implements OnClickListener{
 		et = new EditText[5];
 		btn = new TextView[4];
 		
-		back = (ImageView)findViewById(R.id.error_back);    //·µ»Ø°´âo
-		et[0] = (EditText)findViewById(R.id.error_num);     //¹¤†Î²éÔƒ
-		et[1] = (EditText)findViewById(R.id.error_begin);   //é_Ê¼ÈÕÆÚ
-		et[2] = (EditText)findViewById(R.id.error_end);     //½YÊøÈÕÆÚ
-		et[3] = (EditText)findViewById(R.id.error_gongdan); //²úÆ··ÖÀà
-		et[4] = (EditText)findViewById(R.id.kehu); //²úÆ··ÖÀà
+		back = (ImageView)findViewById(R.id.error_back);    //è¿”å›æŒ‰éˆ•
+		et[0] = (EditText)findViewById(R.id.error_num);     //å·¥å–®æŸ¥è©¢
+		et[1] = (EditText)findViewById(R.id.error_begin);   //é–‹å§‹æ—¥æœŸ
+		et[2] = (EditText)findViewById(R.id.error_end);     //çµæŸæ—¥æœŸ
+		et[3] = (EditText)findViewById(R.id.error_gongdan); //äº§å“åˆ†ç±»
+		et[4] = (EditText)findViewById(R.id.kehu); //äº§å“åˆ†ç±»
 
 		
-		btn[0] = (TextView)findViewById(R.id.error_numfind);//é_Ê¼¹¤†Î²éÔƒ
-		btn[1] = (TextView)findViewById(R.id.button2);  	//é_Ê¼ÈÕÆÚ
-		btn[2] = (TextView)findViewById(R.id.button3); 	 	//½YÊøÈÕÆÚ
-		btn[3] = (TextView)findViewById(R.id.button4); 		//é_Ê¼ÈÕÆÚ²éÔƒ
+		btn[0] = (TextView)findViewById(R.id.error_numfind);//é–‹å§‹å·¥å–®æŸ¥è©¢
+		btn[1] = (TextView)findViewById(R.id.button2);  	//é–‹å§‹æ—¥æœŸ
+		btn[2] = (TextView)findViewById(R.id.button3); 	 	//çµæŸæ—¥æœŸ
+		btn[3] = (TextView)findViewById(R.id.button4); 		//é–‹å§‹æ—¥æœŸæŸ¥è©¢
 		
 		listView = (ListView)findViewById(R.id.error_list1);
 		
-		dialog_UI = new Dialog_UI(Error_findActivity.this, "ÕıÔÚ²éÑ¯...");
+		dialog_UI = new Dialog_UI(Error_findActivity.this, "æ­£åœ¨æŸ¥è¯¢...");
 		
 		et[0].setOnClickListener(this);
 		back.setOnClickListener(this);
@@ -127,7 +127,7 @@ public class Error_findActivity extends Activity implements OnClickListener{
 			
 					public void onFocusChange(View v, boolean hasFocus) {
 
-						((EditText) v).setInputType(InputType.TYPE_NULL); // ¹Ø±ÕÈí¼üÅÌ     
+						((EditText) v).setInputType(InputType.TYPE_NULL); // å…³é—­è½¯é”®ç›˜     
 						removeDialog(DATE_BEGIN);
 						removeDialog(DATE_END);
 						
@@ -142,7 +142,7 @@ public class Error_findActivity extends Activity implements OnClickListener{
 			
 			public void onFocusChange(View v, boolean hasFocus) {
 				
-				((EditText) v).setInputType(InputType.TYPE_NULL); // ¹Ø±ÕÈí¼üÅÌ  
+				((EditText) v).setInputType(InputType.TYPE_NULL); // å…³é—­è½¯é”®ç›˜  
 				removeDialog(DATE_BEGIN);
 				removeDialog(DATE_END);
 				showDialog(DATE_END);
@@ -171,13 +171,13 @@ public class Error_findActivity extends Activity implements OnClickListener{
 		
 		switch (v.getId()) {
 
-		case R.id.error_back:		//·µ»Ø°´âo
+		case R.id.error_back:		//è¿”å›æŒ‰éˆ•
 		Intent intent = new Intent(Error_findActivity.this, Error_DemadFindActivity.class);
 		startActivity(intent);
 		this.finish();
 		break;
 			
-		case R.id.button4:			//é_Ê¼²éÔƒ
+		case R.id.button4:			//é–‹å§‹æŸ¥è©¢
 			if(new Hellper().getNetworkIsAvailable(Error_findActivity.this)){
 			
 			dialog_UI.show();
@@ -313,7 +313,7 @@ public class Error_findActivity extends Activity implements OnClickListener{
 		public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 			if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-				// ÕâÀïÖØĞ´·µ»Ø¼ü
+				// è¿™é‡Œé‡å†™è¿”å›é”®
 
 				Intent intent = new Intent(Error_findActivity.this, Error_DemadFindActivity.class);
 				startActivity(intent);

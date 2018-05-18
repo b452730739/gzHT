@@ -35,7 +35,7 @@ public class Add_NoteActivity extends Activity implements OnClickListener{
 	private TextView time = null;
 	private Bundle bundle = null;
 	private NoteService service = null;
-	private int getID = -1; //Èç¹ûÊÇ-1¾ÍÊÇÌí¼Ó×´Ì¬£¬·ñÔò¾ÍÊÇĞŞ¸Ä»òÕß²é¿´×´Ì¬
+	private int getID = -1; //å¦‚æœæ˜¯-1å°±æ˜¯æ·»åŠ çŠ¶æ€ï¼Œå¦åˆ™å°±æ˜¯ä¿®æ”¹æˆ–è€…æŸ¥çœ‹çŠ¶æ€
 	private ImageView image_back = null;
 	private Dialog_UI dialog_UI = null;
 
@@ -88,9 +88,9 @@ public class Add_NoteActivity extends Activity implements OnClickListener{
 			}
 		});
 		
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyyÄêMMÔÂddÈÕ  "
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyå¹´MMæœˆddæ—¥  "
 				+ "HH:mm:ss  ");
-		Date curDate = new Date(System.currentTimeMillis());// »ñÈ¡µ±Ç°Ê±¼ä
+		Date curDate = new Date(System.currentTimeMillis());// è·å–å½“å‰æ—¶é—´
 		String str = formatter.format(curDate);		
 		time.setText(str);		
 		add.setOnClickListener(this);		
@@ -113,7 +113,7 @@ public class Add_NoteActivity extends Activity implements OnClickListener{
 		
 		if(getID == -1){
 			
-			dialog_UI = new Dialog_UI(this, "ÕıÔÚÉÏ´«...");
+			dialog_UI = new Dialog_UI(this, "æ­£åœ¨ä¸Šä¼ ...");
 			dialog_UI.show();
 			new AsyncTask<Void, Void, Void>() {
 
@@ -185,7 +185,7 @@ public class Add_NoteActivity extends Activity implements OnClickListener{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			
 			Intent intent = new Intent(Add_NoteActivity.this, Note_BookActivity.class);
 			

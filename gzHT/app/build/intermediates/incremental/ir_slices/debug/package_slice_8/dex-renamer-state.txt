@@ -1,0 +1,4 @@
+#Fri May 18 08:56:39 CST 2018
+base.0=/Users/lichendong/project/git/gzHT/app/build/intermediates/transforms/dexMerger/debug/9
+path.0=classes.dex
+renamed.0=classes.dex

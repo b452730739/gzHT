@@ -25,9 +25,9 @@ import com.elegps.javabean.Find_password;
 
 public class Find_PasswordActivity extends Activity implements OnClickListener {
 
-	private EditText[] find_password = null;// ´ÓEditText»ñÈ¡µÄÖµ
-	private Button find_btn = null; // ×¢²á°´Å¥
-	private Button b_back = null; // ÏÂÃæµÄ·µ»Ø°´Å¥
+	private EditText[] find_password = null;// ä»EditTextè·å–çš„å€¼
+	private Button find_btn = null; // æ³¨å†ŒæŒ‰é’®
+	private Button b_back = null; // ä¸‹é¢çš„è¿”å›æŒ‰é’®
 	private ImageView image_back = null;
 	private List<Find_password> find_passwords = null;
 	private Find_password password = null;
@@ -45,13 +45,13 @@ public class Find_PasswordActivity extends Activity implements OnClickListener {
 	private void init() {
 		
 		find_password = new EditText[5];
-		find_password[0] = (EditText) findViewById(R.id.find_name); // ¿Í»§Ãû³Æ
-		find_password[1] = (EditText) findViewById(R.id.find_contactname);// ÁªÏµÈË
-		find_password[2] = (EditText) findViewById(R.id.find_phone);// ÊÖ»úºÅÂë
-		find_password[3] = (EditText) findViewById(R.id.find_swollen);// ÕË»§
+		find_password[0] = (EditText) findViewById(R.id.find_name); // å®¢æˆ·åç§°
+		find_password[1] = (EditText) findViewById(R.id.find_contactname);// è”ç³»äºº
+		find_password[2] = (EditText) findViewById(R.id.find_phone);// æ‰‹æœºå·ç 
+		find_password[3] = (EditText) findViewById(R.id.find_swollen);// è´¦æˆ·
 		
-		find_btn = (Button) findViewById(R.id.b_enrolment);// È·ÈÏÕÒ»Ø
-		b_back = (Button) findViewById(R.id.b_back); // ·µ»Ø
+		find_btn = (Button) findViewById(R.id.b_enrolment);// ç¡®è®¤æ‰¾å›
+		b_back = (Button) findViewById(R.id.b_back); // è¿”å›
 		image_back = (ImageView) findViewById(R.id.image_back);
 		
 		find_passwords= new ArrayList<Find_password>();
@@ -70,7 +70,7 @@ public class Find_PasswordActivity extends Activity implements OnClickListener {
 
 		switch (v.getId()) {
 		case R.id.b_enrolment:
-			dialog_UI = new Dialog_UI(Find_PasswordActivity.this, "ÕıÔÚÆ¥Åä...");
+			dialog_UI = new Dialog_UI(Find_PasswordActivity.this, "æ­£åœ¨åŒ¹é…...");
 			if ((!find_password[0].getText().toString().equals(""))
 					&& (!find_password[1].getText().toString().equals(""))
 					&& (!find_password[2].getText().toString().equals(""))
@@ -126,7 +126,7 @@ public class Find_PasswordActivity extends Activity implements OnClickListener {
 				this.finish();*/
 				
 			} else {
-				Toast.makeText(Find_PasswordActivity.this, "ÄúÊäÈëµÄÓĞÎó£¬ÇëÖØĞÂÊäÈë...", 0)
+				Toast.makeText(Find_PasswordActivity.this, "æ‚¨è¾“å…¥çš„æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥...", 0)
 						.show();
 				
 			}
@@ -156,7 +156,7 @@ public class Find_PasswordActivity extends Activity implements OnClickListener {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			
 			Intent intent = new Intent(Find_PasswordActivity.this,
 					LogingActivity.class);

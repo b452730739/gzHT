@@ -53,7 +53,7 @@ public class Buy_LishiActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.buy_lishi);
-		dialog_UI = new Dialog_UI(this, "ÕıÔÚ¼ÓÔØ...");
+		dialog_UI = new Dialog_UI(this, "æ­£åœ¨åŠ è½½...");
 		dialog_UI.show();
 		init();
 
@@ -146,7 +146,7 @@ public class Buy_LishiActivity extends Activity{
 			Button goumai = (Button)ly.findViewById(R.id.imageView2);
 			goumai.setOnClickListener(new OnClickListener() {
 				private List<GetBuyMessage> buyMessages = null;
-				Dialog_UI	dialog_UI1 = new Dialog_UI(Buy_LishiActivity.this, "ÕıÔÚ»ñÈ¡...");
+				Dialog_UI	dialog_UI1 = new Dialog_UI(Buy_LishiActivity.this, "æ­£åœ¨è·å–...");
 				@Override
 				public void onClick( final View v) {
 					dialog_UI1.show();
@@ -184,7 +184,7 @@ public class Buy_LishiActivity extends Activity{
 								@Override
 								public void onClick(View v) {
 							
-							final Dialog_UI dialog_UI = new Dialog_UI(Buy_LishiActivity.this, "ÕıÔÚ»Ø¸´...");	
+							final Dialog_UI dialog_UI = new Dialog_UI(Buy_LishiActivity.this, "æ­£åœ¨å›å¤...");	
 							dialog_UI.show();
 						new AsyncTask<Void, Void, String>(){
 
@@ -286,16 +286,16 @@ public class Buy_LishiActivity extends Activity{
 		}
 	}
 	 /*
-     * È·ÈÏÊÇ·ñÉ¾³ı
+     * ç¡®è®¤æ˜¯å¦åˆ é™¤
      * */
     public  void is_delete(final int position){
-        //ÌáÊ¾¶Ô»°¿ò
+        //æç¤ºå¯¹è¯æ¡†
         AlertDialog.Builder builder=new Builder(Buy_LishiActivity.this);
-        builder.setTitle("È·¶¨ÊÇ·ñÉ¾³ı?").setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+        builder.setTitle("ç¡®å®šæ˜¯å¦åˆ é™¤?").setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
         	@Override
             public void onClick(DialogInterface dialog, int which) {
 
-				final Dialog_UI dialog_UI = new Dialog_UI(Buy_LishiActivity.this, "ÕıÔÚÉ¾³ı...");
+				final Dialog_UI dialog_UI = new Dialog_UI(Buy_LishiActivity.this, "æ­£åœ¨åˆ é™¤...");
 				dialog_UI.show();
 				new AsyncTask<Void, Void, String>(){
 
@@ -321,7 +321,7 @@ public class Buy_LishiActivity extends Activity{
 				}.execute((Void)null);
 			
             }
-        }).setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+        }).setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -333,7 +333,7 @@ public class Buy_LishiActivity extends Activity{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			
 			Intent intent = new Intent(Buy_LishiActivity.this,
 					MainActivity.class);	

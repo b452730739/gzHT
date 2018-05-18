@@ -37,8 +37,8 @@ public class Note_BookActivity extends Activity implements OnClickListener {
 	private ImageView add_note = null;
 	private ImageView back = null;
 	private ListView list = null;
-	private AlertDialog.Builder builder = null;// ¶Ô»°¿ò
-	private List<Note> lists = null;// »ñµÃµÄÈ«²¿ĞÅÏ¢
+	private AlertDialog.Builder builder = null;// å¯¹è¯æ¡†
+	private List<Note> lists = null;// è·å¾—çš„å…¨éƒ¨ä¿¡æ¯
 	private NoteService noteService = null;
 
 	@Override
@@ -84,7 +84,7 @@ public class Note_BookActivity extends Activity implements OnClickListener {
 			public boolean onItemLongClick(AdapterView<?> arg0, View arg1,
 					final int arg2, long arg3) {
 
-				builder.setItems(new String[] { "É¾³ı" },
+				builder.setItems(new String[] { "åˆ é™¤" },
 						new DialogInterface.OnClickListener() {
 
 							@Override
@@ -221,9 +221,9 @@ public class Note_BookActivity extends Activity implements OnClickListener {
 				@Override
 				public void onClick(View v) {
 					
-				     //ÌáÊ¾¶Ô»°¿ò
+				     //æç¤ºå¯¹è¯æ¡†
 			        AlertDialog.Builder builder=new Builder(Note_BookActivity.this);
-			        builder.setTitle("È·¶¨ÊÇ·ñÉ¾³ı?").setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+			        builder.setTitle("ç¡®å®šæ˜¯å¦åˆ é™¤?").setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
 			        	@Override
 			            public void onClick(DialogInterface dialog, int which) {
 			        		new NoteService(Note_BookActivity.this)
@@ -235,7 +235,7 @@ public class Note_BookActivity extends Activity implements OnClickListener {
 					list.setAdapter(new NoteBooK_ListAdapter(
 							Note_BookActivity.this, noteService));
 			        	}
-			        	}).setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+			        	}).setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
 			                
 			                @Override
 			                public void onClick(DialogInterface dialog, int which) {
@@ -244,7 +244,7 @@ public class Note_BookActivity extends Activity implements OnClickListener {
 			                }
 			            }).show();
 					
-					/*builder.setItems(new String[] { "É¾³ı" },
+					/*builder.setItems(new String[] { "åˆ é™¤" },
 							new DialogInterface.OnClickListener() {
 
 								@Override
@@ -265,7 +265,7 @@ public class Note_BookActivity extends Activity implements OnClickListener {
 				}
 			});
 			Button button2 = (Button)ly.findViewById(R.id.imageView2);
-			button2.setText("Ïê  Ï¸  ÄÚ  Èİ");
+			button2.setText("è¯¦  ç»†  å†…  å®¹");
 			button2.setOnClickListener(new OnClickListener() {
 				
 				@Override
@@ -286,7 +286,7 @@ public class Note_BookActivity extends Activity implements OnClickListener {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 
 			Intent intent = new Intent(Note_BookActivity.this,
 					MainActivity.class);

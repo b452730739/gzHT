@@ -11,8 +11,9 @@
 
     <LinearLayout
         android:id="@+id/lin"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical" >
 
         <ImageView
@@ -22,8 +23,9 @@
             android:src="@drawable/aa" />
 		
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/mainpage_video"
@@ -50,8 +52,9 @@
             android:textSize="2dp" />
 			
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/mainpage_location"
@@ -78,8 +81,9 @@
             android:textSize="2dp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/mainpage_fitting"
@@ -98,6 +102,91 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/zhuye_note" />
         </LinearLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textSize="2dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/ivTaskSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zhuye_task" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" " />
+
+            <ImageView
+                android:id="@+id/ivMachineStockSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zhuye_stock" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textSize="2dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/ivTaskDaiBanSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zhuye_process" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" " />
+
+            <ImageView
+                android:id="@+id/ivWorkHoursSearch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zhuye_hour" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textSize="2dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/ivMyHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zhuye_myhour" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" " />
+
+            <ImageView
+                android:id="@+id/ivDataAnalysis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/zhuye_data" />
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:textSize="2dp" />
         <LinearLayout 
            android:layout_width="fill_parent"
             android:layout_height="10dp"

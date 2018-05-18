@@ -14,7 +14,7 @@ import android.view.SurfaceHolder;
 import android.view.WindowManager;
 
 
-// AnyChat Camera°ü×°Àà£¬ÊµÏÖ±¾µØÊÓÆµ²É¼¯
+// AnyChat CameraåŒ…è£…ç±»ï¼Œå®ç°æœ¬åœ°è§†é¢‘é‡‡é›†
 public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 	private final static String TAG = "ANYCHAT";
 	private Camera mCamera =null;
@@ -33,10 +33,10 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 	public final int CAMERA_FACING_BACK = 0;
 	public final int CAMERA_FACING_FRONT = 1;
 	
-	// ÉèÖÃ¸¸´°¿Ú¾ä±ú
+	// è®¾ç½®çˆ¶çª—å£å¥æŸ„
 	public void SetContext(Context ctx)	{	mContext = ctx;	}
 	
-	// ³õÊ¼»¯ÉãÏñ»ú£¬ÔÚsurfaceCreatedÖĞµ÷ÓÃ
+	// åˆå§‹åŒ–æ‘„åƒæœºï¼Œåœ¨surfaceCreatedä¸­è°ƒç”¨
 	private void initCamera()
 	{
 		if (null == mCamera)
@@ -58,10 +58,10 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 			/* Camera Service settings */
 			Camera.Parameters parameters = mCamera.getParameters();
 			
-			// »ñÈ¡cameraÖ§³ÖµÄÏà¹Ø²ÎÊı£¬ÅĞ¶ÏÊÇ·ñ¿ÉÒÔÉèÖÃ
+			// è·å–cameraæ”¯æŒçš„ç›¸å…³å‚æ•°ï¼Œåˆ¤æ–­æ˜¯å¦å¯ä»¥è®¾ç½®
 			List<Size> previewSizes = mCamera.getParameters().getSupportedPreviewSizes();
 
-			// »ñÈ¡µ±Ç°ÉèÖÃµÄ·Ö±çÂÊ²ÎÊı
+			// è·å–å½“å‰è®¾ç½®çš„åˆ†è¾©ç‡å‚æ•°
 			int iSettingsWidth = AnyChatCoreSDK.GetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_WIDTHCTRL);
 			int iSettingsHeight = AnyChatCoreSDK.GetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_HEIGHTCTRL);
 			boolean bSetPreviewSize = false;
@@ -74,13 +74,13 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 				}
 			}
 			parameters.setPreviewFrameRate(25);
-			// Ö¸¶¨µÄ·Ö±çÂÊ²»Ö§³ÖÊ±£¬ÓÃÄ¬ÈÏµÄ·Ö±çÂÊÌæ´ú
+			// æŒ‡å®šçš„åˆ†è¾©ç‡ä¸æ”¯æŒæ—¶ï¼Œç”¨é»˜è®¤çš„åˆ†è¾©ç‡æ›¿ä»£
 			if(!bSetPreviewSize)
 				parameters.setPreviewSize(320, 240);
 
-			// ÉèÖÃÊÓÆµÊı¾İ¸ñÊ½
+			// è®¾ç½®è§†é¢‘æ•°æ®æ ¼å¼
 			parameters.setPreviewFormat(ImageFormat.NV21);
-			// ²ÎÊıÉèÖÃÉúĞ§
+			// å‚æ•°è®¾ç½®ç”Ÿæ•ˆ
 			try {
 				mCamera.setParameters(parameters);
 			} catch(Exception e){
@@ -91,7 +91,7 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 			for (int i = 0; i < iCaptureBuffers; i++) {
 				mCamera.addCallbackBuffer(new byte[bufSize]);
 			}
-			// ÉèÖÃÊÓÆµÊä³ö»Øµ÷º¯Êı£¬Í¨¹ıAnyChatµÄÍâ²¿ÊÓÆµÊäÈë½Ó¿Ú´«ÈëAnyChatÄÚºË½øĞĞ´¦Àí
+			// è®¾ç½®è§†é¢‘è¾“å‡ºå›è°ƒå‡½æ•°ï¼Œé€šè¿‡AnyChatçš„å¤–éƒ¨è§†é¢‘è¾“å…¥æ¥å£ä¼ å…¥AnyChatå†…æ ¸è¿›è¡Œå¤„ç†
 			mCamera.setPreviewCallbackWithBuffer(new Camera.PreviewCallback() {
 				@Override
 				public void onPreviewFrame(byte[] data, Camera camera) {
@@ -101,10 +101,10 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 					mCamera.addCallbackBuffer(data);
 				}
 			});
-			mCamera.startPreview(); // ´ò¿ªÔ¤ÀÀ»­Ãæ
+			mCamera.startPreview(); // æ‰“å¼€é¢„è§ˆç”»é¢
 			bIfPreview = true;
 
-			// »ñÈ¡ÉèÖÃºóµÄÏà¹Ø²ÎÊı
+			// è·å–è®¾ç½®åçš„ç›¸å…³å‚æ•°
 			if(mCamera.getParameters().getPreviewFormat() == ImageFormat.NV21)
 				mVideoPixfmt = AnyChatDefine.BRAC_PIX_FMT_NV21;
 			else if(mCamera.getParameters().getPreviewFormat() == ImageFormat.YV12)
@@ -127,7 +127,7 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 		}	
 	}
 	
-	// ÉãÏñÍ·²É¼¯¿ØÖÆ
+	// æ‘„åƒå¤´é‡‡é›†æ§åˆ¶
 	public void CaptureControl(boolean bCapture) {
 		bNeedCapture = bCapture;
 		if(bNeedCapture && mVideoPixfmt != -1)
@@ -141,7 +141,7 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 		}
 	}
 
-	// »ñÈ¡ÏµÍ³ÖĞÉãÏñÍ·µÄÊıÁ¿
+	// è·å–ç³»ç»Ÿä¸­æ‘„åƒå¤´çš„æ•°é‡
 	public int GetCameraNumber() {
 		try {
 			return Camera.getNumberOfCameras();
@@ -149,7 +149,7 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 			return 0;
 		}
 	}
-	// ×Ô¶¯¶Ô½¹
+	// è‡ªåŠ¨å¯¹ç„¦
 	public void CameraAutoFocus() {
 		if(mCamera == null || !bIfPreview)
 			return;
@@ -160,7 +160,7 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 		}
 	}
 	
-	// ÇĞ»»ÉãÏñÍ·
+	// åˆ‡æ¢æ‘„åƒå¤´
 	public void SwitchCamera() {
 		try {
 			if(Camera.getNumberOfCameras() == 1 || currentHolder == null)
@@ -187,7 +187,7 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 		}
 	}
 	
-	// ¸ù¾İÉãÏñÍ·µÄ·½ÏòÑ¡ÔñÉãÏñÍ·£¨Ç°ÖÃ¡¢ºóÖÃ£©
+	// æ ¹æ®æ‘„åƒå¤´çš„æ–¹å‘é€‰æ‹©æ‘„åƒå¤´ï¼ˆå‰ç½®ã€åç½®ï¼‰
 	public void SelectVideoCapture(int facing) {
 		for (int i = 0; i < Camera.getNumberOfCameras(); i++) 
 		{
@@ -200,7 +200,7 @@ public class AnyChatCameraHelper implements SurfaceHolder.Callback{
 		}
 	}
 	
-	// ¸ù¾İÉãÏñÍ·µÄĞòºÅÑ¡ÔñÉãÏñÍ·£¨0 - GetCameraNumber()£©
+	// æ ¹æ®æ‘„åƒå¤´çš„åºå·é€‰æ‹©æ‘„åƒå¤´ï¼ˆ0 - GetCameraNumber()ï¼‰
 	public void SelectCamera(int iCameraId) {
 		try {
 			if(iCurrentCameraId==iCameraId || Camera.getNumberOfCameras() <= iCameraId || currentHolder == null)

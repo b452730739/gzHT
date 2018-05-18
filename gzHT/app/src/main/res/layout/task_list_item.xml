@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/gongwen_item_bg"
     android:paddingBottom="10dp"
     android:paddingLeft="2dp"
     android:paddingRight="8dp"
@@ -21,7 +20,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:paddingLeft="2dp"
-        android:src="@drawable/gongwen_item"
         android:visibility="gone" />
 
     <TextView
@@ -82,20 +80,11 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_toRightOf="@+id/textView2"
-                android:layout_toLeftOf="@+id/btnShouHui"
                 android:gravity="right"
                 android:textColor="#525252"
                 android:textSize="15dp" />
 
-            <Button
-                android:id="@+id/btnShouHui"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                 android:focusable="false"  
-                android:visibility="gone"
-                android:text="收回" />
+
         </RelativeLayout>
     </LinearLayout>
 

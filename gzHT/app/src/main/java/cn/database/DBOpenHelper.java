@@ -7,8 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBOpenHelper extends SQLiteOpenHelper {
-	private static final String DATABASENAME = Constant.TableName + ".db"; // Êı¾İ¿âÃû³Æ
-	private static final int DATABASEVERSION = 2;// Êı¾İ¿â°æ±¾
+	private static final String DATABASENAME = Constant.TableName + ".db"; // æ•°æ®åº“åç§°
+	private static final int DATABASEVERSION = 2;// æ•°æ®åº“ç‰ˆæœ¬
 
 	public DBOpenHelper(Context context) {
 		super(context, DATABASENAME, null, DATABASEVERSION);
@@ -21,7 +21,7 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 				+ " (id integer primary key autoincrement,"
 				+ "title varchar, et_name varchar,  et_people varchar, et_phone varchar, "
 				+ "time varchar,error varchar,suggestion varchar)");
-		// Ö´ĞĞÓĞ¸ü¸ÄµÄsqlÓï¾ä
+		// æ‰§è¡Œæœ‰æ›´æ”¹çš„sqlè¯­å¥
 	}
 
 	@Override

@@ -9,10 +9,10 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class CLYJ_Spinner_Adapter extends BaseAdapter {
+public class SpinnerApadterByList extends BaseAdapter {
 	private ArrayList<String> str = null;
 	private Context context = null;
-	public CLYJ_Spinner_Adapter(ArrayList<String> str, Context context ){
+	public SpinnerApadterByList(ArrayList<String> str, Context context ){
 		this.str = str;
 		this.context = context;
 	}

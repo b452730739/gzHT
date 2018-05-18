@@ -1,6 +1,22 @@
 package com.elegps.javabean;
 
-public class TaskInfo {
+import java.io.Serializable;
+import java.util.ArrayList;
+
+public class TaskInfoList implements Serializable{
+
+
+    public ArrayList<TaskInfo> taskInfoArrayList;
+
+    public ArrayList<TaskInfo> getTaskInfoArrayList() {
+        return taskInfoArrayList;
+    }
+
+    public void setTaskInfoArrayList(ArrayList<TaskInfo> taskInfoArrayList) {
+        this.taskInfoArrayList = taskInfoArrayList;
+    }
+
+    public class TaskInfo implements Serializable{
 
 
     /**
@@ -86,4 +102,4 @@ public class TaskInfo {
     public void setRemark(String Remark) {
         this.Remark = Remark;
     }
-}
+} }

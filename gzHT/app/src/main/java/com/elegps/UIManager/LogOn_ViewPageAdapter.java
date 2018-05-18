@@ -10,7 +10,7 @@ public class LogOn_ViewPageAdapter extends PagerAdapter{
 
 	ArrayList<View> list ;
 	
-	//¹¹Ôì·½·¨
+	//æž„é€ æ–¹æ³•
 	public LogOn_ViewPageAdapter(ArrayList<View> list) {
 		this.list = list;
 	}

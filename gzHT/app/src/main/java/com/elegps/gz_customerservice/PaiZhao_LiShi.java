@@ -76,7 +76,7 @@ public class PaiZhao_LiShi extends Activity {
 		File f = new File(Constant.photoPath+"/photos/");
 		if (f.isDirectory()) {
 	        String[] children = f.list();
-	        //µİ¹éÉ¾³ıÄ¿Â¼ÖĞµÄ×ÓÄ¿Â¼ÏÂ
+	        //é€’å½’åˆ é™¤ç›®å½•ä¸­çš„å­ç›®å½•ä¸‹
 	        for (int i=0; i<children.length; i++) {
 	        	if(children[i].endsWith("png")|children[i].endsWith("jpg")){
 		        	arrayList.add(Constant.photoPath+"/photos/"+children[i]);
@@ -90,19 +90,19 @@ public class PaiZhao_LiShi extends Activity {
 		
 	}
 	 /*
-     * È·ÈÏÊÇ·ñÉ¾³ı
+     * ç¡®è®¤æ˜¯å¦åˆ é™¤
      * */
     public  void is_delete(final int position){
-        //ÌáÊ¾¶Ô»°¿ò
+        //æç¤ºå¯¹è¯æ¡†
         AlertDialog.Builder builder=new Builder(PaiZhao_LiShi.this);
-        builder.setTitle("È·¶¨ÊÇ·ñÉ¾³ı?").setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+        builder.setTitle("ç¡®å®šæ˜¯å¦åˆ é™¤?").setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
         	@Override
             public void onClick(DialogInterface dialog, int which) {
         		new File(arrayList.get(position)).delete();
         		set_Adapter();
         		
         	}
-        }).setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+        }).setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -147,7 +147,7 @@ public class PaiZhao_LiShi extends Activity {
 		
 	}
 	/**
-	 * ÒÀ¾İËùÖ¸¶¨µÄdrawableÏÂµÄÍ¼Æ¬×ÊÔ´IDºÅ£¨¿ÉÒÔ¸ù¾İ×Ô¼ºµÄĞèÒª´ÓÍøÂç»ò±¾µØpathÏÂ»ñÈ¡£©£¬ÖØĞÂ»ñÈ¡ÏàÓ¦Bitmap¶ÔÏóµÄÊµÀı
+	 * ä¾æ®æ‰€æŒ‡å®šçš„drawableä¸‹çš„å›¾ç‰‡èµ„æºIDå·ï¼ˆå¯ä»¥æ ¹æ®è‡ªå·±çš„éœ€è¦ä»ç½‘ç»œæˆ–æœ¬åœ°pathä¸‹è·å–ï¼‰ï¼Œé‡æ–°è·å–ç›¸åº”Bitmapå¯¹è±¡çš„å®ä¾‹
 	 */
 	public Bitmap getBitmap(String filePath) {
 		Bitmap bmp = null;
@@ -170,14 +170,14 @@ public class PaiZhao_LiShi extends Activity {
 					
 					option.inTempStorage = new byte[1024];
 					option.inPurgeable = true;
-					//cwj.inSampleSize = 153600/bt.length; //Í¼Æ¬µÄ´óĞ¡Îª153600/1024=150kb
+					//cwj.inSampleSize = 153600/bt.length; //å›¾ç‰‡çš„å¤§å°ä¸º153600/1024=150kb
 					option.inSampleSize = bt.length/200000;
 					
 					if(bt != null){
 						bmp = BitmapFactory.decodeByteArray(bt, 0, bt.length,option);
 					}else{
 					}
-					// ¸ù¾İËõ·Å±ÈÀı»ñÈ¡ĞÂµÄÎ»Í¼
+					// æ ¹æ®ç¼©æ”¾æ¯”ä¾‹è·å–æ–°çš„ä½å›¾
 					bmp = Bitmap.createBitmap(bmp, 0, 0, 500, 500, null, true);	
 					//this.addCacheBitmap(bmp, filePath);
 				}catch(OutOfMemoryError e){

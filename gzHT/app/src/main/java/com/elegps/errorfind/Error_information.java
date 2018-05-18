@@ -42,7 +42,7 @@ public class Error_information extends Activity implements OnClickListener{
 		
 		setContentView(R.layout.error_information);
 		
-		dialog_UI = new Dialog_UI(this, "ÕıÔÚ¼ÓÔØ...");
+		dialog_UI = new Dialog_UI(this, "æ­£åœ¨åŠ è½½...");
 		dialog_UI.show();
 		
 		bundle = getIntent().getExtras();
@@ -103,28 +103,28 @@ public class Error_information extends Activity implements OnClickListener{
 		
 		
 		editTexts = new EditText[13];
-		//¹¤µ¥ºÅ
+		//å·¥å•å·
 		editTexts[0] = (EditText)findViewById(R.id.et_name);
-		//ÈÕÆÚ
+		//æ—¥æœŸ
 		editTexts[1] = (EditText)findViewById(R.id.et_phone);
-		//¹ÊÕÏÃèÊö
+		//æ•…éšœæè¿°
 		editTexts[2] = (EditText)findViewById(R.id.et_swollen);
-		//´¦Àí´ëÊ©
+		//å¤„ç†æªæ–½
 		editTexts[3] = (EditText)findViewById(R.id.et_password);
-		//ÅÉ¹¤ÈË
+		//æ´¾å·¥äºº
 		editTexts[4] = (EditText)findViewById(R.id.et_confirm_password);
-		//±¸×¢
+		//å¤‡æ³¨
 		editTexts[5] = (EditText)findViewById(R.id.postbox);
-		//·¢»õµ¥
+		//å‘è´§å•
 		editTexts[6] = (EditText)findViewById(R.id.fax);
-		//·¢»õÈË
+		//å‘è´§äºº
 		editTexts[7] = (EditText)findViewById(R.id.address);
-		//·¢»õÈÕÆÚ
+		//å‘è´§æ—¥æœŸ
 		editTexts[8] = (EditText)findViewById(R.id.fahuoriqi);
-		//ÁªÏµ·½Ê½
+		//è”ç³»æ–¹å¼
 		editTexts[9] = (EditText)findViewById(R.id.lianxifangshi);
 
-		//ÅÉ¹¤ÈËÁªÏµ·½Ê½
+		//æ´¾å·¥äººè”ç³»æ–¹å¼
 		editTexts[10] = (EditText)findViewById(R.id.lianxi);
 		editTexts[11] = (EditText)findViewById(R.id.et1);
 		editTexts[12] = (EditText)findViewById(R.id.et2);
@@ -186,10 +186,10 @@ public class Error_information extends Activity implements OnClickListener{
 				if(hasFocus){
 				Intent intent = new Intent();
 
-				//ÏµÍ³Ä¬ÈÏµÄaction£¬ÓÃÀ´´ò¿ªÄ¬ÈÏµÄµç»°½çÃæ
+				//ç³»ç»Ÿé»˜è®¤çš„actionï¼Œç”¨æ¥æ‰“å¼€é»˜è®¤çš„ç”µè¯ç•Œé¢
 				intent.setAction(Intent.ACTION_CALL);
 
-				//ĞèÒª²¦´òµÄºÅÂë
+				//éœ€è¦æ‹¨æ‰“çš„å·ç 
 
 				intent.setData(Uri.parse("tel:"+editTexts[9].getText().toString()));
 				Error_information.this.startActivity(intent);
@@ -205,10 +205,10 @@ public class Error_information extends Activity implements OnClickListener{
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
 
-				//ÏµÍ³Ä¬ÈÏµÄaction£¬ÓÃÀ´´ò¿ªÄ¬ÈÏµÄµç»°½çÃæ
+				//ç³»ç»Ÿé»˜è®¤çš„actionï¼Œç”¨æ¥æ‰“å¼€é»˜è®¤çš„ç”µè¯ç•Œé¢
 				intent.setAction(Intent.ACTION_CALL);
 
-				//ĞèÒª²¦´òµÄºÅÂë
+				//éœ€è¦æ‹¨æ‰“çš„å·ç 
 
 				intent.setData(Uri.parse("tel:"+editTexts[9].getText().toString()));
 				Error_information.this.startActivity(intent);
@@ -219,7 +219,7 @@ public class Error_information extends Activity implements OnClickListener{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			if(Constant.b){
 			Intent intent = new Intent(Error_information.this,
 					Error_DemadFindActivity.class);
@@ -252,7 +252,7 @@ public class Error_information extends Activity implements OnClickListener{
 			}
 			this.finish();
 			break;
-		case R.id.b_enrolment:  //ÂúÒâ
+		case R.id.b_enrolment:  //æ»¡æ„
 			
 			new AsyncTask<Void, Void, String>(){
 
@@ -280,7 +280,7 @@ public class Error_information extends Activity implements OnClickListener{
 			}.execute((Void)null);
 			
 			break;
-		case R.id.b_back:		//²»ÂúÒâ
+		case R.id.b_back:		//ä¸æ»¡æ„
 			new AsyncTask<Void, Void, String>(){
 
 				@Override

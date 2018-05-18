@@ -8,7 +8,7 @@ import android.app.Activity;
 	
  */
 public class PublicWay {
-	//存放所有的Activity
+	//瀛樻斁鎵�鏈夌殑Activity
 	public static List<Activity> activityList = new ArrayList<Activity>();
 	
 	

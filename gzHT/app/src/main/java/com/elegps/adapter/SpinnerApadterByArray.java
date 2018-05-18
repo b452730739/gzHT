@@ -9,21 +9,17 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class SpinnerApadterByList extends BaseAdapter {
-	private ArrayList<String> str = null;
+public class SpinnerApadterByArray extends BaseAdapter {
+	private String[] array = null;
 	private Context context = null;
-	public SpinnerApadterByList(ArrayList<String> str, Context context ){
-		this.str = str;
+	public SpinnerApadterByArray(String[] array , Context context ){
+		this.array = array;
 		this.context = context;
 	}
 	@Override
 	public int getCount() {
-		try {
-			return str.size();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return 0;
+
+		return array == null ?0:array.length;
 	}
 
 	@Override
@@ -41,7 +37,7 @@ public class SpinnerApadterByList extends BaseAdapter {
 		textView.setTextColor(Color.BLACK);
 		textView.setTextSize(18);
 		textView.setPadding(20, 20, 0, 20);
-		textView.setText(str.get(position));
+		textView.setText(array[position]);
 
 		return textView;
 	}

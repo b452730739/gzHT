@@ -25,14 +25,14 @@ import com.elegps.help.PublicWay;
 
 public class Photo_NativeActivity extends Activity implements OnClickListener{
 	
-	private ImageView setphoto = null;	//Í¼Æ¬ÏÔÊ¾
-	private EditText[] setValues = null;//´ÓEditText»ñÈ¡µ½µÄÊıÖµ
-	//private TextView setTime = null;  //ÏÔÊ¾Ê±¼ä
-	private Button upload = null;    	//ÉÏ´«
+	private ImageView setphoto = null;	//å›¾ç‰‡æ˜¾ç¤º
+	private EditText[] setValues = null;//ä»EditTextè·å–åˆ°çš„æ•°å€¼
+	//private TextView setTime = null;  //æ˜¾ç¤ºæ—¶é—´
+	private Button upload = null;    	//ä¸Šä¼ 
 	private Bundle bundle = null;
-	private String path = null;			//Í¼Æ¬µÄ¾ø¶ÔµØÖ·
+	private String path = null;			//å›¾ç‰‡çš„ç»å¯¹åœ°å€
 	
-	private String ImageTemp = null; 	//Í¼Æ¬×ªÎªStringµÄÁÙÊ±±äÁ¿
+	private String ImageTemp = null; 	//å›¾ç‰‡è½¬ä¸ºStringçš„ä¸´æ—¶å˜é‡
 	private Dialog_UI dialog_UI = null;
 	
 	private byte[] b  = null;
@@ -71,7 +71,7 @@ public class Photo_NativeActivity extends Activity implements OnClickListener{
 		e.printStackTrace();
 	} catch (OutOfMemoryError e) {
 		e.printStackTrace();
-		Toast.makeText(Photo_NativeActivity.this, "Í¼Æ¬¹ı´ó", 0).show();
+		Toast.makeText(Photo_NativeActivity.this, "å›¾ç‰‡è¿‡å¤§", 0).show();
 	}
 	
 		
@@ -108,7 +108,7 @@ public class Photo_NativeActivity extends Activity implements OnClickListener{
 			e.printStackTrace();
 		}
 		
-		dialog_UI = new Dialog_UI(Photo_NativeActivity.this, "ÕıÔÚÉÏ´«...");
+		dialog_UI = new Dialog_UI(Photo_NativeActivity.this, "æ­£åœ¨ä¸Šä¼ ...");
 		dialog_UI.setCancelable(false);
 		upload.setOnClickListener(this);
 	}
@@ -127,7 +127,7 @@ public class Photo_NativeActivity extends Activity implements OnClickListener{
 			e.printStackTrace();
 		} catch (OutOfMemoryError e) {
 			e.printStackTrace();
-			Toast.makeText(Photo_NativeActivity.this, "Í¼Æ¬¹ı´ó", 0).show();
+			Toast.makeText(Photo_NativeActivity.this, "å›¾ç‰‡è¿‡å¤§", 0).show();
 		}
 	}}
 
@@ -186,7 +186,7 @@ public class Photo_NativeActivity extends Activity implements OnClickListener{
 			
 	/*	}else{
 
-			Toast.makeText(this, "Í¼Æ¬»ò´ø*ºÅÎª±ØÌîÏîÄ¿,ÇëÖØĞÂÊäÈë...", 0).show();
+			Toast.makeText(this, "å›¾ç‰‡æˆ–å¸¦*å·ä¸ºå¿…å¡«é¡¹ç›®,è¯·é‡æ–°è¾“å…¥...", 0).show();
 
 	}*/}else{
 		Toast.makeText(Photo_NativeActivity.this, R.string.networkeerror, 0).show();
@@ -195,7 +195,7 @@ public class Photo_NativeActivity extends Activity implements OnClickListener{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			
 			Intent intent = new Intent(Photo_NativeActivity.this, MainActivity.class);
 			

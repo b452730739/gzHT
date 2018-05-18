@@ -47,9 +47,9 @@ public class BaiXiu_AddActivity extends Activity implements OnClickListener{
 			editTexts[6] = (EditText)findViewById(R.id.et_swollen);
 			editTexts[7] = (EditText)findViewById(R.id.et_password);
 			editTexts[8] = (EditText)findViewById(R.id.et_confirm_password);
-			editTexts[9] = (EditText)findViewById(R.id.tel);//µç»°
-			editTexts[10] = (EditText)findViewById(R.id.et_name);//¿Í»§Ãû³Æ
-			editTexts[11] = (EditText)findViewById(R.id.beizhu);//Í¼Æ¬±¸×¢
+			editTexts[9] = (EditText)findViewById(R.id.tel);//ç”µè¯
+			editTexts[10] = (EditText)findViewById(R.id.et_name);//å®¢æˆ·åç§°
+			editTexts[11] = (EditText)findViewById(R.id.beizhu);//å›¾ç‰‡å¤‡æ³¨
 			
 			try {
 				editTexts[10].setText(Constant.users.get(0).getCustName());
@@ -79,7 +79,7 @@ public class BaiXiu_AddActivity extends Activity implements OnClickListener{
 			Intent intent = new Intent();
 			switch (v.getId()) {
 			case R.id.addnote:
-				final Dialog_UI dialog_UI = new Dialog_UI(BaiXiu_AddActivity.this, "ÕıÔÚÌí¼Ó...");
+				final Dialog_UI dialog_UI = new Dialog_UI(BaiXiu_AddActivity.this, "æ­£åœ¨æ·»åŠ ...");
 				dialog_UI.show();
 				dialog_UI.setCancelable(false);
 				new AsyncTask<Void, Void, String>() {
@@ -145,7 +145,7 @@ public class BaiXiu_AddActivity extends Activity implements OnClickListener{
 		public boolean onKeyDown(int keyCode, KeyEvent event) {
 			
 			if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-				// ÕâÀïÖØĞ´·µ»Ø¼ü
+				// è¿™é‡Œé‡å†™è¿”å›é”®
 				Intent intent = new Intent(BaiXiu_AddActivity.this,
 						BaoXiu_Activity.class);
 				startActivity(intent);

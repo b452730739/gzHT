@@ -49,6 +49,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.elegps.service.StartService;
+import rx.Subscriber;
 
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxCallback;
@@ -57,17 +58,22 @@ import com.constant.IP_Address;
 import com.content.webservice.ContentWeb;
 import com.elegps.UIManager.Dialog_UI;
 import com.elegps.antkingXML.PullPersonService;
+import com.elegps.help.ACache;
 import com.elegps.help.BitmapCache;
 import com.elegps.help.Hellper;
 import com.elegps.help.PublicWay;
+import com.elegps.javabean.AppUserInfo;
 import com.elegps.javabean.Update_bean;
 import com.elegps.javabean.Video_users;
 import com.elegps.update.UpdateAPP;
+import com.google.gson.Gson;
+import com.soap.RemoteDataByAppMemberService;
 
 
-public class LogingActivity extends Activity implements OnClickListener {
+public class LogingActivity extends Activity implements OnClickListener,LoginContract.View {
 	
 
+	private String TAG = this.getClass().getName();
 	private ImageView imageView = null;
 	private Button login = null; 			// 登录
 	private EditText account = null; 		// 账号
@@ -79,8 +85,7 @@ public class LogingActivity extends Activity implements OnClickListener {
 	private boolean ifLoginSuccess = false; // 是否成功登录
 	private boolean ifLearnPassword = true; // 是否保存密码
 	public static File PATH = null;
-	private String temp = null;
-	
+
 	private Dialog_UI dialog_UI = null;
 	private List<Video_users> users = null;
 	
@@ -99,6 +104,7 @@ public class LogingActivity extends Activity implements OnClickListener {
 	private int downLoadFileSize;
 	private String filename;
 
+	private LoginPresenter presenter = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -110,11 +116,15 @@ public class LogingActivity extends Activity implements OnClickListener {
 		
 		DisplayMetrics dm = getResources().getDisplayMetrics();
 		Constant.screenWidth = dm.widthPixels;
-		Constant.screenHeight = dm.heightPixels;	
-		
-	
+		Constant.screenHeight = dm.heightPixels;
+
+
+		presenter = new LoginPresenter(this);
+
 			init();
 			new UpdateAPP(this).execute();
+
+
 
 		
 	}
@@ -237,12 +247,12 @@ public class LogingActivity extends Activity implements OnClickListener {
 
 				@Override
 				protected String doInBackground(Void... params) {
-					
-					temp = null;
+					 String result = "";
+
 					Constant.UserName = account.getText().toString();
 					Constant.TableName = account.getText().toString();
 					try {
-						temp = ContentWeb.getinstance().contetweb(
+						result = ContentWeb.getinstance().contetweb(
 								IP_Address.MEMBERSERVICE,
 								"UserLogin",
 								new String[] { "strAccount", "strPassword", },
@@ -251,14 +261,14 @@ public class LogingActivity extends Activity implements OnClickListener {
 					}  catch (Exception e1) {
 						e1.printStackTrace();
 					}
-					
+
 					String temp1 = null;
 					try {
 						temp1 = ContentWeb
 								.getinstance()
 								.contetweb(
 										IP_Address.MEMBERSERVICE,
-										"GetUserInfo", 
+										"GetUserInfo",
 										new String[] { "strAccount" },
 										new String[] { Constant.UserName },dialog_UI);
 					} catch (Exception e1) {
@@ -273,40 +283,15 @@ public class LogingActivity extends Activity implements OnClickListener {
 						e.printStackTrace();
 					}
 					
-					return temp;
+					return result;
 				}
 				@Override
-				protected void onPostExecute(String temp) {
-					super.onPostExecute(temp);
-					try {
-						if (temp.equals("true")) {
-							PATH = new File(Environment.getExternalStorageDirectory()
-									.getPath()+"/haitian/"+Constant.UserName+"/");
-							if(!(PATH.isFile())){
-								PATH.mkdirs();
-							}
-							Constant.User_Path = PATH;
-							Constant.jietuPath = PATH+"/map.png";
-							
-							Constant.photoPath = PATH+"";
-							saveAccountInfo(Constant.UserName+"$"+Constant.DENGLUNAME, "config");
-							
-							ifLoginSuccess = true;
-							Intent intent = new Intent(LogingActivity.this,
-									MainActivity.class);
-							startActivity(intent);
-							LogingActivity.this.finish();
-						} else {
-							//loading.setVisibility(View.INVISIBLE);
-							dialog_UI.dismiss();
-							Toast.makeText(LogingActivity.this, temp, 0).show();
-						}
-					} catch (Exception e) {
-						dialog_UI.dismiss();
-						Toast.makeText(LogingActivity.this, "登录失败", 0).show();
-						
-						e.printStackTrace();
-					}
+				protected void onPostExecute(String result) {
+					super.onPostExecute(result);
+
+					result = "true";
+					loginSucess(result);
+
 				}
 			}.execute((Void) null);
 			}else{
@@ -359,6 +344,25 @@ public class LogingActivity extends Activity implements OnClickListener {
 			break;
 		}
 	}
+
+	private void loginSucess(String result){
+		try {
+			if (result.equals("true")) {
+
+				presenter.onLogin(account.getText().toString(),password.getText().toString());
+
+			} else {
+				//loading.setVisibility(View.INVISIBLE);
+				dialog_UI.dismiss();
+				Toast.makeText(LogingActivity.this, result, 0).show();
+			}
+		} catch (Exception e) {
+			dialog_UI.dismiss();
+			Toast.makeText(LogingActivity.this, "登录失败", 0).show();
+
+			e.printStackTrace();
+		}
+	}
 	public void saveAccountInfo(String str/** 保存的内�?*/
 	, String name/** 保存的文件名 */
 	) {
@@ -409,7 +413,39 @@ public class LogingActivity extends Activity implements OnClickListener {
 	}
 
 
+	@Override
+	public void loginFail(String message) {
+		dialog_UI.dismiss();
+
+		Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+	}
+
+	@Override
+	public void loginSucceeded(AppUserInfo appUserInfo) {
 
 
+		ACache.putObject(Constant.APPUSERINFO,appUserInfo);
 
+		PATH = new File(Environment.getExternalStorageDirectory()
+				.getPath()+"/haitian/"+Constant.UserName+"/");
+		if(!(PATH.isFile())){
+			PATH.mkdirs();
+		}
+		Constant.User_Path = PATH;
+		Constant.jietuPath = PATH+"/map.png";
+
+		Constant.photoPath = PATH+"";
+		saveAccountInfo(Constant.UserName+"$"+Constant.DENGLUNAME, "config");
+
+		ifLoginSuccess = true;
+		Intent intent = new Intent(LogingActivity.this,
+				MainActivity.class);
+		startActivity(intent);
+		LogingActivity.this.finish();
+	}
+
+	@Override
+	public void setPresenter(LoginContract.Presenter presenter) {
+
+	}
 }

@@ -84,7 +84,7 @@ public class BaoXiu_Activity extends Activity implements OnClickListener{
 		});*/
 		gridView = (GridView)findViewById(R.id.gridview);
 		gridView.setNumColumns(2);
-		grid_Adapter = new Grid_Adapter(new String[]{"±¨    ĞŞ","±£    Ñø"});
+		grid_Adapter = new Grid_Adapter(new String[]{"æŠ¥    ä¿®","ä¿    å…»"});
 		grid_Adapter.setChecked(new Integer(item));
 		gridView.setOnItemClickListener(new OnItemClickListener() {
 			@Override
@@ -105,7 +105,7 @@ public class BaoXiu_Activity extends Activity implements OnClickListener{
 		setList_Adapter(item);
 	}
 	private void setList_Adapter(final String item){
-		final Dialog_UI dialog_UI = new Dialog_UI(BaoXiu_Activity.this, "ÕıÔÚ¼ÓÔØ...");
+		final Dialog_UI dialog_UI = new Dialog_UI(BaoXiu_Activity.this, "æ­£åœ¨åŠ è½½...");
 		dialog_UI.show();
 		new AsyncTask<Void, Void, List<GetComplainAdviseInfo>>() {
 			@Override
@@ -239,12 +239,12 @@ public class BaoXiu_Activity extends Activity implements OnClickListener{
 	}
 }
 	 /*
-     * È·ÈÏÊÇ·ñÉ¾³ı
+     * ç¡®è®¤æ˜¯å¦åˆ é™¤
      * */
     public  void is_delete(final int position){
-        //ÌáÊ¾¶Ô»°¿ò
+        //æç¤ºå¯¹è¯æ¡†
         AlertDialog.Builder builder=new Builder(BaoXiu_Activity.this);
-        builder.setTitle("È·¶¨ÊÇ·ñÉ¾³ı?").setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+        builder.setTitle("ç¡®å®šæ˜¯å¦åˆ é™¤?").setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
         	@Override
             public void onClick(DialogInterface dialog, int which) {
 				
@@ -277,7 +277,7 @@ public class BaoXiu_Activity extends Activity implements OnClickListener{
 					
 				}.execute((Void)null);
 			}
-        }).setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+        }).setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -326,7 +326,7 @@ public class BaoXiu_Activity extends Activity implements OnClickListener{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			Intent intent = new Intent(BaoXiu_Activity.this,
 					MainActivity.class);
 			startActivity(intent);

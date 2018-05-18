@@ -5,24 +5,24 @@ public class Creat_Person {
 	
 	
 
-	private String et_name = null; // ¹«Ë¾Ãû³Æ
-	private String et_address = null; // ¹«Ë¾µØÖ·
-	private String et_zhizhao = null; // ÓªÒµÖ´ÕÕ
-	private String et_swollen = null; // ÕË»§
-	private String et_password = null; // ÃÜÂë
-	private String et_confirm_password = null; // È·ÈÏÃÜÂë
-	private String postbox = null; // ÓÊÏä
-	private String fax = null; // ´«Õæ
-	private String zijin = null;// ×¢²á×Ê½ğ
-	private String guoshui = null;// ¹úË°
-	private String dishui = null;// µØË°
-	private String daima = null;// ×éÖ¯»ú¹¹´úÂëÖ¤
-	private String sex = null;// ĞÔ±ğ
-	private String bumen = null;// ËùÊô²¿ÃÅ
-	private String bumen_zhiwu = null; // ²¿ÃÅÖ°Îñ
-	private String et_phone = null; // ¹«Ë¾µç»°
-	private String et_tel = null; // ¹«Ë¾µç»°
-	private String et_contactname = null; // ÁªÏµÈË
+	private String et_name = null; // å…¬å¸åç§°
+	private String et_address = null; // å…¬å¸åœ°å€
+	private String et_zhizhao = null; // è¥ä¸šæ‰§ç…§
+	private String et_swollen = null; // è´¦æˆ·
+	private String et_password = null; // å¯†ç 
+	private String et_confirm_password = null; // ç¡®è®¤å¯†ç 
+	private String postbox = null; // é‚®ç®±
+	private String fax = null; // ä¼ çœŸ
+	private String zijin = null;// æ³¨å†Œèµ„é‡‘
+	private String guoshui = null;// å›½ç¨
+	private String dishui = null;// åœ°ç¨
+	private String daima = null;// ç»„ç»‡æœºæ„ä»£ç è¯
+	private String sex = null;// æ€§åˆ«
+	private String bumen = null;// æ‰€å±éƒ¨é—¨
+	private String bumen_zhiwu = null; // éƒ¨é—¨èŒåŠ¡
+	private String et_phone = null; // å…¬å¸ç”µè¯
+	private String et_tel = null; // å…¬å¸ç”µè¯
+	private String et_contactname = null; // è”ç³»äºº
 
 
 	/**

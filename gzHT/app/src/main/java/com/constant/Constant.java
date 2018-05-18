@@ -16,35 +16,45 @@ public class Constant {
 public static final Integer [] pageID = {R.drawable.one,R.drawable.two,
 	R.drawable.three,R.drawable.four,R.drawable.five,R.drawable.six
 	,R.drawable.seven
-}; 															//Ç°ÃæµÄviewpagerµÄÍ¼Æ¬
+}; 															//å‰é¢çš„viewpagerçš„å›¾ç‰‡
 
-public static Integer screenWidth = 0; 						//ÆÁÄ»µÄ¿í
-public static Integer screenHeight = 0;						//¸ß
+public static Integer screenWidth = 0; 						//å±å¹•çš„å®½
+public static Integer screenHeight = 0;						//é«˜
 
 public static final Integer [] MainPage_Computer = {
 	R.drawable.zhuye_fitting,R.drawable.zhuye_photo,R.drawable.zhuye_location,
 	R.drawable.zhuye_error,R.drawable.zhuye_vedio,R.drawable.zhuye_note,};
-															//Ö÷Ò³ÃæµÄÍ¼Æ¬
-public static File User_Path = null; 						//¸öÈËÎÄ¼şµÄÂ·¾¶
-public static String jietuPath = null; 						//½ØÈ¡µØÍ¼µÄÁÙÊ±ÎÄ¼ş
-public static String photoPath = null;						//ÕÕÏà´æÈ¡µÄÁÙÊ±ÎÄ¼ş
-public static final String photoName = "photo.png";       	//ÕÕÏà´æÈ¡µÄÁÙÊ±ÎÄ¼şÃû
-public static final String ServerIP = "183.63.165.198";  	//·şÎñÆ÷µÄIP
-public static final int ServerPort = 8906/*8906*/;         	//·şÎñÆ÷µÄ¶Ë¿ÚºÅ
-public static String UserName = "";          				//ÓÃ»§Ãû
-public static String TableName = "";        			 	//Êı¾İ¿âÃû
-public static String ISINSIDE = null;         				//ÖµÎª1ÎªÄÚ²¿ÕËºÅ£¬·ñÔòÍâ²¿ÕËºÅ
-public static String BUY_TEMP  = null;						//´æ´¢µÄ¹ºÂòÊ±µÄÁÙÊ±±äÁ¿
-public static List<Get_Error> errors = null; 				//´æ´¢µÄÒ»¸öÔÂÖ®ÄÚµÄ¹ÊÕÏĞÅÏ¢
-public static List<Get_Error> errors_find = null; 				//´æ´¢µÄ²éÑ¯µÄ¹ÊÕÏĞÅÏ¢
+															//ä¸»é¡µé¢çš„å›¾ç‰‡
+public static File User_Path = null; 						//ä¸ªäººæ–‡ä»¶çš„è·¯å¾„
+public static String jietuPath = null; 						//æˆªå–åœ°å›¾çš„ä¸´æ—¶æ–‡ä»¶
+public static String photoPath = null;						//ç…§ç›¸å­˜å–çš„ä¸´æ—¶æ–‡ä»¶
+public static final String photoName = "photo.png";       	//ç…§ç›¸å­˜å–çš„ä¸´æ—¶æ–‡ä»¶å
+public static final String ServerIP = "183.63.165.198";  	//æœåŠ¡å™¨çš„IP
+public static final int ServerPort = 8906/*8906*/;         	//æœåŠ¡å™¨çš„ç«¯å£å·
+public static String UserName = "";          				//ç”¨æˆ·å
+public static String TableName = "";        			 	//æ•°æ®åº“å
+public static String ISINSIDE = null;         				//å€¼ä¸º1ä¸ºå†…éƒ¨è´¦å·ï¼Œå¦åˆ™å¤–éƒ¨è´¦å·
+public static String BUY_TEMP  = null;						//å­˜å‚¨çš„è´­ä¹°æ—¶çš„ä¸´æ—¶å˜é‡
+public static List<Get_Error> errors = null; 				//å­˜å‚¨çš„ä¸€ä¸ªæœˆä¹‹å†…çš„æ•…éšœä¿¡æ¯
+public static List<Get_Error> errors_find = null; 				//å­˜å‚¨çš„æŸ¥è¯¢çš„æ•…éšœä¿¡æ¯
 
-public static Buy_fitingOne buy_fitingOnes = null;			//¹ºÂòÒ³ÃæµÄ¸¸Ò»¼¶Ä¿Â¼
-public static List<Buy_fitingOne> ones = null;				//¹ºÂòµÄ¶¥¼¶Ä¿Â¼//58.67.147.209
-public static List<Video_users> users = null;            	//»ñÈ¡µÇÂ¼ÈËµÄ¸öÈËĞÅÏ¢
+public static Buy_fitingOne buy_fitingOnes = null;			//è´­ä¹°é¡µé¢çš„çˆ¶ä¸€çº§ç›®å½•
+public static List<Buy_fitingOne> ones = null;				//è´­ä¹°çš„é¡¶çº§ç›®å½•//58.67.147.209
+public static List<Video_users> users = null;            	//è·å–ç™»å½•äººçš„ä¸ªäººä¿¡æ¯
 
-public static String DENGLUNAME = null;						//µÇÂ¼µÄÕæÊµÃû×Ö
-public static ArrayList<Note_paiGBean> paiGBeans = null;	//´æ´¢µÄÅÉ¹¤ĞÅÏ¢
-public static String Buy_PeiJian = null;					//´æ´¢µÄÅä¼şĞÅÏ¢×Ö·û´®
-public static List<Buy_lishiBean> buy_lishiBeans = null;	//´æ´¢µÄ¹º
-public static boolean b = true;								//ÅĞ¶Ï¹ÊÕÏÏêÏ¸ĞÅÏ¢Ìø×ªµ½ÄÄ¸öÒ³Ãæ
+public static String DENGLUNAME = null;						//ç™»å½•çš„çœŸå®åå­—
+public static ArrayList<Note_paiGBean> paiGBeans = null;	//å­˜å‚¨çš„æ´¾å·¥ä¿¡æ¯
+public static String Buy_PeiJian = null;					//å­˜å‚¨çš„é…ä»¶ä¿¡æ¯å­—ç¬¦ä¸²
+public static List<Buy_lishiBean> buy_lishiBeans = null;	//å­˜å‚¨çš„è´­
+public static boolean b = true;								//åˆ¤æ–­æ•…éšœè¯¦ç»†ä¿¡æ¯è·³è½¬åˆ°å“ªä¸ªé¡µé¢
+
+
+//2018-4-29
+	public static final String APPUSERINFO = "AppUserInfo";       	//ç”¨æˆ·ä¿¡æ¯
+	public static final String TASKINFO = "TaskInfo";
+	public static final String TASK_DAIBAN_INFO = "TaskDaibanInfo";
+
+	public static final String MACHINESTOCK = "MachineStock";
+	public static final String IS_MY_HOURS = "isMyHours";
+
 }

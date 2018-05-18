@@ -2,11 +2,11 @@ package com.elegps.javabean;
 
 public class Buy_enrolment {
 
-	private String Type = null; 	//²úÆ·ÀàĞÍ
-	private String TypeId = null;	//ÀàĞÍId
-	private String TypeName = null; //²úÆ·Ãû
-	private String TypeNum  = null; //²úÆ·ÊıÁ¿
-	private String ID = null;   	//²úÆ·Id
+	private String Type = null; 	//äº§å“ç±»å‹
+	private String TypeId = null;	//ç±»å‹Id
+	private String TypeName = null; //äº§å“å
+	private String TypeNum  = null; //äº§å“æ•°é‡
+	private String ID = null;   	//äº§å“Id
 	
 	public Buy_enrolment(){}
 	

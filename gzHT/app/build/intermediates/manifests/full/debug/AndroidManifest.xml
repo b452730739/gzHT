@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.elegps.gz_customerservice"
-    android:versionCode="27"
-    android:versionName="2.7" >
+    android:versionCode="26"
+    android:versionName="2.6" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="11" />
+        android:minSdkVersion="15"
+        android:targetSdkVersion="18" />
 
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <!-- 百度地图的权限 -->
@@ -44,10 +44,10 @@
     -->
 
     <application
+        android:name="com.app.App"
         android:debuggable="true"
         android:icon="@drawable/lognr"
         android:label="@string/app_name"
-        android:testOnly="true"
         android:theme="@android:style/Theme.NoTitleBar"
         android:windowSoftInputMode="adjustPan|stateHidden" >
         <activity
@@ -60,6 +60,38 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.elegps.module.task_daiban_search.TaskDaiBanInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.module.data_analyze.DataAnalyzeActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.module.work_hours.WorkHoursSearchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.module.task_daiban_search.TaskDaiBanSearchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.module.machine_stock_search.MachineStockSearchActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.module.machine_stock_search.MachineStockInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.module.task_search.TaskInfoActivity"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="com.elegps.module.task_search.TaskSearchActivity"
+            android:screenOrientation="portrait" >
         </activity>
         <activity
             android:name="com.elegps.gz_customerservice.CreateAccountActivity"

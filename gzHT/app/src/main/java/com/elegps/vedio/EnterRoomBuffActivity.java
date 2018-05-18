@@ -35,7 +35,7 @@ public class EnterRoomBuffActivity extends Activity implements AnyChatBaseEvent{
 		relativeLayout.setLayoutParams(new LinearLayout.LayoutParams(-1, -1));
 		
 		TextView tv = new TextView(this);
-		tv.setText("ÕıÔÚ½øÈë...");
+		tv.setText("æ­£åœ¨è¿›å…¥...");
 		tv.setTextColor(Color.WHITE);
 		tv.setTextSize(27);
 		RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(-2, -2);
@@ -94,7 +94,7 @@ public class EnterRoomBuffActivity extends Activity implements AnyChatBaseEvent{
 	public void OnAnyChatConnectMessage(boolean bSuccess) {
 		if (!bSuccess) {
 
-			Toast.makeText(this, "ÕıÔÚÊÓÆµÍ¨»°ÖĞ,ÇëÉÔºó..." , Toast.LENGTH_LONG)
+			Toast.makeText(this, "æ­£åœ¨è§†é¢‘é€šè¯ä¸­,è¯·ç¨å..." , Toast.LENGTH_LONG)
 			.show();
 			
 			Intent intent = new Intent(EnterRoomBuffActivity.this, MainActivity.class);
@@ -102,7 +102,7 @@ public class EnterRoomBuffActivity extends Activity implements AnyChatBaseEvent{
 			EnterRoomBuffActivity.this.finish();
 			
 		  	try {
-		  		anychat.Release();	// ¹Ø±ÕSDK£¬²»ÔÙ·µ»ØµÇÂ¼½çÃæ
+		  		anychat.Release();	// å…³é—­SDKï¼Œä¸å†è¿”å›ç™»å½•ç•Œé¢
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -127,9 +127,9 @@ public class EnterRoomBuffActivity extends Activity implements AnyChatBaseEvent{
 
 	@Override
 	public void OnAnyChatLinkCloseMessage(int dwErrorCode) {
-	/*	Toast.makeText(this, "Á¬½Ó¹Ø±Õ£¬error£º" + dwErrorCode, Toast.LENGTH_SHORT)
+	/*	Toast.makeText(this, "è¿æ¥å…³é—­ï¼Œerrorï¼š" + dwErrorCode, Toast.LENGTH_SHORT)
 				.show();*/
-		Toast.makeText(this, "ÕıÔÚÊÓÆµÍ¨»°ÖĞ,ÇëÉÔºó..." , Toast.LENGTH_LONG)
+		Toast.makeText(this, "æ­£åœ¨è§†é¢‘é€šè¯ä¸­,è¯·ç¨å..." , Toast.LENGTH_LONG)
 		.show();
 		
 		
@@ -138,7 +138,7 @@ public class EnterRoomBuffActivity extends Activity implements AnyChatBaseEvent{
 		EnterRoomBuffActivity.this.finish();
 		
 	  	try {
-	  		anychat.Release();	// ¹Ø±ÕSDK£¬²»ÔÙ·µ»ØµÇÂ¼½çÃæ
+	  		anychat.Release();	// å…³é—­SDKï¼Œä¸å†è¿”å›ç™»å½•ç•Œé¢
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -152,9 +152,9 @@ public class EnterRoomBuffActivity extends Activity implements AnyChatBaseEvent{
 
 		} else {
 			
-			Toast.makeText(this, "ÕıÔÚÊÓÆµÍ¨»°ÖĞ,ÇëÉÔºó..." , Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "æ­£åœ¨è§†é¢‘é€šè¯ä¸­,è¯·ç¨å..." , Toast.LENGTH_SHORT).show();
 
-			/*Toast.makeText(this, "µÇÂ¼Ê§°Ü£¬´íÎó´úÂë£º" + dwErrorCode, Toast.LENGTH_SHORT)
+			/*Toast.makeText(this, "ç™»å½•å¤±è´¥ï¼Œé”™è¯¯ä»£ç ï¼š" + dwErrorCode, Toast.LENGTH_SHORT)
 					.show();*/
 			Intent intent = new Intent(EnterRoomBuffActivity.this, MainActivity.class);
 			startActivity(intent);
@@ -177,7 +177,7 @@ public class EnterRoomBuffActivity extends Activity implements AnyChatBaseEvent{
 		if (bNeedRelease) {
 	/*	  	anychat.LeaveRoom(-1);
 	    	anychat.Logout();*/
-	    	anychat.Release();	// ¹Ø±ÕSDK£¬²»ÔÙ·µ»ØµÇÂ¼½çÃæ
+	    	anychat.Release();	// å…³é—­SDKï¼Œä¸å†è¿”å›ç™»å½•ç•Œé¢
 			System.out.println("Release()");
 
 		}
@@ -186,7 +186,7 @@ public class EnterRoomBuffActivity extends Activity implements AnyChatBaseEvent{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			
 			Intent intent = new Intent(EnterRoomBuffActivity.this,MainActivity.class
 					);
@@ -199,54 +199,54 @@ public class EnterRoomBuffActivity extends Activity implements AnyChatBaseEvent{
 		return false;
 
 	}
-	// ¸ù¾İÅäÖÃÎÄ¼şÅäÖÃÊÓÆµ²ÎÊı
+	// æ ¹æ®é…ç½®æ–‡ä»¶é…ç½®è§†é¢‘å‚æ•°
 	private void ApplyVideoConfig()
 	{
 		ConfigEntity configEntity = ConfigService.LoadConfig(this);
-		if(configEntity.configMode == 1)		// ×Ô¶¨ÒåÊÓÆµ²ÎÊıÅäÖÃ
+		if(configEntity.configMode == 1)		// è‡ªå®šä¹‰è§†é¢‘å‚æ•°é…ç½®
 		{
-			// ÉèÖÃ±¾µØÊÓÆµ±àÂëµÄÂëÂÊ£¨Èç¹ûÂëÂÊÎª0£¬Ôò±íÊ¾Ê¹ÓÃÖÊÁ¿ÓÅÏÈÄ£Ê½£©
+			// è®¾ç½®æœ¬åœ°è§†é¢‘ç¼–ç çš„ç ç‡ï¼ˆå¦‚æœç ç‡ä¸º0ï¼Œåˆ™è¡¨ç¤ºä½¿ç”¨è´¨é‡ä¼˜å…ˆæ¨¡å¼ï¼‰
 			AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_BITRATECTRL, configEntity.videoBitrate);
 			if(configEntity.videoBitrate==0)
 			{
-				// ÉèÖÃ±¾µØÊÓÆµ±àÂëµÄÖÊÁ¿
+				// è®¾ç½®æœ¬åœ°è§†é¢‘ç¼–ç çš„è´¨é‡
 				AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_QUALITYCTRL, configEntity.videoQuality);
 			}
-			// ÉèÖÃ±¾µØÊÓÆµ±àÂëµÄÖ¡ÂÊ
+			// è®¾ç½®æœ¬åœ°è§†é¢‘ç¼–ç çš„å¸§ç‡
 			AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_FPSCTRL, configEntity.videoFps);
-			// ÉèÖÃ±¾µØÊÓÆµ±àÂëµÄ¹Ø¼üÖ¡¼ä¸ô
+			// è®¾ç½®æœ¬åœ°è§†é¢‘ç¼–ç çš„å…³é”®å¸§é—´éš”
 			AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_GOPCTRL, configEntity.videoFps*4);
-			// ÉèÖÃ±¾µØÊÓÆµ²É¼¯·Ö±æÂÊ
+			// è®¾ç½®æœ¬åœ°è§†é¢‘é‡‡é›†åˆ†è¾¨ç‡
 			AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_WIDTHCTRL, configEntity.resolution_width);
 			AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_HEIGHTCTRL, configEntity.resolution_height);
-			// ÉèÖÃÊÓÆµ±àÂëÔ¤Éè²ÎÊı£¨ÖµÔ½´ó£¬±àÂëÖÊÁ¿Ô½¸ß£¬Õ¼ÓÃCPU×ÊÔ´Ò²»áÔ½¸ß£©
+			// è®¾ç½®è§†é¢‘ç¼–ç é¢„è®¾å‚æ•°ï¼ˆå€¼è¶Šå¤§ï¼Œç¼–ç è´¨é‡è¶Šé«˜ï¼Œå ç”¨CPUèµ„æºä¹Ÿä¼šè¶Šé«˜ï¼‰
 			AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_PRESETCTRL, configEntity.videoPreset);
 		}
-		// ÈÃÊÓÆµ²ÎÊıÉúĞ§
+		// è®©è§†é¢‘å‚æ•°ç”Ÿæ•ˆ
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_APPLYPARAM, configEntity.configMode);
-		// P2PÉèÖÃ
+		// P2Pè®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_NETWORK_P2PPOLITIC, configEntity.enableP2P);
-		// ±¾µØÊÓÆµOverlayÄ£Ê½ÉèÖÃ
+		// æœ¬åœ°è§†é¢‘Overlayæ¨¡å¼è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_OVERLAY, configEntity.videoOverlay);
-		// »ØÒôÏû³ıÉèÖÃ
+		// å›éŸ³æ¶ˆé™¤è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_AUDIO_ECHOCTRL, configEntity.enableAEC);
-		// Æ½Ì¨Ó²¼ş±àÂëÉèÖÃ
+		// å¹³å°ç¡¬ä»¶ç¼–ç è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_CORESDK_USEHWCODEC, configEntity.useHWCodec);
-		// ÊÓÆµĞı×ªÄ£Ê½ÉèÖÃ
+		// è§†é¢‘æ—‹è½¬æ¨¡å¼è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_ROTATECTRL, configEntity.videorotatemode);
-		// ÊÓÆµ²É¼¯Çı¶¯ÉèÖÃ
+		// è§†é¢‘é‡‡é›†é©±åŠ¨è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_CAPDRIVER, configEntity.videoCapDriver);
-		// ±¾µØÊÓÆµ²É¼¯Æ«É«ĞŞÕıÉèÖÃ
+		// æœ¬åœ°è§†é¢‘é‡‡é›†åè‰²ä¿®æ­£è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_FIXCOLORDEVIA, configEntity.fixcolordeviation);
-		// ÊÓÆµÏÔÊ¾Çı¶¯ÉèÖÃ
+		// è§†é¢‘æ˜¾ç¤ºé©±åŠ¨è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_VIDEOSHOW_DRIVERCTRL, configEntity.videoShowDriver);
-		// ÒôÆµ²¥·ÅÇı¶¯ÉèÖÃ
+		// éŸ³é¢‘æ’­æ”¾é©±åŠ¨è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_AUDIO_PLAYDRVCTRL, configEntity.audioPlayDriver);
-		// ÒôÆµ²É¼¯Çı¶¯ÉèÖÃ
+		// éŸ³é¢‘é‡‡é›†é©±åŠ¨è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_AUDIO_RECORDDRVCTRL, configEntity.audioRecordDriver);
-		// ÊÓÆµGPUäÖÈ¾ÉèÖÃ
+		// è§†é¢‘GPUæ¸²æŸ“è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_VIDEOSHOW_GPUDIRECTRENDER, configEntity.videoShowGPURender);
-		// ±¾µØÊÓÆµ×Ô¶¯Ğı×ªÉèÖÃ
+		// æœ¬åœ°è§†é¢‘è‡ªåŠ¨æ—‹è½¬è®¾ç½®
 		AnyChatCoreSDK.SetSDKOptionInt(AnyChatDefine.BRAC_SO_LOCALVIDEO_AUTOROTATION, configEntity.videoAutoRotation);
 	}
 }

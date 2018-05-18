@@ -6,16 +6,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 /**
  * @author jiaruihua jrhhybh@163.com
- *  ½¨Á¢Ò»¸öÊı¾İ¿â°ïÖúÀà
+ *  å»ºç«‹ä¸€ä¸ªæ•°æ®åº“å¸®åŠ©ç±»
  */
 public class MyDbHelper extends SQLiteOpenHelper {
-	// download.db-->Êı¾İ¿âÃû
+	// download.db-->æ•°æ®åº“å
 	public MyDbHelper(Context context) {
 		super(context, "download.db", null, 1);
 	}
 
 	/**
-	 * ÔÚdownload.dbÊı¾İ¿âÏÂ´´½¨Ò»¸ödownload_info±í´æ´¢ÏÂÔØĞÅÏ¢
+	 * åœ¨download.dbæ•°æ®åº“ä¸‹åˆ›å»ºä¸€ä¸ªdownload_infoè¡¨å­˜å‚¨ä¸‹è½½ä¿¡æ¯
 	 */
 	@Override
 	public void onCreate(SQLiteDatabase db) {

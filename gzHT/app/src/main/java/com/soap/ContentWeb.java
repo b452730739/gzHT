@@ -1,4 +1,4 @@
-package com.lcd.elegps.soap;
+package com.soap;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;

@@ -13,7 +13,7 @@ import com.elegps.javabean.GetComplainAdviseInfo;
 public class Complaints_proposals {
 	
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,¶ÁÈ¡Í¶Ëß½¨ÒéÄÚÈİ
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,è¯»å–æŠ•è¯‰å»ºè®®å†…å®¹
 	 * 
 	 * @param str
 	 * @return
@@ -35,7 +35,7 @@ public class Complaints_proposals {
 				video_users = new ArrayList<GetComplainAdviseInfo>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if("Row".equals(parser.getName())){
 					
 					users = new GetComplainAdviseInfo();
@@ -94,13 +94,13 @@ public class Complaints_proposals {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return video_users;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,¶ÁÈ¡±¨ĞŞ±£Ñø
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,è¯»å–æŠ¥ä¿®ä¿å…»
 	 * 
 	 * @param str
 	 * @return
@@ -122,7 +122,7 @@ public class Complaints_proposals {
 				video_users = new ArrayList<GetComplainAdviseInfo>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if("RepairsMaintains".equals(parser.getName())){
 					
 					users = new GetComplainAdviseInfo();
@@ -153,7 +153,7 @@ public class Complaints_proposals {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return video_users;

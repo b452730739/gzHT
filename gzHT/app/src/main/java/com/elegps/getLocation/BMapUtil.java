@@ -6,7 +6,7 @@ import android.view.View;
 public class BMapUtil {
     	
 	/**
-	 * ��view �õ�ͼƬ
+	 * 从view 得到图片
 	 * @param view
 	 * @return
 	 */

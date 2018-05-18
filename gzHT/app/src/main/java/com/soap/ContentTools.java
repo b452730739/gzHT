@@ -1,6 +1,5 @@
-package com.lcd.elegps.soap;
+package com.soap;
 
-import android.support.annotation.Nullable;
 
 
 import java.lang.annotation.Annotation;
@@ -23,7 +22,6 @@ public class ContentTools {
     public static String getMethodName(StackTraceElement[] stackTraceElements){
         return stackTraceElements[2].getMethodName();
     }
-    @Nullable
     public static String[] getMethodParameterNames(String methodName, Class classz, int length) {
 
         int len = 1;//由于最后一个不为后台参数名,所以去掉

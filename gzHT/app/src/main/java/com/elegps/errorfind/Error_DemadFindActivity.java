@@ -44,7 +44,7 @@ public class Error_DemadFindActivity extends Activity implements
 		
 		if(new Hellper().getNetworkIsAvailable(Error_DemadFindActivity.this)){
 		personService = new PullPersonService();
-		dialog_UI = new Dialog_UI(this, "ÕıÔÚ¼ÓÔØ...");
+		dialog_UI = new Dialog_UI(this, "æ­£åœ¨åŠ è½½...");
 		dialog_UI.show();
 		
 		new AsyncTask<Void, Void, Void>() {
@@ -146,7 +146,7 @@ public class Error_DemadFindActivity extends Activity implements
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			Constant.errors = null;
 			Intent intent = new Intent(Error_DemadFindActivity.this,
 					MainActivity.class);

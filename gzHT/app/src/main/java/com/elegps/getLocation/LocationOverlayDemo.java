@@ -53,38 +53,38 @@ import com.elegps.help.Hellper;
 import com.elegps.help.PublicWay;
 import com.elegps.photo.Photo_NativeActivity;
 /**
- * ´ËdemoÓÃÀ´Õ¹Ê¾ÈçºÎ½áºÏ¶¨Î»SDKÊµÏÖ¶¨Î»£¬²¢Ê¹ÓÃMyLocationOverlay»æÖÆ¶¨Î»Î»ÖÃ
- * Í¬Ê±Õ¹Ê¾ÈçºÎÊ¹ÓÃ×Ô¶¨ÒåÍ¼±ê»æÖÆ²¢µã»÷Ê±µ¯³öÅİÅİ
+ * æ­¤demoç”¨æ¥å±•ç¤ºå¦‚ä½•ç»“åˆå®šä½SDKå®ç°å®šä½ï¼Œå¹¶ä½¿ç”¨MyLocationOverlayç»˜åˆ¶å®šä½ä½ç½®
+ * åŒæ—¶å±•ç¤ºå¦‚ä½•ä½¿ç”¨è‡ªå®šä¹‰å›¾æ ‡ç»˜åˆ¶å¹¶ç‚¹å‡»æ—¶å¼¹å‡ºæ³¡æ³¡
  *
  */
 public class LocationOverlayDemo extends Activity {
 	
-	// ¶¨Î»Ïà¹Ø
+	// å®šä½ç›¸å…³
 	LocationClient mLocClient;
 	LocationData locData = null;
 	public MyLocationListenner myListener = new MyLocationListenner();
 	private Button jietu = null;
-	//¶¨Î»Í¼²ã
+	//å®šä½å›¾å±‚
 	locationOverlay myLocationOverlay = null;
-	//µ¯³öÅİÅİÍ¼²ã
-	private PopupOverlay   pop  = null;//µ¯³öÅİÅİÍ¼²ã£¬ä¯ÀÀ½ÚµãÊ±Ê¹ÓÃ
-	private TextView  popupText = null;//ÅİÅİview
+	//å¼¹å‡ºæ³¡æ³¡å›¾å±‚
+	private PopupOverlay   pop  = null;//å¼¹å‡ºæ³¡æ³¡å›¾å±‚ï¼Œæµè§ˆèŠ‚ç‚¹æ—¶ä½¿ç”¨
+	private TextView  popupText = null;//æ³¡æ³¡view
 	private View viewCache = null;
 	MKMapViewListener mMapListener = null;
 	/**
-	 * ÓÃÓÚ½Ø»ñÆÁ×ø±ê
+	 * ç”¨äºæˆªè·å±åæ ‡
 	 */
-	//µØÍ¼Ïà¹Ø£¬Ê¹ÓÃ¼Ì³ĞMapViewµÄMyLocationMapViewÄ¿µÄÊÇÖØĞ´touchÊÂ¼şÊµÏÖÅİÅİ´¦Àí
-	//Èç¹û²»´¦ÀítouchÊÂ¼ş£¬ÔòÎŞĞè¼Ì³Ğ£¬Ö±½ÓÊ¹ÓÃMapView¼´¿É
-	MyLocationMapView mMapView = null;	// µØÍ¼View
+	//åœ°å›¾ç›¸å…³ï¼Œä½¿ç”¨ç»§æ‰¿MapViewçš„MyLocationMapViewç›®çš„æ˜¯é‡å†™touchäº‹ä»¶å®ç°æ³¡æ³¡å¤„ç†
+	//å¦‚æœä¸å¤„ç†touchäº‹ä»¶ï¼Œåˆ™æ— éœ€ç»§æ‰¿ï¼Œç›´æ¥ä½¿ç”¨MapViewå³å¯
+	MyLocationMapView mMapView = null;	// åœ°å›¾View
 	private MapController mMapController = null;
 	private Dialog_UI dialog_UI = null;
 
-	//UIÏà¹Ø	
+	//UIç›¸å…³	
 	OnCheckedChangeListener radioButtonListener = null;
 	Button requestLocButton = null;
-	boolean isRequest = false;//ÊÇ·ñÊÖ¶¯´¥·¢ÇëÇó¶¨Î»
-	boolean isFirstLoc = true;//ÊÇ·ñÊ×´Î¶¨Î»
+	boolean isRequest = false;//æ˜¯å¦æ‰‹åŠ¨è§¦å‘è¯·æ±‚å®šä½
+	boolean isFirstLoc = true;//æ˜¯å¦é¦–æ¬¡å®šä½
 	private String ImageTemp = null;
     private String temp = null;
 
@@ -99,8 +99,8 @@ public class LocationOverlayDemo extends Activity {
             init();
         }else{
         	
-        	new AlertDialog.Builder(this).setTitle("¸ÃÍøÂç²»ÊÇwifiÍøÂç").setIcon(
-   			     android.R.drawable.ic_dialog_info).setPositiveButton("ÍË³ö",
+        	new AlertDialog.Builder(this).setTitle("è¯¥ç½‘ç»œä¸æ˜¯wifiç½‘ç»œ").setIcon(
+   			     android.R.drawable.ic_dialog_info).setPositiveButton("é€€å‡º",
    			    		 new DialogInterface.OnClickListener() {
    							
    							@Override
@@ -113,7 +113,7 @@ public class LocationOverlayDemo extends Activity {
    								LocationOverlayDemo.this.finish();
    							}
    						})
-   			     .setNegativeButton("¼ÌĞø", 	 new DialogInterface.OnClickListener() {
+   			     .setNegativeButton("ç»§ç»­", 	 new DialogInterface.OnClickListener() {
 						
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
@@ -131,7 +131,7 @@ public class LocationOverlayDemo extends Activity {
     private void init(){  
         
         setContentView(R.layout.activity_locationoverlay);
-        CharSequence titleLable="¶¨Î»¹¦ÄÜ";
+        CharSequence titleLable="å®šä½åŠŸèƒ½";
         setTitle(titleLable);
 		PublicWay.activityList.add(this);
 
@@ -140,7 +140,7 @@ public class LocationOverlayDemo extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				//ÊÖ¶¯¶¨Î»ÇëÇó
+				//æ‰‹åŠ¨å®šä½è¯·æ±‚
 				requestLocClick();
 			}
 		};
@@ -153,27 +153,27 @@ public class LocationOverlayDemo extends Activity {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				//
 				if (checkedId == R.id.defaulticon){
-					//´«ÈënullÔò£¬»Ö¸´Ä¬ÈÏÍ¼±ê
+					//ä¼ å…¥nullåˆ™ï¼Œæ¢å¤é»˜è®¤å›¾æ ‡
 					modifyLocationOverlayIcon(null);
 				}
 				if (checkedId == R.id.customicon){
-					//ĞŞ¸ÄÎª×Ô¶¨Òåmarker
+					//ä¿®æ”¹ä¸ºè‡ªå®šä¹‰marker
 					modifyLocationOverlayIcon(getResources().getDrawable(R.drawable.icon_geo));
 				}
 			}
 		};
 		group.setOnCheckedChangeListener(radioButtonListener);
         */
-		//µØÍ¼³õÊ¼»¯
+		//åœ°å›¾åˆå§‹åŒ–
         mMapView = (MyLocationMapView)findViewById(R.id.bmapView);
         mMapController = mMapView.getController();
         mMapView.getController().setZoom(14);
         mMapView.getController().enableClick(true);
         mMapView.setBuiltInZoomControls(true);
         
-        dialog_UI = new Dialog_UI(LocationOverlayDemo.this, "ÕıÔÚÉÏ´«,ÇëÉÔºó...");
+        dialog_UI = new Dialog_UI(LocationOverlayDemo.this, "æ­£åœ¨ä¸Šä¼ ,è¯·ç¨å...");
         dialog_UI.setCancelable(false);
-      //´´½¨ µ¯³öÅİÅİÍ¼²ã
+      //åˆ›å»º å¼¹å‡ºæ³¡æ³¡å›¾å±‚
         createPaopao();
         mMapListener = new MKMapViewListener() {
 
@@ -181,8 +181,8 @@ public class LocationOverlayDemo extends Activity {
 			@Override
 			public void onGetCurrentMap(Bitmap b) {
 				/**
-				 *  µ±µ÷ÓÃ¹ı mMapView.getCurrentMap()ºó£¬´Ë»Øµ÷»á±»´¥·¢
-				 *  ¿ÉÔÚ´Ë±£´æ½ØÍ¼ÖÁ´æ´¢Éè±¸
+				 *  å½“è°ƒç”¨è¿‡ mMapView.getCurrentMap()åï¼Œæ­¤å›è°ƒä¼šè¢«è§¦å‘
+				 *  å¯åœ¨æ­¤ä¿å­˜æˆªå›¾è‡³å­˜å‚¨è®¾å¤‡
 				 */
 				File file = new File(Constant.jietuPath);
                 FileOutputStream out;
@@ -194,7 +194,7 @@ public class LocationOverlayDemo extends Activity {
                         out.close();
                     }
             /*        Toast.makeText(LocationOverlayDemo.this, 
-                    	    "ÆÁÄ»½ØÍ¼³É¹¦£¬Í¼Æ¬´æÔÚ: "+file.toString(),	
+                    	    "å±å¹•æˆªå›¾æˆåŠŸï¼Œå›¾ç‰‡å­˜åœ¨: "+file.toString(),	
                     		 Toast.LENGTH_SHORT)
                          .show();*/
                 } 
@@ -230,7 +230,7 @@ public class LocationOverlayDemo extends Activity {
 			    								 Constant.UserName,ImageTemp},null);
 			    			} catch (Exception e) {
 			    				e.printStackTrace();
-								Toast.makeText(LocationOverlayDemo.this, "ÉÏ´«Ê§°Ü", 0).show();
+								Toast.makeText(LocationOverlayDemo.this, "ä¸Šä¼ å¤±è´¥", 0).show();
 	
 			    			}
 						return null;
@@ -292,42 +292,42 @@ public class LocationOverlayDemo extends Activity {
 				
 				if("1".equals(Constant.ISINSIDE)){
 					
-					//½ØÍ¼£¬ÔÚMKMapViewListenerÖĞ±£´æÍ¼Æ¬
+					//æˆªå›¾ï¼Œåœ¨MKMapViewListenerä¸­ä¿å­˜å›¾ç‰‡
 	                dialog_UI.show();
 
 				     mMapView.getCurrentMap();	
 				/*     Toast.makeText(LocationOverlayDemo.this, 
-				    		 "ÕıÔÚ½ØÍ¼ÉÏ´«...", 
+				    		 "æ­£åœ¨æˆªå›¾ä¸Šä¼ ...", 
 				    		 Toast.LENGTH_LONG ).show();*/
 				}else{
 					
 				     Toast.makeText(LocationOverlayDemo.this, 
-				    		 "ÄúµÄÕËºÅÎªÍâ²¿ÕËºÅ,ÎŞÉÏ´«È¨ÏŞ...", 
+				    		 "æ‚¨çš„è´¦å·ä¸ºå¤–éƒ¨è´¦å·,æ— ä¸Šä¼ æƒé™...", 
 				    		 Toast.LENGTH_SHORT ).show();
 				}
 				
 			          
 			}
 		});
-        //¶¨Î»³õÊ¼»¯
+        //å®šä½åˆå§‹åŒ–
         mLocClient = new LocationClient( this );
         locData = new LocationData();
         mLocClient.registerLocationListener( myListener );
         LocationClientOption option = new LocationClientOption();
-        option.setOpenGps(true);//´ò¿ªgps
-        option.setCoorType("bd09ll");     //ÉèÖÃ×ø±êÀàĞÍ
+        option.setOpenGps(true);//æ‰“å¼€gps
+        option.setCoorType("bd09ll");     //è®¾ç½®åæ ‡ç±»å‹
         option.setScanSpan(5000);
         mLocClient.setLocOption(option);
         mLocClient.start();
        
-        //¶¨Î»Í¼²ã³õÊ¼»¯
+        //å®šä½å›¾å±‚åˆå§‹åŒ–
 		myLocationOverlay = new locationOverlay(mMapView);
-		//ÉèÖÃ¶¨Î»Êı¾İ
+		//è®¾ç½®å®šä½æ•°æ®
 	    myLocationOverlay.setData(locData);
-	    //Ìí¼Ó¶¨Î»Í¼²ã
+	    //æ·»åŠ å®šä½å›¾å±‚
 		mMapView.getOverlays().add(myLocationOverlay);
 		myLocationOverlay.enableCompass();
-		//ĞŞ¸Ä¶¨Î»Êı¾İºóË¢ĞÂÍ¼²ãÉúĞ§
+		//ä¿®æ”¹å®šä½æ•°æ®ååˆ·æ–°å›¾å±‚ç”Ÿæ•ˆ
 		mMapView.refresh();
 		
     
@@ -343,30 +343,30 @@ public class LocationOverlayDemo extends Activity {
 		return false;
 	}
     /**
-     * ÊÖ¶¯´¥·¢Ò»´Î¶¨Î»ÇëÇó
+     * æ‰‹åŠ¨è§¦å‘ä¸€æ¬¡å®šä½è¯·æ±‚
      */
     public void requestLocClick(){
     	isRequest = true;
         mLocClient.requestLocation();
-        Toast.makeText(LocationOverlayDemo.this, "ÕıÔÚ¶¨Î»¡­¡­", Toast.LENGTH_SHORT).show();
+        Toast.makeText(LocationOverlayDemo.this, "æ­£åœ¨å®šä½â€¦â€¦", Toast.LENGTH_SHORT).show();
     }
     /**
-     * ĞŞ¸ÄÎ»ÖÃÍ¼±ê
+     * ä¿®æ”¹ä½ç½®å›¾æ ‡
      * @param marker
      */
     public void modifyLocationOverlayIcon(Drawable marker){
-    	//µ±´«ÈëmarkerÎªnullÊ±£¬Ê¹ÓÃÄ¬ÈÏÍ¼±ê»æÖÆ
+    	//å½“ä¼ å…¥markerä¸ºnullæ—¶ï¼Œä½¿ç”¨é»˜è®¤å›¾æ ‡ç»˜åˆ¶
     	myLocationOverlay.setMarker(marker);
-    	//ĞŞ¸ÄÍ¼²ã£¬ĞèÒªË¢ĞÂMapViewÉúĞ§
+    	//ä¿®æ”¹å›¾å±‚ï¼Œéœ€è¦åˆ·æ–°MapViewç”Ÿæ•ˆ
     	mMapView.refresh();
     }
     /**
-	 * ´´½¨µ¯³öÅİÅİÍ¼²ã
+	 * åˆ›å»ºå¼¹å‡ºæ³¡æ³¡å›¾å±‚
 	 */
 	public void createPaopao(){
 		viewCache = getLayoutInflater().inflate(R.layout.custom_text_view, null);
         popupText =(TextView) viewCache.findViewById(R.id.textcache);
-        //ÅİÅİµã»÷ÏìÓ¦»Øµ÷
+        //æ³¡æ³¡ç‚¹å‡»å“åº”å›è°ƒ
         PopupClickListener popListener = new PopupClickListener(){
 			@Override
 			public void onClickedPopup(int index) {
@@ -377,7 +377,7 @@ public class LocationOverlayDemo extends Activity {
         MyLocationMapView.pop = pop;
 	}
 	/**
-     * ¶¨Î»SDK¼àÌıº¯Êı
+     * å®šä½SDKç›‘å¬å‡½æ•°
      */
     public class MyLocationListenner implements BDLocationListener {
     	
@@ -388,16 +388,16 @@ public class LocationOverlayDemo extends Activity {
             
             locData.latitude = location.getLatitude();
             locData.longitude = location.getLongitude();
-            //Èç¹û²»ÏÔÊ¾¶¨Î»¾«¶ÈÈ¦£¬½«accuracy¸³ÖµÎª0¼´¿É
+            //å¦‚æœä¸æ˜¾ç¤ºå®šä½ç²¾åº¦åœˆï¼Œå°†accuracyèµ‹å€¼ä¸º0å³å¯
             locData.accuracy = location.getRadius();
             locData.direction = location.getDerect();
-            //¸üĞÂ¶¨Î»Êı¾İ
+            //æ›´æ–°å®šä½æ•°æ®
             myLocationOverlay.setData(locData);
-            //¸üĞÂÍ¼²ãÊı¾İÖ´ĞĞË¢ĞÂºóÉúĞ§
+            //æ›´æ–°å›¾å±‚æ•°æ®æ‰§è¡Œåˆ·æ–°åç”Ÿæ•ˆ
             mMapView.refresh();
-            //ÊÇÊÖ¶¯´¥·¢ÇëÇó»òÊ×´Î¶¨Î»Ê±£¬ÒÆ¶¯µ½¶¨Î»µã
+            //æ˜¯æ‰‹åŠ¨è§¦å‘è¯·æ±‚æˆ–é¦–æ¬¡å®šä½æ—¶ï¼Œç§»åŠ¨åˆ°å®šä½ç‚¹
             if (isRequest || isFirstLoc){
-            	//ÒÆ¶¯µØÍ¼µ½¶¨Î»µã
+            	//ç§»åŠ¨åœ°å›¾åˆ°å®šä½ç‚¹
                 try {
 					mMapController.animateTo(new GeoPoint((int)(locData.latitude* 1e6), (int)(locData.longitude *  1e6)));
 				} catch (Exception e) {
@@ -406,7 +406,7 @@ public class LocationOverlayDemo extends Activity {
 				}
                 isRequest = false;
             }
-            //Ê×´Î¶¨Î»Íê³É
+            //é¦–æ¬¡å®šä½å®Œæˆ
             isFirstLoc = false;
         }
         
@@ -417,7 +417,7 @@ public class LocationOverlayDemo extends Activity {
         }
     }
     
-    //¼Ì³ĞMyLocationOverlayÖØĞ´dispatchTapÊµÏÖµã»÷´¦Àí
+    //ç»§æ‰¿MyLocationOverlayé‡å†™dispatchTapå®ç°ç‚¹å‡»å¤„ç†
   	public class locationOverlay extends MyLocationOverlay{
 
   		public locationOverlay(MapView mapView) {
@@ -425,9 +425,9 @@ public class LocationOverlayDemo extends Activity {
   		}
   		@Override
   		protected boolean dispatchTap() {
-  			//´¦Àíµã»÷ÊÂ¼ş,µ¯³öÅİÅİ
+  			//å¤„ç†ç‚¹å‡»äº‹ä»¶,å¼¹å‡ºæ³¡æ³¡
   			popupText.setBackgroundResource(R.drawable.popup);
-			popupText.setText("ÎÒµÄÎ»ÖÃ");
+			popupText.setText("æˆ‘çš„ä½ç½®");
 			pop.showPopup(BMapUtil.getBitmapFromView(popupText),
 					new GeoPoint((int)(locData.latitude*1e6), (int)(locData.longitude*1e6)),
 					8);
@@ -460,7 +460,7 @@ public class LocationOverlayDemo extends Activity {
     protected void onDestroy() {
     	System.out.println("onDestroy()");
     	try {
-			//ÍË³öÊ±Ïú»Ù¶¨Î»
+			//é€€å‡ºæ—¶é”€æ¯å®šä½
 			if (mLocClient != null)
 			    mLocClient.stop();
 			mMapView.destroy();
@@ -493,7 +493,7 @@ public class LocationOverlayDemo extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			
 			Intent intent = new Intent(LocationOverlayDemo.this, MainActivity.class);
 			
@@ -509,12 +509,12 @@ public class LocationOverlayDemo extends Activity {
 
 }
 /**
- * ¼Ì³ĞMapViewÖØĞ´onTouchEventÊµÏÖÅİÅİ´¦Àí²Ù×÷
+ * ç»§æ‰¿MapViewé‡å†™onTouchEventå®ç°æ³¡æ³¡å¤„ç†æ“ä½œ
  * @author hejin
  *
  */
 class MyLocationMapView extends MapView{
-	static PopupOverlay   pop  = null;//µ¯³öÅİÅİÍ¼²ã£¬µã»÷Í¼±êÊ¹ÓÃ
+	static PopupOverlay   pop  = null;//å¼¹å‡ºæ³¡æ³¡å›¾å±‚ï¼Œç‚¹å‡»å›¾æ ‡ä½¿ç”¨
 	public MyLocationMapView(Context context) {
 		super(context);
 	}
@@ -527,7 +527,7 @@ class MyLocationMapView extends MapView{
 	@Override
     public boolean onTouchEvent(MotionEvent event){
 		if (!super.onTouchEvent(event)){
-			//ÏûÒşÅİÅİ
+			//æ¶ˆéšæ³¡æ³¡
 			if (pop != null && event.getAction() == MotionEvent.ACTION_UP)
 				pop.hidePop();
 		}

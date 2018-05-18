@@ -131,14 +131,14 @@ public class LogOn_GetViewPage extends RelativeLayout {
 	}
 
 	/**
-	 * ¸üĞÂµ±Ç°Ò³Âë
+	 * æ›´æ–°å½“å‰é¡µç 
 	 */
 	public void setCurPage(int page) {
 		nextView.setSelect(page);
 	}
 
 	/**
-	 * ×óÓÒ»¬¶¯µÄµãµã
+	 * å·¦å³æ»‘åŠ¨çš„ç‚¹ç‚¹
 	 * 
 	 * @author lichendong
 	 * 
@@ -161,7 +161,7 @@ public class LogOn_GetViewPage extends RelativeLayout {
 		protected void onDraw(Canvas canvas) {
 			super.onDraw(canvas);
 			Paint paint = new Paint();
-			paint.setColor(Color.BLUE); // ÉèÖÃ»­±ÊÑÕÉ«
+			paint.setColor(Color.BLUE); // è®¾ç½®ç”»ç¬”é¢œè‰²
 			paint.setStyle(Paint.Style.FILL);
 			paint.setAntiAlias(true);
 			paint.setStrokeWidth(2);

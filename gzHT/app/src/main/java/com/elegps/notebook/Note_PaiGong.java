@@ -34,7 +34,7 @@ public class Note_PaiGong extends Activity {
 		PublicWay.activityList.add(this);
 
 		setContentView(R.layout.note_paigong);
-		dialog_UI = new Dialog_UI(this, "ÕıÔÚ¼ÓÔØ...");
+		dialog_UI = new Dialog_UI(this, "æ­£åœ¨åŠ è½½...");
 		dialog_UI.show();
 		
 		bundle = getIntent().getExtras();
@@ -138,7 +138,7 @@ public class Note_PaiGong extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 
 			Intent intent = new Intent(Note_PaiGong.this,
 					Note_paiG.class);

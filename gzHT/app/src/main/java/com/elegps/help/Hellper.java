@@ -34,7 +34,7 @@ public class Hellper {
 	
 
 	public Boolean getNetworkIsAvailable(Context context){
-		//´Ë´¦Ğ´ÍøÂç¼ì²âµÄ´úÂë
+		//æ­¤å¤„å†™ç½‘ç»œæ£€æµ‹çš„ä»£ç 
 		//<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 		ConnectivityManager conManager=(ConnectivityManager)context.getSystemService(Context.CONNECTIVITY_SERVICE );
         NetworkInfo networkInfo = conManager.getActiveNetworkInfo();
@@ -79,11 +79,11 @@ public class Hellper {
 	public static Bitmap getBitmapById1(int resId, Context context) {
 		Bitmap bmp = null;
 
-		// Èç¹ûÃ»ÓĞÈíÒıÓÃ£¬»òÕß´ÓÈíÒıÓÃÖĞµÃµ½µÄÊµÀıÊÇnull£¬ÖØĞÂ¹¹½¨Ò»¸öÊµÀı£¬
-		// ²¢±£´æ¶ÔÕâ¸öĞÂ½¨ÊµÀıµÄÈíÒıÓÃ
+		// å¦‚æœæ²¡æœ‰è½¯å¼•ç”¨ï¼Œæˆ–è€…ä»è½¯å¼•ç”¨ä¸­å¾—åˆ°çš„å®ä¾‹æ˜¯nullï¼Œé‡æ–°æ„å»ºä¸€ä¸ªå®ä¾‹ï¼Œ
+		// å¹¶ä¿å­˜å¯¹è¿™ä¸ªæ–°å»ºå®ä¾‹çš„è½¯å¼•ç”¨
 		if (bmp == null || bmp.isRecycled()) {
-			// ´«ËµdecodeStreamÖ±½Óµ÷ÓÃJNI>>nativeDecodeAsset()À´Íê³Édecode£¬
-			// ÎŞĞèÔÙÊ¹ÓÃjava²ãµÄcreateBitmap£¬´Ó¶ø½ÚÊ¡ÁËjava²ãµÄ¿Õ¼ä¡£
+			// ä¼ è¯´decodeStreamç›´æ¥è°ƒç”¨JNI>>nativeDecodeAsset()æ¥å®Œæˆdecodeï¼Œ
+			// æ— éœ€å†ä½¿ç”¨javaå±‚çš„createBitmapï¼Œä»è€ŒèŠ‚çœäº†javaå±‚çš„ç©ºé—´ã€‚
 			try {
 				BitmapFactory.Options option = new BitmapFactory.Options();
 				option.inPurgeable = true;
@@ -102,7 +102,7 @@ public class Hellper {
 		
 		  //Bitmap bitmap = readInputStream(path);
 		  
-		  // ½«Bitmap×ª»»³É×Ö·û´®
+		  // å°†Bitmapè½¬æ¢æˆå­—ç¬¦ä¸²
 		  String str = null; 
 		  ByteArrayOutputStream bStream = new ByteArrayOutputStream(); 
 		  bitmap.compress(CompressFormat.PNG,1, bStream);
@@ -113,22 +113,22 @@ public class Hellper {
 					Base64.DEFAULT);
 		} catch (OutOfMemoryError e) {
 			
-			Toast.makeText(context, "Í¼Æ¬¹ı´ó,ÇëÖØĞÂÑ¡Ôñ¡£", 0).show();
+			Toast.makeText(context, "å›¾ç‰‡è¿‡å¤§,è¯·é‡æ–°é€‰æ‹©ã€‚", 0).show();
 			return null;
 		}
 		return string;
 	}
 
 
-	// ´ÓÕâÀï»ñÈ¡µÄÍ¼Æ¬²»»áÄÚ´æÒç³ö
+	// ä»è¿™é‡Œè·å–çš„å›¾ç‰‡ä¸ä¼šå†…å­˜æº¢å‡º
 	@SuppressWarnings("unused")
 	public static Bitmap getImage(byte[] bt) {
-		/* ÕâÀïÊÇ½â¾öOOM */
+		/* è¿™é‡Œæ˜¯è§£å†³OOM */
 		BitmapFactory.Options cwj = new BitmapFactory.Options();
 		cwj.inTempStorage = new byte[1024];
 		cwj.inPurgeable = true;
-		//cwj.inSampleSize = 153600/bt.length; //Í¼Æ¬µÄ´óĞ¡Îª153600/1024=150kb
-		cwj.inSampleSize = bt.length/200000; //³ıµÄÊıÖµÔ½Ğ¡£¬Í¼Æ¬Ô½Ğ¡
+		//cwj.inSampleSize = 153600/bt.length; //å›¾ç‰‡çš„å¤§å°ä¸º153600/1024=150kb
+		cwj.inSampleSize = bt.length/200000; //é™¤çš„æ•°å€¼è¶Šå°ï¼Œå›¾ç‰‡è¶Šå°
 		/*	if(bt.length > (2*1000000) && bt.length <= (4*1000000)){
 			
 			cwj.inSampleSize = 2;
@@ -182,13 +182,13 @@ public class Hellper {
 		hashRefs = new Hashtable<String, MySoftRef>();
 		q = new ReferenceQueue<Bitmap>();
 	}
-	/** ÓÃÓÚChcheÄÚÈİµÄ´æ´¢ */
+	/** ç”¨äºChcheå†…å®¹çš„å­˜å‚¨ */
 	private  Hashtable<String, MySoftRef> hashRefs;
-	/** À¬»øReferenceµÄ¶ÓÁĞ£¨ËùÒıÓÃµÄ¶ÔÏóÒÑ¾­±»»ØÊÕ£¬Ôò½«¸ÃÒıÓÃ´æÈë¶ÓÁĞÖĞ£© */
+	/** åƒåœ¾Referenceçš„é˜Ÿåˆ—ï¼ˆæ‰€å¼•ç”¨çš„å¯¹è±¡å·²ç»è¢«å›æ”¶ï¼Œåˆ™å°†è¯¥å¼•ç”¨å­˜å…¥é˜Ÿåˆ—ä¸­ï¼‰ */
 	private ReferenceQueue<Bitmap> q;
 
 	/**
-	 * ¼Ì³ĞSoftReference£¬Ê¹µÃÃ¿Ò»¸öÊµÀı¶¼¾ßÓĞ¿ÉÊ¶±ğµÄ±êÊ¶¡£
+	 * ç»§æ‰¿SoftReferenceï¼Œä½¿å¾—æ¯ä¸€ä¸ªå®ä¾‹éƒ½å…·æœ‰å¯è¯†åˆ«çš„æ ‡è¯†ã€‚
 	 */
 	private class MySoftRef extends SoftReference<Bitmap> {
 		private String _key = "";
@@ -198,30 +198,30 @@ public class Hellper {
 		}
 	}
 	/**
-	 * ÒÔÈíÒıÓÃµÄ·½Ê½¶ÔÒ»¸öBitmap¶ÔÏóµÄÊµÀı½øĞĞÒıÓÃ²¢±£´æ¸ÃÒıÓÃ
+	 * ä»¥è½¯å¼•ç”¨çš„æ–¹å¼å¯¹ä¸€ä¸ªBitmapå¯¹è±¡çš„å®ä¾‹è¿›è¡Œå¼•ç”¨å¹¶ä¿å­˜è¯¥å¼•ç”¨
 	 */
 	private void addCacheBitmap(Bitmap bmp, String key) {
-		cleanCache();// Çå³ıÀ¬»øÒıÓÃ
+		cleanCache();// æ¸…é™¤åƒåœ¾å¼•ç”¨
 		MySoftRef ref = new MySoftRef(bmp, q, key);
 		hashRefs.put(key, ref);
 	}
 /*	*//**
-	 * ÒÀ¾İËùÖ¸¶¨µÄdrawableÏÂµÄÍ¼Æ¬×ÊÔ´IDºÅ£¨¿ÉÒÔ¸ù¾İ×Ô¼ºµÄĞèÒª´ÓÍøÂç»ò±¾µØpathÏÂ»ñÈ¡£©£¬ÖØĞÂ»ñÈ¡ÏàÓ¦Bitmap¶ÔÏóµÄÊµÀı
+	 * ä¾æ®æ‰€æŒ‡å®šçš„drawableä¸‹çš„å›¾ç‰‡èµ„æºIDå·ï¼ˆå¯ä»¥æ ¹æ®è‡ªå·±çš„éœ€è¦ä»ç½‘ç»œæˆ–æœ¬åœ°pathä¸‹è·å–ï¼‰ï¼Œé‡æ–°è·å–ç›¸åº”Bitmapå¯¹è±¡çš„å®ä¾‹
 	 *//*
 	public  Bitmap getBitmapById(int resId, Context context) {
 		Bitmap bmp = null;
-		// »º´æÖĞÊÇ·ñÓĞ¸ÃBitmapÊµÀıµÄÈíÒıÓÃ£¬Èç¹ûÓĞ£¬´ÓÈíÒıÓÃÖĞÈ¡µÃ¡£
+		// ç¼“å­˜ä¸­æ˜¯å¦æœ‰è¯¥Bitmapå®ä¾‹çš„è½¯å¼•ç”¨ï¼Œå¦‚æœæœ‰ï¼Œä»è½¯å¼•ç”¨ä¸­å–å¾—ã€‚
 		if (hashRefs.containsKey("" + resId)) {
 			MySoftRef ref = (MySoftRef) hashRefs.get("" + resId);
 			bmp = (Bitmap) ref.get();
 			
 			System.out.println("111111111111111111");
 		}
-		// Èç¹ûÃ»ÓĞÈíÒıÓÃ£¬»òÕß´ÓÈíÒıÓÃÖĞµÃµ½µÄÊµÀıÊÇnull£¬ÖØĞÂ¹¹½¨Ò»¸öÊµÀı£¬
-		// ²¢±£´æ¶ÔÕâ¸öĞÂ½¨ÊµÀıµÄÈíÒıÓÃ
+		// å¦‚æœæ²¡æœ‰è½¯å¼•ç”¨ï¼Œæˆ–è€…ä»è½¯å¼•ç”¨ä¸­å¾—åˆ°çš„å®ä¾‹æ˜¯nullï¼Œé‡æ–°æ„å»ºä¸€ä¸ªå®ä¾‹ï¼Œ
+		// å¹¶ä¿å­˜å¯¹è¿™ä¸ªæ–°å»ºå®ä¾‹çš„è½¯å¼•ç”¨
 		if (bmp == null || bmp.isRecycled()) {
-			// ´«ËµdecodeStreamÖ±½Óµ÷ÓÃJNI>>nativeDecodeAsset()À´Íê³Édecode£¬
-			// ÎŞĞèÔÙÊ¹ÓÃjava²ãµÄcreateBitmap£¬´Ó¶ø½ÚÊ¡ÁËjava²ãµÄ¿Õ¼ä¡£
+			// ä¼ è¯´decodeStreamç›´æ¥è°ƒç”¨JNI>>nativeDecodeAsset()æ¥å®Œæˆdecodeï¼Œ
+			// æ— éœ€å†ä½¿ç”¨javaå±‚çš„createBitmapï¼Œä»è€ŒèŠ‚çœäº†javaå±‚çš„ç©ºé—´ã€‚
 			System.out.println("2222222222");
 			
 			try{
@@ -231,15 +231,15 @@ public class Hellper {
 				bmp = BitmapFactory.decodeStream(context.getResources().
 						openRawResource(resId),null,option);
 				Matrix matrix = new Matrix();
-				int width = bmp.getWidth();// »ñÈ¡×ÊfeÎ»Í¼µÄ¿í
-				int height = bmp.getHeight();// »ñÈ¡×ÊÔ´Î»Í¼µÄ¸ß
+				int width = bmp.getWidth();// è·å–èµ„feä½å›¾çš„å®½
+				int height = bmp.getHeight();// è·å–èµ„æºä½å›¾çš„é«˜
 				if(Constant.screenHeight != 800 || Constant.screenWidth != 480){
 					float w = ((float)Constant.screenHeight + 1)/ (float)800;
 					float h = ((float)Constant.screenWidth + 1)/ (float)480;
-					matrix.postScale(w, h);// »ñÈ¡Ëõ·Å±ÈÀı
+					matrix.postScale(w, h);// è·å–ç¼©æ”¾æ¯”ä¾‹
 					
 				}
-				// ¸ù¾İËõ·Å±ÈÀı»ñÈ¡ĞÂµÄÎ»Í¼
+				// æ ¹æ®ç¼©æ”¾æ¯”ä¾‹è·å–æ–°çš„ä½å›¾
 				bmp = Bitmap.createBitmap(bmp, 0, 0, width, height, matrix, true);	
 				this.addCacheBitmap(bmp, "" + resId);
 				
@@ -259,7 +259,7 @@ public class Hellper {
 	}
 
 	/**
-	 * Çå³ıCacheÄÚµÄÈ«²¿ÄÚÈİ
+	 * æ¸…é™¤Cacheå†…çš„å…¨éƒ¨å†…å®¹
 	 */
 	public void clearCache() {
 		cleanCache();

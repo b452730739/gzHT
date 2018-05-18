@@ -1,4 +1,4 @@
-package com.elegps.module.task_search;
+package com.elegps.module.machine_stock_search;
 
 
 import android.app.Dialog;
@@ -13,16 +13,18 @@ import android.widget.Toast;
 
 import com.elegps.UIManager.Dialog_UI;
 import com.elegps.adapter.SpinnerApadterByArray;
-import com.elegps.adapter.SpinnerApadterByList;
 import com.elegps.gz_customerservice.R;
+import com.elegps.javabean.MachineStockInfo;
 import com.elegps.javabean.TaskInfoList;
 import com.view.DateEditTextForData;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class TaskSearchDialog extends Dialog implements TaskSearchContract.View,AdapterView.OnItemSelectedListener{
+public class MachineStockSearchDialog extends Dialog implements MachineStockSearchContract.View{
 
 
     @Bind(R.id.et_strMachineNO)
@@ -33,24 +35,21 @@ public class TaskSearchDialog extends Dialog implements TaskSearchContract.View,
     DateEditTextForData startData;
     @Bind(R.id.endData)
     DateEditTextForData endData;
-    @Bind(R.id.sp_status)
-    Spinner spStatus;
+
     @Bind(R.id.search)
     Button search;
 
     private Context mContext;
-    private GetTaskInfoList getTaskInfoList;
-    private TaskSearchPresenter presenter = null;
+    private GetMachineStockInfoList infoList;
+    private MachineStockSearchPresenter presenter = null;
     private Dialog_UI loading ;
-    private final String[][] TASK_STATUS = {{"待生产","生产中","已入库"},{"0","1","2"}};
-    private String taskStatus = "";
 
-    public TaskSearchDialog(Context context,GetTaskInfoList getTaskInfoList) {
+    public MachineStockSearchDialog(Context context, GetMachineStockInfoList infoList) {
         super(context);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.mContext = context;
-        this.getTaskInfoList = getTaskInfoList;
-        setContentView(R.layout.dialog_task_search);
+        this.infoList = infoList;
+        setContentView(R.layout.dialog_machine_stock_search);
         ButterKnife.bind(this);
         init();
     }
@@ -58,16 +57,14 @@ public class TaskSearchDialog extends Dialog implements TaskSearchContract.View,
     private void init() {
 
         loading = new Dialog_UI(mContext,"正在查询...");
-        presenter = new TaskSearchPresenter(this);
+        presenter = new MachineStockSearchPresenter(this);
 
-        spStatus.setAdapter(new SpinnerApadterByArray(TASK_STATUS[0],mContext));
-        spStatus.setOnItemSelectedListener(this);
     }
 
     public void searchTask(){
         this.dismiss();
         loading.show();
-        presenter.searchTask(etStrMachineNO.getText().toString(),etStrMachineModel.getText().toString(),startData.getText().toString(),endData.getText().toString(),taskStatus);
+        presenter.searchMachineStock(etStrMachineNO.getText().toString(),etStrMachineModel.getText().toString(),startData.getText().toString(),endData.getText().toString());
 
     }
 
@@ -83,29 +80,17 @@ public class TaskSearchDialog extends Dialog implements TaskSearchContract.View,
     }
 
     @Override
-    public void Succeeded(TaskInfoList taskInfoList) {
+    public void Succeeded(ArrayList<MachineStockInfo> arrayList) {
         loading.dismiss();
-        getTaskInfoList.taskInfoList(taskInfoList);
+        infoList.machineStockList(arrayList);
     }
 
     @Override
-    public void setPresenter(TaskSearchContract.Presenter presenter) {
+    public void setPresenter(MachineStockSearchContract.Presenter presenter) {
 
     }
 
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        taskStatus = TASK_STATUS[1][i];
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
-
-    interface GetTaskInfoList{
-        public void taskInfoList(TaskInfoList taskInfoList);
+    interface GetMachineStockInfoList{
+        public void machineStockList(ArrayList<MachineStockInfo> arrayList);
     }
 }

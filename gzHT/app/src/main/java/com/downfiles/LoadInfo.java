@@ -2,12 +2,12 @@ package com.downfiles;
 
 /**
  * @author jiaruihua jrhhybh@163.com
- *  ×Ô¶¨ÒåµÄÒ»¸ö¼ÇÔØÏÂÔØÆ÷ÏêÏ¸ĞÅÏ¢µÄÀà
+ *  è‡ªå®šä¹‰çš„ä¸€ä¸ªè®°è½½ä¸‹è½½å™¨è¯¦ç»†ä¿¡æ¯çš„ç±»
  */
 public class LoadInfo {
-	public int fileSize;// ÎÄ¼ş´óĞ¡
-	private int complete;// Íê³É¶È
-	private String urlstring;// ÏÂÔØÆ÷±êÊ¶
+	public int fileSize;// æ–‡ä»¶å¤§å°
+	private int complete;// å®Œæˆåº¦
+	private String urlstring;// ä¸‹è½½å™¨æ ‡è¯†
 
 	public LoadInfo(int fileSize, int complete, String urlstring) {
 		this.fileSize = fileSize;

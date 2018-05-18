@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 /**
  * @author
- * Ò»¸öÒµÎñÀà
+ * ä¸€ä¸ªä¸šåŠ¡ç±»
  */
 public class GetDownloadInfos {  
 	private static GetDownloadInfos dao=null;
@@ -34,7 +34,7 @@ public class GetDownloadInfos {
 	}
 
 	/**
-	 * ²é¿´Êı¾İ¿âÖĞÊÇ·ñÓĞÊı¾İ
+	 * æŸ¥çœ‹æ•°æ®åº“ä¸­æ˜¯å¦æœ‰æ•°æ®
 	 */
 	public synchronized boolean isHasInfors(String urlstr) {
 		SQLiteDatabase database = getConnection();
@@ -60,7 +60,7 @@ public class GetDownloadInfos {
 	}
 
 	/**
-	 * ±£´æ ÏÂÔØµÄ¾ßÌåĞÅÏ¢
+	 * ä¿å­˜ ä¸‹è½½çš„å…·ä½“ä¿¡æ¯
 	 */
 	public synchronized void saveInfos(List<DownloadInfo> infos) {
 		SQLiteDatabase database = getConnection();
@@ -85,7 +85,7 @@ public class GetDownloadInfos {
 	}
 
 	/**
-	 * µÃµ½ÏÂÔØ¾ßÌåĞÅÏ¢
+	 * å¾—åˆ°ä¸‹è½½å…·ä½“ä¿¡æ¯
 	 */
 	public synchronized List<DownloadInfo> getInfos(String urlstr) {
 		List<DownloadInfo> list = new ArrayList<DownloadInfo>();
@@ -113,7 +113,7 @@ public class GetDownloadInfos {
 		return list;
 	}
 	/**
-	 * µÃµ½ÏÂÔØ¾ßÌåĞÅÏ¢
+	 * å¾—åˆ°ä¸‹è½½å…·ä½“ä¿¡æ¯
 	 */
 	public synchronized boolean If_Complete(String urlstr) {
 		boolean b = true;
@@ -147,7 +147,7 @@ public class GetDownloadInfos {
 		return b;
 	}
 	/**
-	 * ¸üĞÂÊı¾İ¿âÖĞµÄÏÂÔØĞÅÏ¢
+	 * æ›´æ–°æ•°æ®åº“ä¸­çš„ä¸‹è½½ä¿¡æ¯
 	 */
 	public synchronized void updataInfos(int threadId, int compeleteSize, String urlstr) {
 		SQLiteDatabase database = getConnection();
@@ -164,7 +164,7 @@ public class GetDownloadInfos {
 		}
 	}
 	/**
-	 * ÏÂÔØÍê³ÉºóÉ¾³ıÊı¾İ¿âÖĞµÄÊı¾İ
+	 * ä¸‹è½½å®Œæˆååˆ é™¤æ•°æ®åº“ä¸­çš„æ•°æ®
 	 */
 	public synchronized void delete_table() {
 		SQLiteDatabase database = getConnection();
@@ -179,7 +179,7 @@ public class GetDownloadInfos {
 		}
 	}
 	/**
-	 * ÏÂÔØÍê³ÉºóÉ¾³ıÊı¾İ¿âÖĞµÄÊı¾İ
+	 * ä¸‹è½½å®Œæˆååˆ é™¤æ•°æ®åº“ä¸­çš„æ•°æ®
 	 */
 	public synchronized void delete(String url) {
 		SQLiteDatabase database = getConnection();

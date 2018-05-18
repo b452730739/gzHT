@@ -1,7 +1,9 @@
-package com.lcd.project.module.login;
+package com.elegps.gz_customerservice;
 
-import com.lcd.project.module.BasePresenter;
-import com.lcd.project.module.BaseView;
+
+import com.elegps.javabean.AppUserInfo;
+import com.mvp.BasePresenter;
+import com.mvp.BaseView;
 
 /**
  * Created by Administrator on 2016/11/10.
@@ -9,29 +11,14 @@ import com.lcd.project.module.BaseView;
 
 public interface LoginContract {
 
-    interface View extends BaseView<Presenter>{
+    interface View extends BaseView<Presenter> {
 
         void loginFail(String message);
-        void loginSucceeded();
-        void userID(String userID);
-        void userInfo(String userInfo);
-        void deptList(String deptList);
-        void huiQianInfo(String duiQianInfo);
-        void deptInfoByUnitID(String deptInfoByUnitID);
-        void yueShiInfo(String yueShiInfo);
-        void dictTypeInfo(String dictTypeInfo);
-        void roleList(String roleList);
+        void loginSucceeded(AppUserInfo appUserInfo);
+
 
     }
-    interface Presenter extends BasePresenter{
-        void onLogin(String strUserID,String strPWD, String strMobileCode,  String strMobileType);
-        void getUserID(String strUserName);
-        void getUserInfo(String strUserID);
-        void getDeptList(String strUserID);
-        void getHuiQianInfo(String strUnitID,String strExceptDeptList);
-        void getDeptInfoByUnitID(String strUnitID);
-        void getYueShiInfo(String strUnitID);
-        void getDictTypeInfo(String strZDType);
-        void getRoleList(String strUserID);
-    }
-}
+    interface Presenter extends BasePresenter {
+        void onLogin(String strUserID, String strPWD);
+
+}}

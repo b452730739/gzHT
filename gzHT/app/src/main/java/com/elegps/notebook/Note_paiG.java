@@ -58,7 +58,7 @@ public class Note_paiG extends Activity {
 
 	}
 	private void set_Adapter(){
-		dialog_UI = new Dialog_UI(this, "ÕıÔÚ¼ÓÔØ...");
+		dialog_UI = new Dialog_UI(this, "æ­£åœ¨åŠ è½½...");
 		dialog_UI.show();
 		new AsyncTask<Void, Void, Void>() {
 			@Override
@@ -135,11 +135,11 @@ public class Note_paiG extends Activity {
 				
 				@Override
 				public boolean onLongClick(View v) {
-					//¶¨ÒåÒ»¸öÕ³Ìù°å¹ÜÀíÆ÷
+					//å®šä¹‰ä¸€ä¸ªç²˜è´´æ¿ç®¡ç†å™¨
 					final ClipboardManager clipBoard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
-					//ÔÚMenuÊÂ¼şºô½ĞµÄÊ±ºòÔËĞĞÕâÒ»ĞĞ´úÂë ÎÄ×Ö¾Í¸´ÖÆµ½Õ³Ìù°åÁË
+					//åœ¨Menuäº‹ä»¶å‘¼å«çš„æ—¶å€™è¿è¡Œè¿™ä¸€è¡Œä»£ç  æ–‡å­—å°±å¤åˆ¶åˆ°ç²˜è´´æ¿äº†
 					clipBoard.setText(((TextView)v).getText());		
-					new Toast_Creat(Note_paiG.this, "¸´ÖÆ³É¹¦", 2000).show_toast();
+					new Toast_Creat(Note_paiG.this, "å¤åˆ¶æˆåŠŸ", 2000).show_toast();
 					return false;
 				}
 			});
@@ -156,10 +156,10 @@ public class Note_paiG extends Activity {
 
 			try {
 				if(paiGBeans.get(position).getIsFinish().equals("1")){
-					button2.setText("¹¤ µ¥ ÒÑ Íê ³É");
+					button2.setText("å·¥ å• å·² å®Œ æˆ");
 
 				}else{
-					button2.setText("»Ø  ¸´  ¼Ç  Â¼");
+					button2.setText("å›  å¤  è®°  å½•");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -240,7 +240,7 @@ public class Note_paiG extends Activity {
 					@Override
 					public void onClick(View v) {
 				
-				final Dialog_UI dialog_UI = new Dialog_UI(Note_paiG.this, "ÕıÔÚ»Ø¸´...");	
+				final Dialog_UI dialog_UI = new Dialog_UI(Note_paiG.this, "æ­£åœ¨å›å¤...");	
 				dialog_UI.show();
 			new AsyncTask<Void, Void, String>(){
 
@@ -318,12 +318,12 @@ public class Note_paiG extends Activity {
 	
 	}
 	 /*
-     * È·ÈÏÊÇ·ñÉ¾³ı
+     * ç¡®è®¤æ˜¯å¦åˆ é™¤
      * */
     public  void is_delete(final int position){
-        //ÌáÊ¾¶Ô»°¿ò
+        //æç¤ºå¯¹è¯æ¡†
         AlertDialog.Builder builder=new Builder(Note_paiG.this);
-        builder.setTitle("È·¶¨ÊÇ·ñÉ¾³ı?").setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+        builder.setTitle("ç¡®å®šæ˜¯å¦åˆ é™¤?").setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
         	@Override
             public void onClick(DialogInterface dialog, int which) {
 				
@@ -357,7 +357,7 @@ public class Note_paiG extends Activity {
 					
 				}.execute((Void)null);
 			}
-        }).setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+        }).setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -369,7 +369,7 @@ public class Note_paiG extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 
 			Intent intent = new Intent(Note_paiG.this,
 					MainActivity.class);

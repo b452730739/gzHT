@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/note_bg"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/note_titlebg" >
+
+        <TextView
+            android:id="@+id/b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="   " />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/b"
+            android:background="@drawable/note_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="机器进度详情"
+            android:textColor="@android:color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:id="@+id/a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="   " />
+
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/app_text_width"
+                    android:layout_height="wrap_content"
+                   android:theme="@style/app_text"
+                    android:text="机器序列号: "/>
+                <TextView
+                    android:id="@+id/tv_MachineNO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                  />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/app_text_width"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    android:text="机器型号: "/>
+                <TextView
+                    android:id="@+id/tv_MachineModel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/app_text_width"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    android:text="订单号: "/>
+                <TextView
+                    android:id="@+id/tv_TaskID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/app_text_width"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    android:text="当前环节: "/>
+                <TextView
+                    android:id="@+id/tv_CurNodeName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/app_text_width"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    android:text="生产时间: "/>
+                <TextView
+                    android:id="@+id/tv_CreateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/app_text_width"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    android:text="流水号: "/>
+                <TextView
+                    android:id="@+id/tv_FlowNO"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/app_text_width"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    android:text="状态: "/>
+                <TextView
+                    android:id="@+id/tv_StatusText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_margin="8dp">
+
+                <TextView
+                    android:layout_width="@dimen/app_text_width"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    android:text="备注: "/>
+                <TextView
+                    android:id="@+id/tv_Remark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:theme="@style/app_text"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

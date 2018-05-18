@@ -3,56 +3,64 @@ package com.constant;
 public class IP_Address {
 
 	/**
-	 * ÍâÍø²âÊÔ»·¾³
+	 *
+	 7190 ä»“ç®¡å‘˜
+	 1833 è½¦é—´ä¸»ä»»
+	 1835 å·¥äºº
+	 å¯†ç ï¼š12345
+	 *
+	 * å¤–ç½‘æµ‹è¯•ç¯å¢ƒ
+	 *http://14.23.94.10:5001/HTAndroidWebService/DirMain/frmLogon.aspx
 	 */
 	public static final String IP = "14.23.94.10:5001";
 	private static final String PROJECT_NAME="/HTAndroidWebService/HTAndroidWebService";
 	/**
-	 * ÕıÊ½»·¾³
+	 * æ­£å¼ç¯å¢ƒ
 	 */
 //	public static final String IP = "183.63.165.198";
 //	private static final String PROJECT_NAME="/HTAndroidWebService";
 
 	/**
-	 * apk¸üĞÂµØÖ·
-	 * 183.63.165.198¹ãÖİÍâÍø
-	 * ×¢ÒâÎÄ¼şÏÂÔØµÄIPºÍÊÓÆµÍ¨»°µÄIP
+	 * apkæ›´æ–°åœ°å€
+	 * 183.63.165.198å¹¿å·å¤–ç½‘
+	 * æ³¨æ„æ–‡ä»¶ä¸‹è½½çš„IPå’Œè§†é¢‘é€šè¯çš„IP
 	 * http://183.63.165.198/HTAndroidWebService/version.xml
 	 */
+	public static final String UPDATE = "http://"+IP+PROJECT_NAME+"/version.xml";
 
 
 	/**
-	 * ĞÂÔöµÄ·şÎñ
+	 * æ–°å¢çš„æœåŠ¡
+	 * http://14.23.94.10:5001/HTAndroidWebService/HTAndroidWebService/AppMemberService.asmx
 	 */
 	public static final String AppMemberService = "http://"+IP+PROJECT_NAME+"/AppMemberService.asmx";
 
-public static final String UPDATE = "http://"+IP+PROJECT_NAME+"/version.xml";
 	/**
-	 * ÃüÃû¿Õ¼ä
+	 * å‘½åç©ºé—´
 	 */
 public static final String NAMESPACE = "http://HTAftersales.com/";
 	/**
-	 * ÕËºÅ¹ÜÀí
+	 * è´¦å·ç®¡ç†
 	 */
 public static final String MEMBERSERVICE = "http://"+IP+PROJECT_NAME+"/MemberService.asmx";
 	/**
-	 * ¹ÊÕÏ²éÑ¯
+	 * æ•…éšœæŸ¥è¯¢
 	 */
 public static final String WORKORDERSERVICE = "http://"+IP+PROJECT_NAME+"/WorkOrderService.asmx";
 	/**
-	 * Åä¼ş¹ºÂò
+	 * é…ä»¶è´­ä¹°
 	 */
 public static final String PRODUCTSERVICE = "http://"+IP+PROJECT_NAME+"/ProductService.asmx";
 	/**
-	 * Í¼Æ¬ÉÏ´«
+	 * å›¾ç‰‡ä¸Šä¼ 
 	 */
 public static final String PICTURESERVICE = "http://"+IP+PROJECT_NAME+"/PictureService.asmx";
 	/**
-	 * ÈÕÖ¾²Ù×÷Ïà¹Ø
+	 * æ—¥å¿—æ“ä½œç›¸å…³
 	 */
 public static final String LOGSERVICE = "http://"+IP+PROJECT_NAME+"/LogService.asmx";
 	/**
-	 * Í¶Ëß½¨Òé
+	 * æŠ•è¯‰å»ºè®®
 	 */
 public static final String MAINTAINADVISESERVICE = "http://"+IP+PROJECT_NAME+"/MaintainAdviseService.asmx";
 }

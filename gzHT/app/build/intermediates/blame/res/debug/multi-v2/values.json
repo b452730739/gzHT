@@ -6,71 +6,64 @@
                 {
                     "source": "/Users/lichendong/project/git/gzHT/app/src/main/res/values/dimens.xml",
                     "from": {
-                        "startLines": "3,4",
-                        "startColumns": "4,4",
-                        "startOffsets": "92,151",
-                        "endColumns": "57,55",
-                        "endOffsets": "145,202"
+                        "startLines": "-1,-1,-1,6,7",
+                        "startColumns": "-1,-1,-1,4,4",
+                        "startOffsets": "-1,-1,-1,254,302",
+                        "endColumns": "-1,-1,-1,46,50",
+                        "endOffsets": "-1,-1,-1,296,348"
                     },
                     "to": {
-                        "startLines": "6,7",
-                        "startColumns": "4,4",
-                        "startOffsets": "212,270",
-                        "endColumns": "57,55",
-                        "endOffsets": "265,321"
+                        "startLines": "7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "255,313,369,414,461",
+                        "endColumns": "57,55,44,46,50",
+                        "endOffsets": "308,364,409,456,507"
                     }
                 },
                 {
                     "source": "/Users/lichendong/project/git/gzHT/app/src/main/res/values/strings.xml",
                     "from": {
-                        "startLines": "5,3,2,4,7,6",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "203,97,55,150,288,245",
-                        "endColumns": "41,52,41,52,50,42",
-                        "endOffsets": "240,145,92,198,334,283"
+                        "startLines": "-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
-                        "startLines": "9,10,11,12,13,14",
+                        "startLines": "13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "372,414,467,509,562,613",
+                        "startOffsets": "558,600,653,695,748,799",
                         "endColumns": "41,52,41,52,50,42",
-                        "endOffsets": "409,462,504,557,608,651"
+                        "endOffsets": "595,648,690,743,794,837"
                     }
                 },
                 {
                     "source": "/Users/lichendong/project/git/gzHT/app/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "2,4,9",
-                        "startColumns": "4,1,1",
-                        "startOffsets": "19,79,254",
-                        "endLines": "2,8,13",
-                        "endColumns": "58,9,9",
-                        "endOffsets": "73,251,424"
+                        "startLines": "-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1"
                     },
                     "to": {
-                        "startLines": "15,16,21",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "656,714,887",
-                        "endLines": "15,20,25",
-                        "endColumns": "57,9,9",
-                        "endOffsets": "709,882,1053"
+                        "startLines": "19,20,25,30",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "842,900,1098,1271",
+                        "endLines": "19,24,29,34",
+                        "endColumns": "57,9,9,9",
+                        "endOffsets": "895,1093,1266,1437"
                     }
                 },
                 {
                     "source": "/Users/lichendong/project/git/gzHT/app/src/main/res/values/colors.xml",
                     "from": {
-                        "startLines": "4,3,5,6,2",
-                        "startColumns": "1,1,1,1,1",
-                        "startOffsets": "137,99,175,212,54",
-                        "endColumns": "36,36,35,34,42",
-                        "endOffsets": "172,134,209,245,95"
+                        "startLines": "-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,8",
-                        "startColumns": "4,4,4,4,4",
-                        "startOffsets": "55,95,135,174,326",
-                        "endColumns": "39,39,38,37,45",
-                        "endOffsets": "90,130,169,207,367"
+                        "startLines": "2,3,4,5,6,12",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "55,95,135,178,217,512",
+                        "endColumns": "39,39,42,38,37,45",
+                        "endOffsets": "90,130,173,212,250,553"
                     }
                 }
             ]

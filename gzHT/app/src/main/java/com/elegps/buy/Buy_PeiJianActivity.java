@@ -12,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -37,12 +38,12 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 	private Button zhaoxiang = null;
 	
 	private byte[] bb  = null;
-	private boolean b = false;// Èç¹ûÊÇtrue¾ÍÊÇ±¾µØÉÏ´«£¬·ñÔò¾ÍÊÇÅÄÕÕÉÏ´«
+	private boolean b = false;// å¦‚æœæ˜¯trueå°±æ˜¯æœ¬åœ°ä¸Šä¼ ï¼Œå¦åˆ™å°±æ˜¯æ‹ç…§ä¸Šä¼ 
 	private Hellper hellper = null;
 	private File file = null;
 	private Bitmap photo = null;
 	private Bundle bundle = null;
-	private String path = null;			//Í¼Æ¬µÄ¾ø¶ÔµØÖ·
+	private String path = null;			//å›¾ç‰‡çš„ç»å¯¹åœ°å€
 	private String ImageTemp = null;
 	private Dialog_UI dialog_UI = null;
 	private EditText[] editTexts = null;
@@ -86,6 +87,10 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 		editTexts[10] = (EditText)findViewById(R.id.gz2);
 		editTexts[11] = (EditText)findViewById(R.id.gz4);
 		editTexts[12] = (EditText)findViewById(R.id.postbox);
+
+
+
+
 		
 		editTexts[10].setText(Constant.users.get(0).getCustName());
 		editTexts[1].setText(Constant.users.get(0).getContact());
@@ -97,19 +102,19 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 		
 		try {
 			strs = Constant.Buy_PeiJian.split("\\$");
-			editTexts[0].setText(strs[0]);     //Åä¼şÃû³Æ
-			editTexts[1].setText(strs[1]);		//»úÌ¨±àºÅ
-			editTexts[2].setText(strs[2]);		//ÁªÏµÈË
-			editTexts[3].setText(strs[3]);		//ÊÖ»ú
-			editTexts[4].setText(strs[4]);		//ÓÊÏä
-			editTexts[5].setText(strs[5]);		//´«Õæ
-			editTexts[6].setText(strs[6]);		//¿Í»§µØÖ·
-			editTexts[7].setText(strs[7]);		//ÊÕ»õÈË
-			editTexts[8].setText(strs[8]);		//ÊÕ»õÈËÁªÏµ·½Ê½
-			editTexts[9].setText(strs[9]);		//ÊÕ»õµØÖ·
-			editTexts[10].setText(strs[10]);	//¿Í»§Ãû³Æ	
-			editTexts[11].setText(strs[11]);	//±¸×¢ 
-			editTexts[12].setText(strs[12]);	//Åä¼şÃèÊö
+			editTexts[0].setText(strs[0]);     //é…ä»¶åç§°
+			editTexts[1].setText(strs[1]);		//æœºå°ç¼–å·
+			editTexts[2].setText(strs[2]);		//è”ç³»äºº
+			editTexts[3].setText(strs[3]);		//æ‰‹æœº
+			editTexts[4].setText(strs[4]);		//é‚®ç®±
+			editTexts[5].setText(strs[5]);		//ä¼ çœŸ
+			editTexts[6].setText(strs[6]);		//å®¢æˆ·åœ°å€
+			editTexts[7].setText(strs[7]);		//æ”¶è´§äºº
+			editTexts[8].setText(strs[8]);		//æ”¶è´§äººè”ç³»æ–¹å¼
+			editTexts[9].setText(strs[9]);		//æ”¶è´§åœ°å€
+			editTexts[10].setText(strs[10]);	//å®¢æˆ·åç§°	
+			editTexts[11].setText(strs[11]);	//å¤‡æ³¨ 
+			editTexts[12].setText(strs[12]);	//é…ä»¶æè¿°
 		} catch (Exception e1) {
 			e1.printStackTrace();
 		}
@@ -121,7 +126,7 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 			e.printStackTrace();
 		} catch (OutOfMemoryError e) {
 			e.printStackTrace();
-			Toast.makeText(Buy_PeiJianActivity.this, "Í¼Æ¬¹ı´ó", 0).show();
+			Toast.makeText(Buy_PeiJianActivity.this, "å›¾ç‰‡è¿‡å¤§", 0).show();
 		}
 		try {
 			ImageTemp = null;
@@ -166,12 +171,12 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 			this.finish();
 			break;
 		case R.id.imageView2:
-			dialog_UI = new Dialog_UI(this, "ÕıÔÚÌá½»...");
+			dialog_UI = new Dialog_UI(this, "æ­£åœ¨æäº¤...");
 			dialog_UI.show();
-			dialog_UI.setCancelable(false);// ÉèÖÃµã»÷ÆÁÄ»Dialog²»ÏûÊ§
+			dialog_UI.setCancelable(false);// è®¾ç½®ç‚¹å‡»å±å¹•Dialogä¸æ¶ˆå¤±
 			
 			if(editTexts[12].getText().toString() == null|editTexts[12].getText().toString().equals("")){
-				Toast.makeText(Buy_PeiJianActivity.this, "Åä¼şÃèÊö²»ÄÜÎª¿Õ", 0).show();
+				Toast.makeText(Buy_PeiJianActivity.this, "é…ä»¶æè¿°ä¸èƒ½ä¸ºç©º", 0).show();
 				dialog_UI.dismiss();
 				break;
 			}
@@ -203,8 +208,8 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 						new String[]{
 	Constant.UserName,editTexts[10].getText().toString(),editTexts[2].getText().toString(),
 	editTexts[3].getText().toString(),editTexts[4].getText().toString(),editTexts[5].getText().toString(),
-	editTexts[6].getText().toString(),editTexts[12].getText().toString(),/*ÎÄ¼şÃû*/file_name,
-	/*ÎÄ¼şÀ©Õ¹Ãû*/"."+end,/*Base64ÎÄ¼ş*/ImageTemp,/*±¸×¢*/editTexts[11].getText().toString(),
+	editTexts[6].getText().toString(),editTexts[12].getText().toString(),/*æ–‡ä»¶å*/file_name,
+	/*æ–‡ä»¶æ‰©å±•å*/"."+end,/*Base64æ–‡ä»¶*/ImageTemp,/*å¤‡æ³¨*/editTexts[11].getText().toString(),
 	editTexts[7].getText().toString(),editTexts[8].getText().toString(),editTexts[9].getText().toString(),
 	editTexts[1].getText().toString(),editTexts[0].getText().toString(),editTexts[12].getText().toString()
 			},dialog_UI);
@@ -245,7 +250,7 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 			;
 			
 			b = true;
-			// ´ò¿ªÍ¼¿âÑ¡ÔñÍ¼Æ¬
+			// æ‰“å¼€å›¾åº“é€‰æ‹©å›¾ç‰‡
 			Intent intent1 = new Intent();
 			intent1.setType("image/*");
 			intent1.setAction(Intent.ACTION_GET_CONTENT);
@@ -317,7 +322,7 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 	}
 
 	/**
-	 * ÅÄÕÕÉÏ´«
+	 * æ‹ç…§ä¸Šä¼ 
 	 */
 	private void photograph() {
 
@@ -331,7 +336,7 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 					file.createNewFile();
 				} catch (IOException e) {
 					e.printStackTrace();
-					Toast.makeText(Buy_PeiJianActivity.this, "ÎÄ¼ş²»´æÔÚ",
+					Toast.makeText(Buy_PeiJianActivity.this, "æ–‡ä»¶ä¸å­˜åœ¨",
 							Toast.LENGTH_LONG).show();
 					return;
 				}
@@ -340,7 +345,7 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 			intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(file));
 			startActivityForResult(intent, 1);
 		} else {
-			Toast.makeText(Buy_PeiJianActivity.this, "sdcard²»´æÔÚ", Toast.LENGTH_SHORT)
+			Toast.makeText(Buy_PeiJianActivity.this, "sdcardä¸å­˜åœ¨", Toast.LENGTH_SHORT)
 					.show();
 		}
 
@@ -354,7 +359,7 @@ public class Buy_PeiJianActivity extends Activity implements OnClickListener{
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			Constant.Buy_PeiJian = null;
 			Intent intent = new Intent(Buy_PeiJianActivity.this,
 					Buy_LishiActivity.class);

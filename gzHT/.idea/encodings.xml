@@ -1,11 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/app/src/main/java/cn/database/DBOpenHelper.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/cn/database/DBOpenHelper.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/cn/database/NoteService.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/constant/IP_Address.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/errorfind/Error_information.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/getLocation/DemoApplication.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatAudioHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatBaseEvent.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatCameraHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatCoreSDK.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatDefine.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatOutParam.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatPrivateChatEvent.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatSensorHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatStateChgEvent.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatTextMsgEvent.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatTransDataEvent.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/bairuitech/anychat/AnyChatVideoHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/constant/Constant.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/constant/IP_Address.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/content/webservice/ContentWeb.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/downfiles/Down_Files_Dialog.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/downfiles/Download.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/downfiles/DownloadInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/downfiles/File_Info.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/downfiles/GetDownloadInfos.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/downfiles/LoadInfo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/downfiles/MyDbHelper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/Complaints_proposals/Complaints_ProposalsActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/Complaints_proposals/Complaints_ProposalsAdd_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/UIManager/Dialog_UI.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/UIManager/Error_ListAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/UIManager/LogOn_GetViewPage.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/UIManager/LogOn_ViewPageAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/UIManager/NoteBooK_ListAdapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/UIManager/Toast_Creat.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/antkingXML/Complaints_proposals.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/antkingXML/PullBuildXMLService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/antkingXML/PullPersonService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/buy/Buy_LishiActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/buy/Buy_PeiJianActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/errorfind/Error_DemadFindActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/errorfind/Error_findActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/errorfind/Error_information.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/getLocation/BMapUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/getLocation/DemoApplication.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/getLocation/LocationOverlayDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/gz_customerservice/CanvasImageTask.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/gz_customerservice/Change_passwordActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/gz_customerservice/Find_PasswordActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/gz_customerservice/PaiZhao_LiShi.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/help/BitmapCache.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/help/Hellper.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/help/PublicWay.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/javabean/Buy_enrolment.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/javabean/Creat_Person.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/javabean/Video_users.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/notebook/Add_NoteActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/notebook/Note_BookActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/notebook/Note_PaiGong.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/notebook/Note_PingTaiActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/notebook/Note_paiG.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/photo/Photo_LookActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/photo/Photo_NativeActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/vedio/ConfigActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/vedio/ConfigEntity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/vedio/ConfigService.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/vedio/EnterRoomBuffActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/vedio/LiveVideoActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/vedio/RoomActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/vedio/VideoActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/vedio/VideoConfigActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/warranty/BaiXiu_AddActivity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/warranty/BaoXiu_Activity.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/elegps/warranty/BaoXiu_InfoActivity.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

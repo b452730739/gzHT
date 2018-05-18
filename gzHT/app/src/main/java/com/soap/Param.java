@@ -1,4 +1,4 @@
-package com.lcd.elegps.soap;
+package com.soap;
 import java.lang.annotation.*;  
 
 @Target(ElementType.PARAMETER)  

@@ -72,7 +72,7 @@ public class Complaints_ProposalsActivity extends Activity implements OnClickLis
 		setList_Adapter();
 	}
 	private void setList_Adapter(){
-		final Dialog_UI dialog_UI = new Dialog_UI(Complaints_ProposalsActivity.this, "ÕıÔÚÌí¼Ó...");
+		final Dialog_UI dialog_UI = new Dialog_UI(Complaints_ProposalsActivity.this, "æ­£åœ¨æ·»åŠ ...");
 		dialog_UI.show();
 		new AsyncTask<Void, Void, List<GetComplainAdviseInfo>>() {
 			@Override
@@ -183,7 +183,7 @@ public class Complaints_ProposalsActivity extends Activity implements OnClickLis
 				}
 			});
 			Button button2 = (Button)ly.findViewById(R.id.imageView2);
-			button2.setText("»Ø  ¸´  ¼Ç  Â¼");
+			button2.setText("å›  å¤  è®°  å½•");
 			button2.setOnClickListener(new OnClickListener() {
 				List<GetBuyMessage> buyMessages = null;
 
@@ -191,7 +191,7 @@ public class Complaints_ProposalsActivity extends Activity implements OnClickLis
 				public void onClick(View v) {
 
 					
-					final Dialog_UI dialog_UI = new Dialog_UI(Complaints_ProposalsActivity.this, "ÕıÔÚ»ñÈ¡...");	
+					final Dialog_UI dialog_UI = new Dialog_UI(Complaints_ProposalsActivity.this, "æ­£åœ¨è·å–...");	
 					dialog_UI.show();
 					new AsyncTask<Void, Void, List<GetBuyMessage>>() {
 						@Override
@@ -224,7 +224,7 @@ public class Complaints_ProposalsActivity extends Activity implements OnClickLis
 								@Override
 								public void onClick(View v) {
 							
-							final Dialog_UI dialog_UI = new Dialog_UI(Complaints_ProposalsActivity.this, "ÕıÔÚ»Ø¸´...");	
+							final Dialog_UI dialog_UI = new Dialog_UI(Complaints_ProposalsActivity.this, "æ­£åœ¨å›å¤...");	
 							dialog_UI.show();
 							new AsyncTask<Void, Void, String>(){
 
@@ -332,12 +332,12 @@ public class Complaints_ProposalsActivity extends Activity implements OnClickLis
 		
 	}
 	 /*
-     * È·ÈÏÊÇ·ñÉ¾³ı
+     * ç¡®è®¤æ˜¯å¦åˆ é™¤
      * */
     public  void is_delete(final int position){
-        //ÌáÊ¾¶Ô»°¿ò
+        //æç¤ºå¯¹è¯æ¡†
         AlertDialog.Builder builder=new Builder(Complaints_ProposalsActivity.this);
-        builder.setTitle("È·¶¨ÊÇ·ñÉ¾³ı?").setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+        builder.setTitle("ç¡®å®šæ˜¯å¦åˆ é™¤?").setPositiveButton("ç¡®å®š", new DialogInterface.OnClickListener() {
         	@Override
             public void onClick(DialogInterface dialog, int which) {
 				
@@ -371,7 +371,7 @@ public class Complaints_ProposalsActivity extends Activity implements OnClickLis
 					
 				}.execute((Void)null);
 			}
-        }).setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+        }).setNegativeButton("å–æ¶ˆ", new DialogInterface.OnClickListener() {
             
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -383,7 +383,7 @@ public class Complaints_ProposalsActivity extends Activity implements OnClickLis
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			Intent intent = new Intent(Complaints_ProposalsActivity.this,
 					MainActivity.class);
 			startActivity(intent);

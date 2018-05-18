@@ -12,7 +12,7 @@ import com.elegps.javabean.Creat_Person;
 import com.elegps.javabean.Find_password;
 
 
-/**²ÉÓÃpull Éú³ÉxmlÎÄ¼ş
+/**é‡‡ç”¨pull ç”Ÿæˆxmlæ–‡ä»¶
  * 
  * @author 
  *
@@ -21,7 +21,7 @@ public class PullBuildXMLService {
 	
 	
 	/**
-	 * µÇ¼ÇÅä¼ş¹ºÂòĞÅÏ¢±í
+	 * ç™»è®°é…ä»¶è´­ä¹°ä¿¡æ¯è¡¨
 	 * @param persons
 	 * @return
 	 * @throws Exception

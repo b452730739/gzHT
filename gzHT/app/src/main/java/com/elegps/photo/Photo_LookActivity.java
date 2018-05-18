@@ -110,7 +110,7 @@ public class Photo_LookActivity extends Activity {
 						if (newDist > 10f) {
 							matrix.set(savedMatrix);
 							scale = newDist / oldDist;
-							System.out.println("scale : Ëõ·Å´óĞ¡£º" + scale);
+							System.out.println("scale : ç¼©æ”¾å¤§å°ï¼š" + scale);
 							matrix.postScale(scale, scale, mid.x, mid.y);
 							isFirst = true;
 						}

@@ -1,21 +1,22 @@
-package com.elegps.module.machine_stock_search;
+package com.elegps.module.task_daiban_search;
 
 
 import android.app.Dialog;
 import android.content.Context;
-import android.view.View;
 import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.app.App;
+import com.constant.Constant;
 import com.elegps.UIManager.Dialog_UI;
-import com.elegps.adapter.SpinnerApadterByArray;
 import com.elegps.gz_customerservice.R;
+import com.elegps.javabean.AppUserInfo;
 import com.elegps.javabean.MachineStockInfo;
-import com.elegps.javabean.TaskInfoList;
+import com.elegps.javabean.TaskDaiBanInfo;
+import com.elegps.module.machine_stock_search.MachineStockSearchContract;
+import com.elegps.module.machine_stock_search.MachineStockSearchPresenter;
 import com.view.DateEditTextForData;
 
 import java.util.ArrayList;
@@ -24,13 +25,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MachineStockSearchDialog extends Dialog implements MachineStockSearchContract.View{
+public class TaskDaiBanSearchDialog extends Dialog implements TaskDaibanSearchContract.View{
 
 
     @Bind(R.id.et_strMachineNO)
     EditText etStrMachineNO;
-    @Bind(R.id.et_strMachineModel)
-    EditText etStrMachineModel;
+
     @Bind(R.id.startData)
     DateEditTextForData startData;
     @Bind(R.id.endData)
@@ -40,32 +40,32 @@ public class MachineStockSearchDialog extends Dialog implements MachineStockSear
     Button search;
 
     private Context mContext;
-    private GetMachineStockInfoList infoList;
-    private MachineStockSearchPresenter presenter = null;
+    private GetTaskDaiBanInfoList infoList;
+    private TaskDaiBanSearchPresenter presenter;
     private Dialog_UI loading ;
+    private AppUserInfo userInfo;
 
-    public MachineStockSearchDialog(Context context, GetMachineStockInfoList infoList) {
+    public TaskDaiBanSearchDialog(Context context, GetTaskDaiBanInfoList infoList) {
         super(context);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.mContext = context;
         this.infoList = infoList;
-        setContentView(R.layout.dialog_machine_stock_search);
+        setContentView(R.layout.dialog_task_daiban_search);
         ButterKnife.bind(this);
         init();
     }
 
     private void init() {
-
+        userInfo = (AppUserInfo) App.ACACHE.getObject(Constant.APPUSERINFO);
+        presenter = new TaskDaiBanSearchPresenter(this);
         loading = new Dialog_UI(mContext,"正在查询...");
-        presenter = new MachineStockSearchPresenter(this);
 
     }
 
     public void searchTask(){
         this.dismiss();
         loading.show();
-        presenter.searchMachineStock(etStrMachineNO.getText().toString(),etStrMachineModel.getText().toString(),startData.getText().toString(),endData.getText().toString());
-
+        presenter.AppTaskDaiBanList(userInfo.getUserID(),etStrMachineNO.getText().toString(),startData.getText().toString(),endData.getText().toString());
     }
 
     @OnClick(R.id.search)
@@ -80,17 +80,18 @@ public class MachineStockSearchDialog extends Dialog implements MachineStockSear
     }
 
     @Override
-    public void Succeeded(ArrayList<MachineStockInfo> arrayList) {
+    public void Succeeded(ArrayList<TaskDaiBanInfo> arrayList) {
         loading.dismiss();
-        infoList.machineStockList(arrayList);
+        infoList.taskDaiBanList(arrayList);
     }
+
 
     @Override
-    public void setPresenter(MachineStockSearchContract.Presenter presenter) {
+    public void setPresenter(TaskDaibanSearchContract.Presenter presenter) {
 
     }
 
-    interface GetMachineStockInfoList{
-        public void machineStockList(ArrayList<MachineStockInfo> arrayList);
+    interface GetTaskDaiBanInfoList{
+        public void taskDaiBanList(ArrayList<TaskDaiBanInfo> arrayList);
     }
 }

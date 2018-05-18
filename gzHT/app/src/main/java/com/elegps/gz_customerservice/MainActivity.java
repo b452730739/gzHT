@@ -18,6 +18,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
@@ -37,8 +38,15 @@ import com.elegps.UIManager.Toast_Creat;
 import com.elegps.buy.Buy_LishiActivity;
 import com.elegps.errorfind.Error_DemadFindActivity;
 import com.elegps.getLocation.LocationOverlayDemo;
+import com.elegps.help.ACache;
 import com.elegps.help.BitmapCache;
 import com.elegps.help.PublicWay;
+import com.elegps.javabean.AppUserInfo;
+import com.elegps.module.data_analyze.DataAnalyzeActivity;
+import com.elegps.module.machine_stock_search.MachineStockSearchActivity;
+import com.elegps.module.task_daiban_search.TaskDaiBanSearchActivity;
+import com.elegps.module.task_search.TaskSearchActivity;
+import com.elegps.module.work_hours.WorkHoursSearchActivity;
 import com.elegps.notebook.Note_BookActivity;
 import com.elegps.notebook.Note_PingTaiActivity;
 import com.elegps.notebook.Note_paiG;
@@ -46,7 +54,7 @@ import com.elegps.photo.Photo_NativeActivity;
 import com.elegps.vedio.EnterRoomBuffActivity;
 import com.elegps.warranty.BaoXiu_Activity;
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements OnClickListener{
 
 	private boolean b = false;// 如果是true就是本地上传，否则就是拍照上传
 	private ImageView[] main_pages = null;
@@ -54,6 +62,10 @@ public class MainActivity extends Activity {
 	private File file = null;
 	
 	private ImageView imageView = null;
+	private ImageView ivTaskSearch,ivMachineStockSearch,ivTaskDaiBanSearch,ivWorkHoursSearch,ivMyHours,ivDataAnalysis;
+
+	private AppUserInfo appUserInfo;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -66,11 +78,50 @@ public class MainActivity extends Activity {
 	}
 
 	private void init() {
+
+		appUserInfo = (AppUserInfo) ACache.getObject(Constant.APPUSERINFO);
 		
 		RelativeLayout ly = null;
 			
 			ly = (RelativeLayout) MainActivity.this
 					.getLayoutInflater().inflate(R.layout.zhuye, null);
+
+
+
+		ivTaskSearch = (ImageView)ly.findViewById(R.id.ivTaskSearch);
+		ivTaskSearch.setOnClickListener(this);
+
+		ivMachineStockSearch = (ImageView)ly.findViewById(R.id.ivMachineStockSearch);
+		ivMachineStockSearch.setOnClickListener(this);
+
+		ivTaskDaiBanSearch = (ImageView)ly.findViewById(R.id.ivTaskDaiBanSearch);
+		ivTaskDaiBanSearch.setOnClickListener(this);
+
+		ivWorkHoursSearch = (ImageView)ly.findViewById(R.id.ivWorkHoursSearch);
+		ivWorkHoursSearch.setOnClickListener(this);
+
+		ivMyHours = (ImageView)ly.findViewById(R.id.ivMyHours);
+		ivMyHours.setOnClickListener(this);
+
+		ivDataAnalysis = (ImageView)ly.findViewById(R.id.ivDataAnalysis);
+		ivDataAnalysis.setOnClickListener(this);
+		ivDataAnalysis.setVisibility(View.INVISIBLE);
+
+
+		if(!TextUtils.isEmpty(appUserInfo.getRoleName())){
+			if((appUserInfo.getRoleName().indexOf("公司领导")!=-1)||(appUserInfo.getRoleName().indexOf("车间主任")!=-1)){
+
+				ivDataAnalysis.setVisibility(View.VISIBLE);
+			}else{
+				ivDataAnalysis.setVisibility(View.INVISIBLE);
+
+			}
+
+		}else{
+			ivDataAnalysis.setVisibility(View.INVISIBLE);
+
+		}
+
 
 		main_pages = new ImageView[6];
 		main_pages[0] = (ImageView) ly.findViewById(R.id.mainpage_video);
@@ -173,6 +224,23 @@ public class MainActivity extends Activity {
 						LianXi_Activity.class);
 				startActivity(intent13);
 				MainActivity.this.finish();
+
+
+//				Intent intent13 = new Intent(MainActivity.this,
+//						TaskSearchActivity.class);
+//				startActivity(intent13);
+
+//				Intent intent13 = new Intent(MainActivity.this,
+//						MachineStockSearchActivity.class);
+//				startActivity(intent13);
+
+//				Intent intent13 = new Intent(MainActivity.this,
+//						TaskDaiBanSearchActivity.class);
+//				startActivity(intent13);
+
+//				Intent intent13 = new Intent(MainActivity.this,
+//						WorkHoursSearchActivity.class);
+//				startActivity(intent13);
 				break;
 			default:
 				break;
@@ -245,6 +313,13 @@ public class MainActivity extends Activity {
 				android.R.style.Theme_Translucent_NoTitleBar);
 		lDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		lDialog.setContentView(R.layout.r_okcanceldialogview);
+
+		if(TextUtils.isEmpty(Constant.ISINSIDE)){
+
+			Toast.makeText(this, "当前账号角色为空!", Toast.LENGTH_SHORT).show();
+			return;
+		}
+
 		if(Constant.ISINSIDE.equals("0")){
 			((Button) lDialog.findViewById(R.id.dingwei)).setVisibility(View.GONE);
 		}
@@ -436,4 +511,39 @@ public class MainActivity extends Activity {
 		super.onDestroy();
 	}
 
+	@Override
+	public void onClick(View view) {
+
+
+		Intent intent = new Intent();
+		switch (view.getId()){
+
+			case R.id.ivTaskSearch:  //生产任务查询
+				intent.setClass(this,TaskSearchActivity.class);
+				break;
+			case R.id.ivMachineStockSearch://已入库机器查询
+				intent.setClass(this,MachineStockSearchActivity.class);
+
+				break;
+			case R.id.ivTaskDaiBanSearch://机器进度
+				intent.setClass(this,TaskDaiBanSearchActivity.class);
+
+				break;
+			case R.id.ivWorkHoursSearch://计算工时
+				intent.setClass(this,WorkHoursSearchActivity.class);
+				intent.putExtra(Constant.IS_MY_HOURS,false);
+
+				break;
+			case R.id.ivMyHours://我的工时
+				intent.setClass(this,WorkHoursSearchActivity.class);
+				intent.putExtra(Constant.IS_MY_HOURS,true);
+				break;
+			case R.id.ivDataAnalysis://数据分析
+				intent.setClass(this,DataAnalyzeActivity.class);
+
+				break;
+		}
+
+		startActivity(intent);
+	}
 }

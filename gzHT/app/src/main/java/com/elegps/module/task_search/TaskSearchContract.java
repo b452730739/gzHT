@@ -1,24 +1,26 @@
-package com.elegps.gz_customerservice;
+package com.elegps.module.task_search;
 
 
-import com.elegps.javabean.AppUserInfo;
+import com.elegps.javabean.TaskInfoList;
 import com.mvp.BasePresenter;
 import com.mvp.BaseView;
+
+import java.util.ArrayList;
 
 /**
  * Created by Administrator on 2016/11/10.
  */
 
-public interface LoginContract {
+public interface TaskSearchContract {
 
     interface View extends BaseView<Presenter> {
 
-        void loginFail(String message);
-        void loginSucceeded(AppUserInfo appUserInfo);
+        void Fail(String message);
+        void Succeeded(TaskInfoList taskInfoList);
 
 
     }
     interface Presenter extends BasePresenter {
-        void onLogin(String strUserID, String strPWD);
+        void searchTask(String strMachineNO,String strMachineModel,String strStartDate,String strEndDate,String strStatus);
 
 }}

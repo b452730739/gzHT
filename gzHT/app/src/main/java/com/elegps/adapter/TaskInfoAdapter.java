@@ -1,4 +1,4 @@
-package com.elegps.module.task_search;
+package com.elegps.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

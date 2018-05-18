@@ -13,7 +13,7 @@ public class Dialog_UI extends Dialog {
 		super(context);
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
 		//this.setTitle(null);
-		//this.setCancelable(false);// ÉèÖÃµã»÷ÆÁÄ»Dialog²»ÏûÊ§
+		//this.setCancelable(false);// è®¾ç½®ç‚¹å‡»å±å¹•Dialogä¸æ¶ˆå¤±
 		setContentView(R.layout.dialog);
 		tv = (TextView)findViewById(R.id.textView1);
 		tv.setText(Txt);

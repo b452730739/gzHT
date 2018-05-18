@@ -23,6 +23,7 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bairuitech.anychat.AnyChatBaseEvent;
 import com.bairuitech.anychat.AnyChatCoreSDK;
@@ -93,7 +94,7 @@ public class RoomActivity extends Activity implements AnyChatBaseEvent,AnyChatTe
 				try {
 					anychat.LeaveRoom(-1);
 					anychat.Logout();
-					anychat.Release();	// ¹Ø±ÕSDK£¬²»ÔÙ·µ»ØµÇÂ¼½çÃæ
+					anychat.Release();	// å…³é—­SDKï¼Œä¸å†è¿”å›ç™»å½•ç•Œé¢
 			    	PublicWay.activityList1.get(0).finish();
 
 				} catch (Exception e) {
@@ -107,7 +108,7 @@ public class RoomActivity extends Activity implements AnyChatBaseEvent,AnyChatTe
 			}
 		});
     	TextView title = new TextView(this);
-    	title.setText("ÊÓÆµÁÄÌì");
+    	title.setText("è§†é¢‘èŠå¤©");
     	title.setTextColor(Color.WHITE);
     	title.setTextSize(20);
     	RelativeLayout.LayoutParams titleParams = new RelativeLayout.LayoutParams(-2, -2);
@@ -121,10 +122,10 @@ public class RoomActivity extends Activity implements AnyChatBaseEvent,AnyChatTe
     	fullLayout.setBackgroundResource(R.drawable.gary_bg);
     	fullLayout.setOrientation(LinearLayout.VERTICAL);	    
     	
-    	fullLayout.addView(relativeLayout); //Ìí¼ÓTitle
+    	fullLayout.addView(relativeLayout); //æ·»åŠ Title
     	
     	TextView documental = new TextView(this);
-    	documental.setText("ÏûÏ¢¼ÇÂ¼");
+    	documental.setText("æ¶ˆæ¯è®°å½•");
     	documental.setTextSize(20);
     	documental.setTextColor(Color.BLACK);
     	documental.setBackgroundResource(R.drawable.shibeijin);
@@ -169,21 +170,21 @@ public class RoomActivity extends Activity implements AnyChatBaseEvent,AnyChatTe
 		userListView.setOnItemClickListener(itemClickListener);
 		
     	TextView Onlinepeople = new TextView(this);
-    	Onlinepeople.setText("ÔÚÏßÈËÔ±");
+    	Onlinepeople.setText("åœ¨çº¿äººå‘˜");
     	Onlinepeople.setTextSize(20);
     	Onlinepeople.setTextColor(Color.BLACK);
     	Onlinepeople.setBackgroundResource(R.drawable.shibeijin);
     	Onlinepeople.setLayoutParams(new LinearLayout.LayoutParams(-1, -2));
     	
-    	fullLayout.addView(Onlinepeople); //ÔÚÏßÈËÔ±
+    	fullLayout.addView(Onlinepeople); //åœ¨çº¿äººå‘˜
 		
     	fullLayout.addView(userListView,new LinearLayout.LayoutParams(
-				-1,(int) (ScreenInfo.HEIGHT*4/25))); //ÔÚÏßÈËÔ±
+				-1,(int) (ScreenInfo.HEIGHT*4/25))); //åœ¨çº¿äººå‘˜
     	
-    	fullLayout.addView(documental);       //ÏûÏ¢¼ÇÂ¼
+    	fullLayout.addView(documental);       //æ¶ˆæ¯è®°å½•
     	
 		fullLayout.addView(messageListView,new LinearLayout.LayoutParams(
-				ScreenInfo.WIDTH,ScreenInfo.HEIGHT*430/800));  //ÏûÏ¢
+				ScreenInfo.WIDTH,ScreenInfo.HEIGHT*430/800));  //æ¶ˆæ¯
 		
     	fullLayout.addView(sendLayout,new LinearLayout.LayoutParams(-1,-2));
     	this.setContentView(fullLayout);
@@ -290,7 +291,7 @@ public class RoomActivity extends Activity implements AnyChatBaseEvent,AnyChatTe
     private void SendMessage()
     {
 		anychat.SendTextMessage(-1, 0, messageEditText.getText().toString());
-		messageList.add("ÎÒËµ: "+ messageEditText.getText().toString());
+		messageList.add("æˆ‘è¯´: "+ messageEditText.getText().toString());
 		//messageListView.setStackFromBottom(true);
 		messageListView.SetFileList(messageList);
 		messageEditText.setText("");
@@ -315,11 +316,11 @@ public class RoomActivity extends Activity implements AnyChatBaseEvent,AnyChatTe
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 	    	try {
 				anychat.LeaveRoom(-1);
 				anychat.Logout();
-				anychat.Release();	// ¹Ø±ÕSDK£¬²»ÔÙ·µ»ØµÇÂ¼½çÃæ
+				anychat.Release();	// å…³é—­SDKï¼Œä¸å†è¿”å›ç™»å½•ç•Œé¢
 				
 				for(int i = 0 ;i<PublicWay.activityList1.size();i++){
 					
@@ -428,14 +429,14 @@ public class RoomActivity extends Activity implements AnyChatBaseEvent,AnyChatTe
 		}
 	}
 	/**
-	 * ĞèĞŞ¸Ä
+	 * éœ€ä¿®æ”¹
 	 */
 	@Override
 	public void OnAnyChatTextMessage(int dwFromUserid, int dwToUserid,
 			boolean bSecret, String message) {
 		if((anychat.GetUserName(dwFromUserid)).startsWith("admin")){
 		
-		messageList.add(anychat.GetUserName(dwFromUserid)+"Ëµ: "+message);
+		messageList.add(anychat.GetUserName(dwFromUserid)+"è¯´: "+message);
 		//messageListView.setStackFromBottom(true);
 		messageListView.SetFileList(messageList);
 		messageListView.setSelection(messageListView.getAdapter().getCount()-1);

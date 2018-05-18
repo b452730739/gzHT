@@ -15,14 +15,14 @@ import android.os.Message;
 import android.util.Log;
 
 public class Download {
-    private String urlstr;// ÏÂÔØµÄµØÖ·
-    private String localfile;// ±£´æÂ·¾¶
-    private int threadcount;// Ïß³ÌÊı
-    private Handler mHandler;// ÏûÏ¢´¦ÀíÆ÷ 
-    private int fileSize;// ËùÒªÏÂÔØµÄÎÄ¼şµÄ´óĞ¡
+    private String urlstr;// ä¸‹è½½çš„åœ°å€
+    private String localfile;// ä¿å­˜è·¯å¾„
+    private int threadcount;// çº¿ç¨‹æ•°
+    private Handler mHandler;// æ¶ˆæ¯å¤„ç†å™¨ 
+    private int fileSize;// æ‰€è¦ä¸‹è½½çš„æ–‡ä»¶çš„å¤§å°
     private Context context; 
-    private List<DownloadInfo> infos;// ´æ·ÅÏÂÔØĞÅÏ¢ÀàµÄ¼¯ºÏ
-    private static final int INIT = 1;//¶¨ÒåÈıÖÖÏÂÔØµÄ×´Ì¬£º³õÊ¼»¯×´Ì¬£¬ÕıÔÚÏÂÔØ×´Ì¬£¬ÔİÍ£×´Ì¬
+    private List<DownloadInfo> infos;// å­˜æ”¾ä¸‹è½½ä¿¡æ¯ç±»çš„é›†åˆ
+    private static final int INIT = 1;//å®šä¹‰ä¸‰ç§ä¸‹è½½çš„çŠ¶æ€ï¼šåˆå§‹åŒ–çŠ¶æ€ï¼Œæ­£åœ¨ä¸‹è½½çŠ¶æ€ï¼Œæš‚åœçŠ¶æ€
     private static final int DOWNLOADING = 2;
     private static final int PAUSE = 3;
     private int state = INIT;
@@ -36,15 +36,15 @@ public class Download {
         this.context = context;
     }
     /**
-     *ÅĞ¶ÏÊÇ·ñÕıÔÚÏÂÔØ 
+     *åˆ¤æ–­æ˜¯å¦æ­£åœ¨ä¸‹è½½ 
      */
     public boolean isdownloading() {
         return state == DOWNLOADING;
     }
     /**
-     * µÃµ½downloaderÀïµÄĞÅÏ¢
-     * Ê×ÏÈ½øĞĞÅĞ¶ÏÊÇ·ñÊÇµÚÒ»´ÎÏÂÔØ£¬Èç¹ûÊÇµÚÒ»´Î¾ÍÒª½øĞĞ³õÊ¼»¯£¬²¢½«ÏÂÔØÆ÷µÄĞÅÏ¢±£´æµ½Êı¾İ¿âÖĞ
-     * Èç¹û²»ÊÇµÚÒ»´ÎÏÂÔØ£¬ÄÇ¾ÍÒª´ÓÊı¾İ¿âÖĞ¶Á³öÖ®Ç°ÏÂÔØµÄĞÅÏ¢£¨ÆğÊ¼Î»ÖÃ£¬½áÊøÎªÖ¹£¬ÎÄ¼ş´óĞ¡µÈ£©£¬²¢½«ÏÂÔØĞÅÏ¢·µ»Ø¸øÏÂÔØÆ÷
+     * å¾—åˆ°downloaderé‡Œçš„ä¿¡æ¯
+     * é¦–å…ˆè¿›è¡Œåˆ¤æ–­æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡ä¸‹è½½ï¼Œå¦‚æœæ˜¯ç¬¬ä¸€æ¬¡å°±è¦è¿›è¡Œåˆå§‹åŒ–ï¼Œå¹¶å°†ä¸‹è½½å™¨çš„ä¿¡æ¯ä¿å­˜åˆ°æ•°æ®åº“ä¸­
+     * å¦‚æœä¸æ˜¯ç¬¬ä¸€æ¬¡ä¸‹è½½ï¼Œé‚£å°±è¦ä»æ•°æ®åº“ä¸­è¯»å‡ºä¹‹å‰ä¸‹è½½çš„ä¿¡æ¯ï¼ˆèµ·å§‹ä½ç½®ï¼Œç»“æŸä¸ºæ­¢ï¼Œæ–‡ä»¶å¤§å°ç­‰ï¼‰ï¼Œå¹¶å°†ä¸‹è½½ä¿¡æ¯è¿”å›ç»™ä¸‹è½½å™¨
      */
     public LoadInfo getDownloaderInfors() {
         if (isFirst(urlstr)) {
@@ -58,13 +58,13 @@ public class Download {
             }
             DownloadInfo info = new DownloadInfo(threadcount - 1,(threadcount - 1) * range, fileSize - 1, 0, urlstr);
             infos.add(info);
-            //±£´æinfosÖĞµÄÊı¾İµ½Êı¾İ¿â
+            //ä¿å­˜infosä¸­çš„æ•°æ®åˆ°æ•°æ®åº“
             GetDownloadInfos.getInstance(context).saveInfos(infos);
-            //´´½¨Ò»¸öLoadInfo¶ÔÏó¼ÇÔØÏÂÔØÆ÷µÄ¾ßÌåĞÅÏ¢
+            //åˆ›å»ºä¸€ä¸ªLoadInfoå¯¹è±¡è®°è½½ä¸‹è½½å™¨çš„å…·ä½“ä¿¡æ¯
             LoadInfo loadInfo = new LoadInfo(fileSize, 0, urlstr);
             return loadInfo;
         } else {
-            //µÃµ½Êı¾İ¿âÖĞÒÑÓĞµÄurlstrµÄÏÂÔØÆ÷µÄ¾ßÌåĞÅÏ¢
+            //å¾—åˆ°æ•°æ®åº“ä¸­å·²æœ‰çš„urlstrçš„ä¸‹è½½å™¨çš„å…·ä½“ä¿¡æ¯
             infos = GetDownloadInfos.getInstance(context).getInfos(urlstr);
             Log.v("TAG", "not isFirst size=" + infos.size());
             int size = 0;
@@ -78,7 +78,7 @@ public class Download {
     }
 
     /**
-     * ³õÊ¼»¯
+     * åˆå§‹åŒ–
      */
     private void init() {
         try {
@@ -92,7 +92,7 @@ public class Download {
             if (!file.exists()) {
                 file.createNewFile();
             }
-            // ±¾µØ·ÃÎÊÎÄ¼ş
+            // æœ¬åœ°è®¿é—®æ–‡ä»¶
             RandomAccessFile accessFile = new RandomAccessFile(file, "rwd");
             accessFile.setLength(fileSize);
             accessFile.close();
@@ -102,14 +102,14 @@ public class Download {
         }
     }  
     /**
-     * ÅĞ¶ÏÊÇ·ñÊÇµÚÒ»´Î ÏÂÔØ
+     * åˆ¤æ–­æ˜¯å¦æ˜¯ç¬¬ä¸€æ¬¡ ä¸‹è½½
      */
     private boolean isFirst(String urlstr) {
         return GetDownloadInfos.getInstance(context).isHasInfors(urlstr);
     }
 
     /**
-     * ÀûÓÃÏß³Ì¿ªÊ¼ÏÂÔØÊı¾İ
+     * åˆ©ç”¨çº¿ç¨‹å¼€å§‹ä¸‹è½½æ•°æ®
      */
     public void download() {
         if (infos != null) {
@@ -149,21 +149,21 @@ public class Download {
                 connection = (HttpURLConnection) url.openConnection();
                 connection.setConnectTimeout(5000);
                 connection.setRequestMethod("GET");
-                // ÉèÖÃ·¶Î§£¬¸ñÊ½ÎªRange£ºbytes x-y;
+                // è®¾ç½®èŒƒå›´ï¼Œæ ¼å¼ä¸ºRangeï¼šbytes x-y;
                 connection.setRequestProperty("Range", "bytes="+(startPos + compeleteSize) + "-" + endPos);
 
                 randomAccessFile = new RandomAccessFile(localfile, "rwd");
                 randomAccessFile.seek(startPos + compeleteSize);
-                // ½«ÒªÏÂÔØµÄÎÄ¼şĞ´µ½±£´æÔÚ±£´æÂ·¾¶ÏÂµÄÎÄ¼şÖĞ
+                // å°†è¦ä¸‹è½½çš„æ–‡ä»¶å†™åˆ°ä¿å­˜åœ¨ä¿å­˜è·¯å¾„ä¸‹çš„æ–‡ä»¶ä¸­
                 is = connection.getInputStream();
                 byte[] buffer = new byte[4096];
                 int length = -1;
                 while ((length = is.read(buffer)) != -1) {
                     randomAccessFile.write(buffer, 0, length);
                     compeleteSize += length;
-                    // ¸üĞÂÊı¾İ¿âÖĞµÄÏÂÔØĞÅÏ¢
+                    // æ›´æ–°æ•°æ®åº“ä¸­çš„ä¸‹è½½ä¿¡æ¯
                     GetDownloadInfos.getInstance(context).updataInfos(threadId, compeleteSize, urlstr);
-                    // ÓÃÏûÏ¢½«ÏÂÔØĞÅÏ¢´«¸ø½ø¶ÈÌõ£¬¶Ô½ø¶ÈÌõ½øĞĞ¸üĞÂ
+                    // ç”¨æ¶ˆæ¯å°†ä¸‹è½½ä¿¡æ¯ä¼ ç»™è¿›åº¦æ¡ï¼Œå¯¹è¿›åº¦æ¡è¿›è¡Œæ›´æ–°
                     Message message = Message.obtain();
                     message.what = 1;
                     message.obj = urlstr;
@@ -178,15 +178,15 @@ public class Download {
             }  
         }
     }
-    //É¾³ıÊı¾İ¿âÖĞurlstr¶ÔÓ¦µÄÏÂÔØÆ÷ĞÅÏ¢
+    //åˆ é™¤æ•°æ®åº“ä¸­urlstrå¯¹åº”çš„ä¸‹è½½å™¨ä¿¡æ¯
     public void delete(String urlstr) {
    	 GetDownloadInfos.getInstance(context).delete(urlstr);
     }
-    //ÉèÖÃÔİÍ£
+    //è®¾ç½®æš‚åœ
     public void pause() {
         state = PAUSE;
     }
-    //ÖØÖÃÏÂÔØ×´Ì¬
+    //é‡ç½®ä¸‹è½½çŠ¶æ€
     public void reset() {
         state = INIT;
     }

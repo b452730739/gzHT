@@ -1,0 +1,146 @@
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:237
+-keep class cn.elegps.service.BootCompletedReceiver { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:235
+-keep class cn.elegps.service.StartService { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/locationsource_activity.xml:7
+-keep class com.amap.api.maps.MapView { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:46
+-keep class com.app.App { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:229
+-keep class com.baidu.location.f { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:133
+-keep class com.elegps.Complaints_proposals.Complaints_ProposalsActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:137
+-keep class com.elegps.Complaints_proposals.Complaints_ProposalsAdd_Activity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/activity_main.xml:121
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/zhuye.xml:150
+-keep class com.elegps.UIManager.LogOn_GetViewPage { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/text_chuangxin.xml:7
+-keep class com.elegps.UIManager.ScrollAlwaysTextView { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:180
+-keep class com.elegps.buy.AddProductBuyInfo_Activity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:168
+-keep class com.elegps.buy.Buy_FittingActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:176
+-keep class com.elegps.buy.Buy_LishiActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:172
+-keep class com.elegps.buy.Buy_PeiJianActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:141
+-keep class com.elegps.errorfind.Error_DemadFindActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:154
+-keep class com.elegps.errorfind.Error_findActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:149
+-keep class com.elegps.errorfind.Error_information { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:202
+-keep class com.elegps.getLocation.LocationOverlayDemo { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/activity_locationoverlay.xml:6
+-keep class com.elegps.getLocation.MyLocationMapView { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:184
+-keep class com.elegps.gz_customerservice.Change_passwordActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:87
+-keep class com.elegps.gz_customerservice.CreateAccountActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:95
+-keep class com.elegps.gz_customerservice.Find_PasswordActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:125
+-keep class com.elegps.gz_customerservice.LianXi_Activity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:52
+-keep class com.elegps.gz_customerservice.LogingActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:91
+-keep class com.elegps.gz_customerservice.MainActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:145
+-keep class com.elegps.gz_customerservice.PaiZhao_LiShi { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:75
+-keep class com.elegps.module.machine_stock_search.MachineStockInfoActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:71
+-keep class com.elegps.module.machine_stock_search.MachineStockSearchActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:67
+-keep class com.elegps.module.task_daiban_search.TaskDaiBanSearchActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:79
+-keep class com.elegps.module.task_search.TaskInfoActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:83
+-keep class com.elegps.module.task_search.TaskSearchActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:63
+-keep class com.elegps.module.work_hours.WorkHoursSearchActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:103
+-keep class com.elegps.notebook.Add_NoteActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:99
+-keep class com.elegps.notebook.Note_BookActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:111
+-keep class com.elegps.notebook.Note_PaiGong { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:107
+-keep class com.elegps.notebook.Note_PingTaiActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:116
+-keep class com.elegps.notebook.Note_paiG { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:129
+-keep class com.elegps.photo.Photo_LookActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:121
+-keep class com.elegps.photo.Photo_NativeActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:198
+-keep class com.elegps.vedio.EnterRoomBuffActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:159
+-keep class com.elegps.vedio.LoginActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:188
+-keep class com.elegps.vedio.RoomActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:219
+-keep class com.elegps.vedio.VideoActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:206
+-keep class com.elegps.warranty.BaiXiu_AddActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:210
+-keep class com.elegps.warranty.BaoXiu_Activity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/build/intermediates/manifests/full/release/AndroidManifest.xml:214
+-keep class com.elegps.warranty.BaoXiu_InfoActivity { <init>(...); }
+
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/dialog_machine_stock_search.xml:114
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/dialog_machine_stock_search.xml:135
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/dialog_task_daiban_search.xml:95
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/dialog_task_daiban_search.xml:116
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/dialog_task_search.xml:114
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/dialog_task_search.xml:135
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/dialog_work_hours_search.xml:76
+# Referenced at /Users/lichendong/project/git/gzHT/app/src/main/res/layout/dialog_work_hours_search.xml:97
+-keep class com.view.DateEditTextForData { <init>(...); }
+

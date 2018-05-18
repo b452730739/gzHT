@@ -48,7 +48,7 @@ public class ContentWeb{
 			SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
 					SoapEnvelope.VER11);
 			
-			envelope.dotNet = true; // 表示不用rpc方式
+			envelope.dotNet = true; // 琛ㄧず涓嶇敤rpc鏂瑰紡
 
 			envelope.setOutputSoapObject(rpc);
 			
@@ -59,7 +59,7 @@ public class ContentWeb{
 			
 		}catch (XmlPullParserException e) {
 			e.printStackTrace();
-			System.out.println("XmlPullParserException连接异常...");
+			System.out.println("XmlPullParserException杩炴帴寮傚父...");
 	
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -69,8 +69,8 @@ public class ContentWeb{
 				e1.printStackTrace();
 			}*/
 			
-			System.out.println("WebService连接异常...");
-			return /*"网络异常..."*/null;
+			System.out.println("WebService杩炴帴寮傚父...");
+			return /*"缃戠粶寮傚父..."*/null;
 		}
 		return result.toString();
 	}

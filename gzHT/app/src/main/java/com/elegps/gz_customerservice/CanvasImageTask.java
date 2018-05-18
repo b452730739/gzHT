@@ -29,7 +29,7 @@ public class CanvasImageTask extends AsyncTask<ImageView, Void, Bitmap> {
 
 	protected void onPostExecute(Bitmap bm) {
 		if (bm != null) {
-			// 此处更新图片
+			// 姝ゅ鏇存柊鍥剧墖
 			this.gView.setImageBitmap(bm);
 			this.gView = null;
 		}

@@ -56,9 +56,9 @@ public class Error_ListAdapter extends BaseAdapter {
 		TextView tv4 = (TextView) ly.findViewById(R.id.textView4);
 	//	tv2.setVisibility(View.GONE);
 		tv1.setText(get_Errors.get(position).getContent()+"("+get_Errors.get(position).getDate()+")");
-		//tv2.setText("(»’∆⁄)"+get_Errors.get(position).getDate());
+		//tv2.setText("(Êó•Êúü)"+get_Errors.get(position).getDate());
 		tv3.setText(get_Errors.get(position).getFlag());
-		tv4.setText(/*"(π§µ•∫≈)"+*/get_Errors.get(position).getGDNO());
+		tv4.setText(/*"(Â∑•ÂçïÂè∑)"+*/get_Errors.get(position).getGDNO());
 		
 		return ly;
 	}

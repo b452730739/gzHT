@@ -35,16 +35,16 @@ import com.elegps.javabean.Down_File;
 
 public class Down_Files_Dialog extends Dialog {
 
-	// ¹Ì¶¨ÏÂÔØµÄ×ÊÔ´Â·¾¶£¬ÕâÀï¿ÉÒÔÉèÖÃÍøÂçÉÏµÄµØÖ·
+	// å›ºå®šä¸‹è½½çš„èµ„æºè·¯å¾„ï¼Œè¿™é‡Œå¯ä»¥è®¾ç½®ç½‘ç»œä¸Šçš„åœ°å€
 	private static final String URL = "http://183.63.165.198/HTASFile/";
-	// ¹Ì¶¨´æ·ÅÏÂÔØÎÄ¼şÂ·¾¶£ºSD¿¨Ä¿Â¼ÏÂ
+	// å›ºå®šå­˜æ”¾ä¸‹è½½æ–‡ä»¶è·¯å¾„ï¼šSDå¡ç›®å½•ä¸‹
 	//private static final String SD_PATH = "/mnt/sdcard/";
-	// ´æ·Å¸÷¸öÏÂÔØÆ÷
+	// å­˜æ”¾å„ä¸ªä¸‹è½½å™¨
 	private Map<String, Download> downloaders = new HashMap<String, Download>();
-	// ´æ·ÅÓëÏÂÔØÆ÷¶ÔÓ¦µÄ½ø¶ÈÌõ
+	// å­˜æ”¾ä¸ä¸‹è½½å™¨å¯¹åº”çš„è¿›åº¦æ¡
 	private Map<String, ProgressBar> ProgressBars = new HashMap<String, ProgressBar>();
 	/**
-	 * ÀûÓÃÏûÏ¢´¦Àí»úÖÆÊÊÊ±¸üĞÂ½ø¶ÈÌõ
+	 * åˆ©ç”¨æ¶ˆæ¯å¤„ç†æœºåˆ¶é€‚æ—¶æ›´æ–°è¿›åº¦æ¡
 	 */
 	private Handler mHandler = new Handler() {
 		public void handleMessage(Message msg) {
@@ -53,16 +53,16 @@ public class Down_Files_Dialog extends Dialog {
 				int length = msg.arg1;
 				ProgressBar bar = ProgressBars.get(url);
 				if (bar != null) {
-					// ÉèÖÃ½ø¶ÈÌõ°´¶ÁÈ¡µÄlength³¤¶È¸üĞÂ
+					// è®¾ç½®è¿›åº¦æ¡æŒ‰è¯»å–çš„lengthé•¿åº¦æ›´æ–°
 					bar.incrementProgressBy(length);
 					if (bar.getProgress() == bar.getMax()) {
 						LinearLayout layout = (LinearLayout) bar.getParent();
 						final TextView resouceName = (TextView) layout
 								.findViewById(R.id.tv_resouce_name);
 						/*Toast.makeText(context,
-								"[" + resouceName.getText() + "]ÏÂÔØÍê³É£¡",
+								"[" + resouceName.getText() + "]ä¸‹è½½å®Œæˆï¼",
 								Toast.LENGTH_SHORT).show();*/
-						// ÏÂÔØÍê³ÉºóÇå³ı½ø¶ÈÌõ²¢½«mapÖĞµÄÊı¾İÇå¿Õ
+						// ä¸‹è½½å®Œæˆåæ¸…é™¤è¿›åº¦æ¡å¹¶å°†mapä¸­çš„æ•°æ®æ¸…ç©º
 						
 						layout.removeView(bar);
 						ProgressBars.remove(url);
@@ -76,7 +76,7 @@ public class Down_Files_Dialog extends Dialog {
 								.findViewById(R.id.btn_start);
 						Button btn_pause = (Button) layout
 								.findViewById(R.id.btn_pause);
-						btn_pause.setText("²é¿´");
+						btn_pause.setText("æŸ¥çœ‹");
 						open_File( 
 								Constant.User_Path+"/"+txtTag
 								, null);
@@ -89,7 +89,7 @@ public class Down_Files_Dialog extends Dialog {
 													Constant.User_Path+"/"+txtTag
 													, null);
 										} catch (Exception e) {
-										Toast.makeText(context, "ÎÄ¼şÒÑÉ¾³ı»ò²»´æÔÚ", 0).show();
+										Toast.makeText(context, "æ–‡ä»¶å·²åˆ é™¤æˆ–ä¸å­˜åœ¨", 0).show();
 										}
 									}
 								});
@@ -114,7 +114,7 @@ public class Down_Files_Dialog extends Dialog {
 		showListView();
 	}
 	
-	// ÏÔÊ¾listView£¬ÕâÀï¿ÉÒÔËæ±ãÌí¼Ó
+	// æ˜¾ç¤ºlistViewï¼Œè¿™é‡Œå¯ä»¥éšä¾¿æ·»åŠ 
 	private void showListView() {
 		
 		close = (Button)findViewById(R.id.dialog_back);
@@ -159,10 +159,10 @@ public class Down_Files_Dialog extends Dialog {
 	}
 	
 	/**
-	 * ÏìÓ¦¿ªÊ¼ÏÂÔØ°´Å¥µÄµã»÷ÊÂ¼ş
+	 * å“åº”å¼€å§‹ä¸‹è½½æŒ‰é’®çš„ç‚¹å‡»äº‹ä»¶
 	 */
 	public void startDownload(View v) {
-		// µÃµ½textViewµÄÄÚÈİ
+		// å¾—åˆ°textViewçš„å†…å®¹
 		LinearLayout layout = (LinearLayout) v.getParent();
 		String resouceName = ((TextView) layout
 				.findViewById(R.id.tv_resouce_name)).getTag().toString();
@@ -173,7 +173,7 @@ public class Down_Files_Dialog extends Dialog {
 		
 		System.out.println(localfile);
 		
-		// ÉèÖÃÏÂÔØÏß³ÌÊı£¬
+		// è®¾ç½®ä¸‹è½½çº¿ç¨‹æ•°ï¼Œ
 		String threadcount = "10";
 		DownloadTask downloadTask = new DownloadTask(v);
 		downloadTask.execute(urlstr, localfile, threadcount);
@@ -203,7 +203,7 @@ public class Down_Files_Dialog extends Dialog {
 			urlstr = params[0];
 			String localfile = params[1];
 			int threadcount = Integer.parseInt(params[2]);
-			// ³õÊ¼»¯Ò»¸ödownloaderÏÂÔØÆ÷
+			// åˆå§‹åŒ–ä¸€ä¸ªdownloaderä¸‹è½½å™¨
 			downloader = downloaders.get(urlstr);
 			if (downloader == null) {
 				downloader = new Download(urlstr, localfile, threadcount,
@@ -212,16 +212,16 @@ public class Down_Files_Dialog extends Dialog {
 			}
 			if (downloader.isdownloading())
 				return null;
-			// µÃµ½ÏÂÔØĞÅÏ¢ÀàµÄ¸öÊı×é³É¼¯ºÏ
+			// å¾—åˆ°ä¸‹è½½ä¿¡æ¯ç±»çš„ä¸ªæ•°ç»„æˆé›†åˆ
 			return downloader.getDownloaderInfors();
 		}
 
 		@Override
 		protected void onPostExecute(LoadInfo loadInfo) {
 			if (loadInfo != null) {
-				// ÏÔÊ¾½ø¶ÈÌõ
+				// æ˜¾ç¤ºè¿›åº¦æ¡
 				showProgress(loadInfo, urlstr, v);
-				// µ÷ÓÃ·½·¨¿ªÊ¼ÏÂÔØ
+				// è°ƒç”¨æ–¹æ³•å¼€å§‹ä¸‹è½½
 				downloader.download();
 			}
 		}
@@ -229,7 +229,7 @@ public class Down_Files_Dialog extends Dialog {
 	};
 
 	/**
-	 * ÏÔÊ¾½ø¶ÈÌõ
+	 * æ˜¾ç¤ºè¿›åº¦æ¡
 	 */
 	private void showProgress(LoadInfo loadInfo, String url, View v) {
 		ProgressBar bar = ProgressBars.get(url);
@@ -247,7 +247,7 @@ public class Down_Files_Dialog extends Dialog {
 	}
 
 	/**
-	 * ÏìÓ¦ÔİÍ£ÏÂÔØ°´Å¥µÄµã»÷ÊÂ¼ş
+	 * å“åº”æš‚åœä¸‹è½½æŒ‰é’®çš„ç‚¹å‡»äº‹ä»¶
 	 */
 	public void pauseDownload(View v) {
 		LinearLayout layout = (LinearLayout) v.getParent();
@@ -275,7 +275,7 @@ public class Down_Files_Dialog extends Dialog {
 			context.startActivity(intent);
 		} catch (Exception e) {
 			e.printStackTrace();
-			Toast.makeText(context, "Ã»ÓĞºÏÊÊµÄÓ¦ÓÃ³ÌĞò´ò¿ª¸ÃÎÄ¼ş£¡", 
+			Toast.makeText(context, "æ²¡æœ‰åˆé€‚çš„åº”ç”¨ç¨‹åºæ‰“å¼€è¯¥æ–‡ä»¶ï¼", 
 					0)
 			.show();		
 		}
@@ -339,7 +339,7 @@ public class Down_Files_Dialog extends Dialog {
 							}
 						
 						} else {
-							Toast.makeText(context, "sdcard²»¿ÉÓÃ", Toast.LENGTH_SHORT)
+							Toast.makeText(context, "sdcardä¸å¯ç”¨", Toast.LENGTH_SHORT)
 									.show();
 						}
 			}
@@ -391,14 +391,14 @@ public class Down_Files_Dialog extends Dialog {
 						if(b){
 							
 						/*	//**
-							 * Èç¹û¸ÃÎÄ¼ş²»ÔÚÊı¾İ¿âÖĞ²¢ÇÒ´æÔÚ±¾µØÎÄ¼ş
+							 * å¦‚æœè¯¥æ–‡ä»¶ä¸åœ¨æ•°æ®åº“ä¸­å¹¶ä¸”å­˜åœ¨æœ¬åœ°æ–‡ä»¶
 							 *//*
-*/						start.setText("²é¿´");
+*/						start.setText("æŸ¥çœ‹");
 						start.setOnClickListener(new android.view.View.OnClickListener() {
 								
 									@Override
 									public void onClick(View v) {
-										final Dialog_UI dialog_UI= new Dialog_UI(context, "ÕıÔÚ²é¿´...");
+										final Dialog_UI dialog_UI= new Dialog_UI(context, "æ­£åœ¨æŸ¥çœ‹...");
 										dialog_UI.show();
 										new AsyncTask<Void, Void, Void>() {
 
@@ -436,7 +436,7 @@ public class Down_Files_Dialog extends Dialog {
 										}
 									
 									} else {
-										Toast.makeText(context, "sdcard²»¿ÉÓÃ", Toast.LENGTH_SHORT)
+										Toast.makeText(context, "sdcardä¸å¯ç”¨", Toast.LENGTH_SHORT)
 												.show();
 									}
 						}

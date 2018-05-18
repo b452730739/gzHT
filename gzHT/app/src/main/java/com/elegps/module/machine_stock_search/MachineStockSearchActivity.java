@@ -9,15 +9,19 @@ import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.constant.Constant;
+import com.elegps.adapter.MachineStockAdapter;
 import com.elegps.adapter.TaskInfoAdapter;
 import com.elegps.gz_customerservice.R;
+import com.elegps.javabean.MachineStockInfo;
 import com.elegps.javabean.TaskInfoList;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MachineStockInfoActivity extends Activity implements MachineStockSearchDialog.GetTaskInfoList,AdapterView.OnItemClickListener{
+public class MachineStockSearchActivity extends Activity implements MachineStockSearchDialog.GetMachineStockInfoList,AdapterView.OnItemClickListener{
 
 
     @Bind(R.id.iv_back)
@@ -28,15 +32,16 @@ public class MachineStockInfoActivity extends Activity implements MachineStockSe
     ListView taskListView;
 
 
+    private ArrayList<MachineStockInfo> arrayList;
     private MachineStockSearchDialog taskSearchDialog;
-    private TaskInfoAdapter taskInfoAdapter;
-    private TaskInfoList taskInfoList;
+
+    private MachineStockAdapter machineStockAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_task_search);
+        setContentView(R.layout.activity_machine_stock_search);
         ButterKnife.bind(this);
 
         taskSearchDialog = new MachineStockSearchDialog(this,this);
@@ -57,21 +62,23 @@ public class MachineStockInfoActivity extends Activity implements MachineStockSe
     }
 
 
-    @Override
-    public void taskInfoList(TaskInfoList taskInfoList) {
 
-        this.taskInfoList = taskInfoList;
-
-        taskInfoAdapter = new TaskInfoAdapter(this,taskInfoList);
-        taskListView.setAdapter(taskInfoAdapter);
-        taskListView.setOnItemClickListener(this);
-    }
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-        Intent intent = new Intent(this,MachineStockSearchActivity.class);
-        intent.putExtra(Constant.TASKINFO,taskInfoList.getTaskInfoArrayList().get(i));
+        Intent intent = new Intent(this,MachineStockInfoActivity.class);
+        intent.putExtra(Constant.MACHINESTOCK,arrayList.get(i));
         startActivity(intent);
+    }
+
+    @Override
+    public void machineStockList(ArrayList<MachineStockInfo> arrayList) {
+
+        this.arrayList = arrayList;
+
+        machineStockAdapter = new MachineStockAdapter(this,arrayList);
+        taskListView.setAdapter(machineStockAdapter);
+        taskListView.setOnItemClickListener(this);
     }
 }

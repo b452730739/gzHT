@@ -96,7 +96,7 @@ public class NoteBooK_ListAdapter extends BaseAdapter {
 			}
 		});
 		Button button2 = (Button)ly.findViewById(R.id.imageView2);
-		button2.setText("Ïê  Ï¸  ÄÚ  ÈÝ");
+		button2.setText("è¯¦  ç»†  å†…  å®¹");
 		return ly;
 	}
 

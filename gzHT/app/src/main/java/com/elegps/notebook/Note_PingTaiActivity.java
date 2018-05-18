@@ -45,7 +45,7 @@ public class Note_PingTaiActivity extends Activity {
 		PublicWay.activityList.add(this);
 
 		setContentView(R.layout.note_pingtai);
-		dialog_UI = new Dialog_UI(this, "ÕıÔÚ¼ÓÔØ...");
+		dialog_UI = new Dialog_UI(this, "æ­£åœ¨åŠ è½½...");
 		dialog_UI.show();
 		new AsyncTask<Void, Void, Void>() {
 
@@ -101,7 +101,7 @@ public class Note_PingTaiActivity extends Activity {
 				try {
 					new Down_Files_Dialog(Note_PingTaiActivity.this, pingTaiBeans.get(arg2).getFileInfo()).show();
 				} catch (Exception e) {
-					Toast.makeText(Note_PingTaiActivity.this, "¸Ã¹«¸æÃ»ÓĞ¸½¼ş", 0).show();
+					Toast.makeText(Note_PingTaiActivity.this, "è¯¥å…¬å‘Šæ²¡æœ‰é™„ä»¶", 0).show();
 				}
 			}
 		});
@@ -174,7 +174,7 @@ public class Note_PingTaiActivity extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			Intent intent = new Intent(Note_PingTaiActivity.this, MainActivity.class);
 			startActivity(intent);
 			Note_PingTaiActivity.this.finish();

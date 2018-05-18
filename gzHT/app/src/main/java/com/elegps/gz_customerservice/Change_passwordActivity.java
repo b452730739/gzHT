@@ -23,10 +23,10 @@ import com.elegps.help.PublicWay;
 
 public class Change_passwordActivity extends Activity implements OnClickListener{
 
-	private EditText[] enrolment = null;//´ÓEditText»ñÈ¡µÄÖµ
-	private Button enrolmentBtn = null; //È·ÈÏ°´Å¥
-	private Button b_back = null; 		//ÏÂÃæµÄ·µ»Ø°´Å¥
-	private ImageView image_back = null;//·µ»Ø°´Å¥
+	private EditText[] enrolment = null;//ä»EditTextè·å–çš„å€¼
+	private Button enrolmentBtn = null; //ç¡®è®¤æŒ‰é’®
+	private Button b_back = null; 		//ä¸‹é¢çš„è¿”å›æŒ‰é’®
+	private ImageView image_back = null;//è¿”å›æŒ‰é’®
 	private String temp = null;
 	private Bundle bundle= null;
 	private Dialog_UI dialog_UI = null;
@@ -51,12 +51,12 @@ public class Change_passwordActivity extends Activity implements OnClickListener
 		
 		enrolment = new EditText[2];
 
-		enrolment[0] = (EditText)findViewById(R.id.password);			//ÃÜÂë
-		enrolment[1] = (EditText)findViewById(R.id.password2);			//È·ÈÏÃÜÂë
+		enrolment[0] = (EditText)findViewById(R.id.password);			//å¯†ç 
+		enrolment[1] = (EditText)findViewById(R.id.password2);			//ç¡®è®¤å¯†ç 
 
 		
-		enrolmentBtn = (Button)findViewById(R.id.b_enrolment);			//È·ÈÏ
-		b_back = (Button)findViewById(R.id.b_back);  					//·µ»Ø
+		enrolmentBtn = (Button)findViewById(R.id.b_enrolment);			//ç¡®è®¤
+		b_back = (Button)findViewById(R.id.b_back);  					//è¿”å›
 		image_back = (ImageView)findViewById(R.id.image_back);
 		
 		enrolmentBtn.setOnClickListener(this);
@@ -79,7 +79,7 @@ public class Change_passwordActivity extends Activity implements OnClickListener
 			(enrolment[0].getText().toString().equals(enrolment[1].getText().toString()))){
 			
 		
-			dialog_UI = new Dialog_UI(Change_passwordActivity.this, "ÕıÔÚĞŞ¸Ä...");
+			dialog_UI = new Dialog_UI(Change_passwordActivity.this, "æ­£åœ¨ä¿®æ”¹...");
 			dialog_UI.show();
 			
 			new AsyncTask<Void, Void, String>() {
@@ -105,12 +105,12 @@ public class Change_passwordActivity extends Activity implements OnClickListener
 					
 					dialog_UI.dismiss();
 					if("true".equals(result)){
-					Toast.makeText(Change_passwordActivity.this, "ĞŞ¸Ä³É¹¦", 0).show();
+					Toast.makeText(Change_passwordActivity.this, "ä¿®æ”¹æˆåŠŸ", 0).show();
 					Intent intent1 = new Intent(Change_passwordActivity.this,LogingActivity.class);
 					startActivity(intent1);
 					Change_passwordActivity.this.finish();
 					}else{
-						Toast.makeText(Change_passwordActivity.this, "ĞŞ¸ÄÊ§°Ü", 0).show();
+						Toast.makeText(Change_passwordActivity.this, "ä¿®æ”¹å¤±è´¥", 0).show();
 						
 					}
 				
@@ -121,7 +121,7 @@ public class Change_passwordActivity extends Activity implements OnClickListener
 
 		
 		}else{
-			Toast.makeText(Change_passwordActivity.this, "ÄúµÄÊäÈëÓĞÎó,ÇëÖØĞÂÊäÈë...", 0).show();
+			Toast.makeText(Change_passwordActivity.this, "æ‚¨çš„è¾“å…¥æœ‰è¯¯,è¯·é‡æ–°è¾“å…¥...", 0).show();
 			
 		}}else{
 			Toast.makeText(Change_passwordActivity.this, R.string.networkeerror, 0).show();
@@ -151,7 +151,7 @@ public class Change_passwordActivity extends Activity implements OnClickListener
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			
 			Intent intent = new Intent(Change_passwordActivity.this, Find_PasswordActivity.class);
 			

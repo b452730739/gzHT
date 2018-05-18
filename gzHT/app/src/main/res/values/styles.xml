@@ -12,4 +12,9 @@
 		<item name="android:textColor">#001100</item>
 		<item name="android:textStyle">bold</item>
 	</style>
+	<style name="app_text">
+		<item name="android:gravity">right</item>
+		<item name="android:textSize">@dimen/app_text_size</item>
+		<item name="android:textColor">@color/app_grey</item>
+	</style>
 </resources>

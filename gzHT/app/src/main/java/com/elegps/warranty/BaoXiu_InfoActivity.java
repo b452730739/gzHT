@@ -84,7 +84,7 @@ public class BaoXiu_InfoActivity extends Activity {
 		});
 		relpy.setOnClickListener(new OnClickListener() {
 			private List<GetBuyMessage> buyMessages = null;
-			Dialog_UI dialog_UI = new Dialog_UI(BaoXiu_InfoActivity.this, "ÕıÔÚ»ñÈ¡...");
+			Dialog_UI dialog_UI = new Dialog_UI(BaoXiu_InfoActivity.this, "æ­£åœ¨è·å–...");
 			
 			@Override
 			public void onClick( final View v) {
@@ -123,7 +123,7 @@ public class BaoXiu_InfoActivity extends Activity {
 							@Override
 							public void onClick(View v) {
 						
-						final Dialog_UI dialog_UI = new Dialog_UI(BaoXiu_InfoActivity.this, "ÕıÔÚ»Ø¸´...");	
+						final Dialog_UI dialog_UI = new Dialog_UI(BaoXiu_InfoActivity.this, "æ­£åœ¨å›å¤...");	
 						dialog_UI.show();
 					new AsyncTask<Void, Void, String>(){
 
@@ -202,7 +202,7 @@ public class BaoXiu_InfoActivity extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 
 		if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-			// ÕâÀïÖØĞ´·µ»Ø¼ü
+			// è¿™é‡Œé‡å†™è¿”å›é”®
 			Intent intent = new Intent(BaoXiu_InfoActivity.this,
 					BaoXiu_Activity.class);
 			intent.putExtra("item", item);

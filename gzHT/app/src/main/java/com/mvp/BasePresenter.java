@@ -1,4 +1,4 @@
-package com.lcd.project.module;
+package com.mvp;
 
 
 public interface BasePresenter {

@@ -1,4 +1,4 @@
-package com.elegps.view;
+package com.view;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -67,7 +67,7 @@ public class DateEditTextForData extends EditText implements View.OnFocusChangeL
 
 	@Override
 	public void onDateSet(DatePicker view, int year, int monthOfYear,
-						  int dayOfMonth) {
+                          int dayOfMonth) {
 		DateEditTextForData.this.setText(new StringBuilder().append(year).append("-")
 				.append((monthOfYear + 1)<10?"0"+(monthOfYear + 1):(monthOfYear + 1)).append("-")
 				.append(dayOfMonth<10?"0"+dayOfMonth:dayOfMonth).append("")

@@ -8,24 +8,27 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.elegps.gz_customerservice.R;
+import com.elegps.javabean.TaskDaiBanInfo;
 import com.elegps.javabean.TaskInfoList;
+
+import java.util.ArrayList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class TaskInfoAdapter extends BaseAdapter {
+public class TaskDaiBanInfoAdapter extends BaseAdapter {
 
-    private TaskInfoList taskInfoList;
+    private ArrayList<TaskDaiBanInfo> arrayList ;
     private Context mContext;
 
-    public TaskInfoAdapter(Context mContext,TaskInfoList taskInfoList) {
-        this.taskInfoList = taskInfoList;
+    public TaskDaiBanInfoAdapter(Context mContext, ArrayList<TaskDaiBanInfo> arrayList) {
+        this.arrayList = arrayList;
         this.mContext = mContext;
     }
 
     @Override
     public int getCount() {
-        return taskInfoList == null ? 0 : taskInfoList.taskInfoArrayList.size();
+        return arrayList == null ? 0 : arrayList.size();
     }
 
     @Override
@@ -45,9 +48,9 @@ public class TaskInfoAdapter extends BaseAdapter {
 
         ViewHolder holder = new ViewHolder(view1);
 
-        holder.textView1.setText(taskInfoList.taskInfoArrayList.get(i).getMachineNO()+"("+taskInfoList.taskInfoArrayList.get(i).getMachineModel()+")");
-        holder.textView2.setText(taskInfoList.taskInfoArrayList.get(i).getStatusText());
-        holder.textView4.setText(taskInfoList.taskInfoArrayList.get(i).getCreateTime());
+        holder.textView1.setText(arrayList.get(i).getCurNodeName());
+        holder.textView2.setText(arrayList.get(i).getStatusText());
+        holder.textView4.setText(arrayList.get(i).getCreateTime());
 
         return view1;
     }

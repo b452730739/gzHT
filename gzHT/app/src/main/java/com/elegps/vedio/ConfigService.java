@@ -49,7 +49,7 @@ public class ConfigService {
 	public static void SaveConfig(Context context,ConfigEntity configEntity)
 	{
     	SharedPreferences  share = context.getSharedPreferences("perference",  Context.MODE_WORLD_WRITEABLE);  
-        Editor editor = share.edit();//ȡ�ñ༭��
+        Editor editor = share.edit();//取得编辑器
         
         editor.putString("name", configEntity.name);
         editor.putString("password", configEntity.password);

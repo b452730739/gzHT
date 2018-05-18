@@ -2,14 +2,14 @@ package com.elegps.javabean;
 
 public class Video_users {
 
-	private String CustName = null; //¿Í·şÃû³Æ
-	private String Mobile  = null;  //¿Í·şÊÖ»ú
-	private String EmplNO = null ;  //¿Í·ş¹¤ºÅ
-	private String Contact = null ;  //¿Í·ş¹¤ºÅ
-	private String Email = null ;  //¿Í·ş¹¤ºÅ
-	private String Fax = null ;  //¿Í·ş¹¤ºÅ
-	private String CustAddr = null ;  //¿Í·ş¹¤ºÅ
-	private String AcctType = null; //ÅĞ¶ÏÊÇ·ñÎªÄÚ²¿ÕËºÅ
+	private String CustName = null; //å®¢æœåç§°
+	private String Mobile  = null;  //å®¢æœæ‰‹æœº
+	private String EmplNO = null ;  //å®¢æœå·¥å·
+	private String Contact = null ;  //å®¢æœå·¥å·
+	private String Email = null ;  //å®¢æœå·¥å·
+	private String Fax = null ;  //å®¢æœå·¥å·
+	private String CustAddr = null ;  //å®¢æœå·¥å·
+	private String AcctType = null; //åˆ¤æ–­æ˜¯å¦ä¸ºå†…éƒ¨è´¦å·
 	
 	/**
 	 * @return the contact

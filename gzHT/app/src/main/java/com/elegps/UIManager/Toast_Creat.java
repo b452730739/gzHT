@@ -22,7 +22,7 @@ public class Toast_Creat extends Toast {
 	}
 	public void show_toast(){
 		this.setDuration(time);
-		this.setGravity(Gravity.CENTER, 0,0 ); // ÉèÖÃ³öÏÖµÄÎ»ÖÃ
+		this.setGravity(Gravity.CENTER, 0,0 ); // è®¾ç½®å‡ºç°çš„ä½ç½®
 		
 		TextView textView = new TextView(context);
 		textView.setTextColor(Color.BLACK);

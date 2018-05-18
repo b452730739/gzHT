@@ -7,13 +7,14 @@ import android.widget.TextView;
 
 import com.constant.Constant;
 import com.elegps.gz_customerservice.R;
+import com.elegps.javabean.MachineStockInfo;
 import com.elegps.javabean.TaskInfoList;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MachineStockSearchActivity extends Activity {
+public class MachineStockInfoActivity extends Activity {
 
 
     @Bind(R.id.iv_back)
@@ -34,20 +35,20 @@ public class MachineStockSearchActivity extends Activity {
     TextView tvRemark;
 
     private Bundle bundle;
-    private TaskInfoList.TaskInfo taskInfo;
+    private MachineStockInfo machineStockInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_task_info);
+        setContentView(R.layout.activity_machine_stock_info);
         ButterKnife.bind(this);
 
         bundle = getIntent().getExtras();
 
         if (bundle != null) {
 
-            taskInfo = (TaskInfoList.TaskInfo) bundle.get(Constant.TASKINFO);
+            machineStockInfo = (MachineStockInfo) bundle.get(Constant.MACHINESTOCK);
             init();
 
         }
@@ -55,13 +56,13 @@ public class MachineStockSearchActivity extends Activity {
 
     private void init() {
 
-        tvCreateTime.setText(taskInfo.getCreateTime());
-        tvFlowNO.setText(taskInfo.getFlowNO());
-        tvMachineNO.setText(taskInfo.getMachineNO());
-        tvStatusText.setText(taskInfo.getStatusText());
-        tvTaskID.setText(taskInfo.getTaskID());
-        tvMachineModel.setText(taskInfo.getMachineModel());
-        tvRemark.setText(taskInfo.getRemark());
+        tvCreateTime.setText(machineStockInfo.getCreateTime());
+        tvFlowNO.setText(machineStockInfo.getFlowNO());
+        tvMachineNO.setText(machineStockInfo.getMachineNO());
+        tvStatusText.setText(machineStockInfo.getStatusText());
+        tvTaskID.setText(machineStockInfo.getTaskID());
+        tvMachineModel.setText(machineStockInfo.getMachineModel());
+        tvRemark.setText(machineStockInfo.getRemark());
     }
 
     @OnClick(R.id.iv_back)

@@ -1,0 +1,41 @@
+// Generated code from Butter Knife. Do not modify!
+package com.elegps.module.task_daiban_search;
+
+import android.view.View;
+import butterknife.ButterKnife.Finder;
+import butterknife.ButterKnife.ViewBinder;
+
+public class TaskDaiBanInfoActivity$$ViewBinder<T extends com.elegps.module.task_daiban_search.TaskDaiBanInfoActivity> implements ViewBinder<T> {
+  @Override public void bind(final Finder finder, final T target, Object source) {
+    View view;
+    view = finder.findRequiredView(source, 2130968697, "field 'ivBack' and method 'onViewClicked'");
+    target.ivBack = finder.castView(view, 2130968697, "field 'ivBack'");
+    view.setOnClickListener(
+      new butterknife.internal.DebouncingOnClickListener() {
+        @Override public void doClick(
+          android.view.View p0
+        ) {
+          target.onViewClicked();
+        }
+      });
+    view = finder.findRequiredView(source, 2130968809, "field 'tvMachineNO'");
+    target.tvMachineNO = finder.castView(view, 2130968809, "field 'tvMachineNO'");
+    view = finder.findRequiredView(source, 2130968805, "field 'tvCreateTime'");
+    target.tvCreateTime = finder.castView(view, 2130968805, "field 'tvCreateTime'");
+    view = finder.findRequiredView(source, 2130968807, "field 'tvFlowNO'");
+    target.tvFlowNO = finder.castView(view, 2130968807, "field 'tvFlowNO'");
+    view = finder.findRequiredView(source, 2130968817, "field 'tvStatusText'");
+    target.tvStatusText = finder.castView(view, 2130968817, "field 'tvStatusText'");
+    view = finder.findRequiredView(source, 2130968806, "field 'tvCurNodeName'");
+    target.tvCurNodeName = finder.castView(view, 2130968806, "field 'tvCurNodeName'");
+  }
+
+  @Override public void unbind(T target) {
+    target.ivBack = null;
+    target.tvMachineNO = null;
+    target.tvCreateTime = null;
+    target.tvFlowNO = null;
+    target.tvStatusText = null;
+    target.tvCurNodeName = null;
+  }
+}

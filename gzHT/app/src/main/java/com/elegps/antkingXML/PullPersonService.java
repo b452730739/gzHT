@@ -24,7 +24,7 @@ import com.elegps.javabean.Update_bean;
 import com.elegps.javabean.Video_users;
 
 /**
- * ½âÎöXML
+ * è§£æXML
  * @author lichendong
  *
  */
@@ -34,7 +34,7 @@ public class PullPersonService {
 	public static String AGE = "age";
 	public static String PERSONS = "person";
 	/**
-	 * ´Óurl»ñÈ¡µÄapk¸üĞÂµÄĞÅÏ¢
+	 * ä»urlè·å–çš„apkæ›´æ–°çš„ä¿¡æ¯
 	 * @param str
 	 * @return
 	 * @throws Exception
@@ -55,7 +55,7 @@ public class PullPersonService {
 				video_users = new ArrayList<Update_bean>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if("update".equals(parser.getName())){
 					
 					users = new Update_bean();
@@ -84,13 +84,13 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return video_users;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,ÅĞ¶ÏÊÇ·ñÎªÄÚ²¿ÕËºÅ1ÎªÄÚ²¿ÕËºÅ
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,åˆ¤æ–­æ˜¯å¦ä¸ºå†…éƒ¨è´¦å·1ä¸ºå†…éƒ¨è´¦å·
 	 * 
 	 * @param str
 	 * @return
@@ -112,7 +112,7 @@ public class PullPersonService {
 				video_users = new ArrayList<GetBuyMessage>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if("Row".equals(parser.getName())){
 					
 					users = new GetBuyMessage();
@@ -141,13 +141,13 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return video_users;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,ÅĞ¶ÏÊÇ·ñÎªÄÚ²¿ÕËºÅ1ÎªÄÚ²¿ÕËºÅ
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,åˆ¤æ–­æ˜¯å¦ä¸ºå†…éƒ¨è´¦å·1ä¸ºå†…éƒ¨è´¦å·
 	 * 
 	 * @param str
 	 * @return
@@ -169,7 +169,7 @@ public class PullPersonService {
 				video_users = new ArrayList<Note_PingTaiBean>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if("Row".equals(parser.getName())){
 					
 					users = new Note_PingTaiBean();
@@ -195,13 +195,13 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return video_users;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,ÅĞ¶ÏÊÇ·ñÎªÄÚ²¿ÕËºÅ1ÎªÄÚ²¿ÕËºÅ
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,åˆ¤æ–­æ˜¯å¦ä¸ºå†…éƒ¨è´¦å·1ä¸ºå†…éƒ¨è´¦å·
 	 * 
 	 * @param str
 	 * @return
@@ -223,7 +223,7 @@ public class PullPersonService {
 				video_users = new ArrayList<Video_users>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if("person".equals(parser.getName())){
 					
 					users = new Video_users();
@@ -283,13 +283,13 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return video_users;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,ÅÉ¹¤ĞÅÏ¢
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,æ´¾å·¥ä¿¡æ¯
 	 * 
 	 * @param str
 	 * @return
@@ -308,7 +308,7 @@ public class PullPersonService {
 				Buy_List = new ArrayList<Buy_lishiBean>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if ("Row".equals(parser.getName())) {
 
 					buy_fitingOne = new Buy_lishiBean();
@@ -381,13 +381,13 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return Buy_List;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,ÅÉ¹¤ÏêÏ¸ĞÅÏ¢
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,æ´¾å·¥è¯¦ç»†ä¿¡æ¯
 	 * 
 	 * @param str
 	 * @return
@@ -406,7 +406,7 @@ public class PullPersonService {
 				Buy_List = new ArrayList<Note_PaiGongbean>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if ("PGInfo".equals(parser.getName())) {
 
 					buy_fitingOne = new Note_PaiGongbean();
@@ -568,13 +568,13 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return Buy_List;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,ÅÉ¹¤ĞÅÏ¢
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,æ´¾å·¥ä¿¡æ¯
 	 * 
 	 * @param str
 	 * @return
@@ -593,7 +593,7 @@ public class PullPersonService {
 				Buy_List = new ArrayList<Note_paiGBean>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if ("Row".equals(parser.getName())) {
 
 					buy_fitingOne = new Note_paiGBean();
@@ -651,7 +651,7 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			try {
 				eventCode = parser.next();
 			} catch (Exception e) {
@@ -661,7 +661,7 @@ public class PullPersonService {
 		return Buy_List;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,Åä¼ş¹ºÂòµÄ×Ó¼¶Ä¿Â¼µÄÅä¼şĞÅÏ¢
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,é…ä»¶è´­ä¹°çš„å­çº§ç›®å½•çš„é…ä»¶ä¿¡æ¯
 	 * 
 	 * @param str
 	 * @return
@@ -680,7 +680,7 @@ public class PullPersonService {
 				Buy_List = new ArrayList<Buy_fitingOne>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if ("Row".equals(parser.getName())) {
 
 					buy_fitingOne = new Buy_fitingOne();
@@ -714,14 +714,14 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return Buy_List;
 	}
 
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,Åä¼ş¹ºÂòµÄÒ»¼¶Ä¿Â¼
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,é…ä»¶è´­ä¹°çš„ä¸€çº§ç›®å½•
 	 * 
 	 * @param str
 	 * @return
@@ -740,7 +740,7 @@ public class PullPersonService {
 				Buy_List = new ArrayList<Buy_fitingOne>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if ("Row".equals(parser.getName())) {
 
 					buy_fitingOne = new Buy_fitingOne();
@@ -774,13 +774,13 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return Buy_List;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,¹ÊÕÏ²éÑ¯
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,æ•…éšœæŸ¥è¯¢
 	 * 
 	 * @param str
 	 * @return
@@ -799,7 +799,7 @@ public class PullPersonService {
 				personList = new ArrayList<Get_Error>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if ("Row".equals(parser.getName())) {
 
 					get_Error = new Get_Error();
@@ -856,13 +856,13 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return personList;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,¹ÊÕÏ²éÑ¯
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,æ•…éšœæŸ¥è¯¢
 	 * 
 	 * @param str
 	 * @return
@@ -881,7 +881,7 @@ public class PullPersonService {
 				personList = new ArrayList<Get_ErrorXiangXI>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if ("WorkOrder".equals(parser.getName())) {
 
 					get_Error = new Get_ErrorXiangXI();
@@ -1067,13 +1067,13 @@ public class PullPersonService {
 
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return personList;
 	}
 	/**
-	 * ´ÓxmlÎÄ¼şÖĞ¶ÁÈ¡Êı¾İ,¹ÊÕÏ²éÑ¯µÄÏêÏ¸ĞÅÏ¢
+	 * ä»xmlæ–‡ä»¶ä¸­è¯»å–æ•°æ®,æ•…éšœæŸ¥è¯¢çš„è¯¦ç»†ä¿¡æ¯
 	 * 
 	 * @param str
 	 * @return
@@ -1092,7 +1092,7 @@ public class PullPersonService {
 				personList = new ArrayList<Error_info>();
 				break;
 			case XmlPullParser.START_TAG:
-				// ÅĞ¶Ï¿ªÊ¼±êÇ©ÔªËØÊÇ·ñÊÇperson
+				// åˆ¤æ–­å¼€å§‹æ ‡ç­¾å…ƒç´ æ˜¯å¦æ˜¯person
 				if ("SendGoods".equals(parser.getName())) {
 
 					get_Error = new Error_info();
@@ -1172,12 +1172,12 @@ public class PullPersonService {
 				}
 				break;
 			}
-			// ½øÈëÏÂÒ»¸öÔªËØ²¢´¥·¢ÏàÓ¦ÊÂ¼ş
+			// è¿›å…¥ä¸‹ä¸€ä¸ªå…ƒç´ å¹¶è§¦å‘ç›¸åº”äº‹ä»¶
 			eventCode = parser.next();
 		}
 		return personList;
 	}
-	// ½«Êı¾İĞ´ÈëxmlÎÄ¼ş
+	// å°†æ•°æ®å†™å…¥xmlæ–‡ä»¶
 	public static String writeToXml(List<Creat_Person> personList)
 			throws Exception {
 		XmlSerializer serializer = Xml.newSerializer();

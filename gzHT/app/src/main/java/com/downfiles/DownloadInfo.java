@@ -2,14 +2,14 @@ package com.downfiles;
 
 /**@author 
  *
- *´´½¨Ò»¸öÏÂÔØĞÅÏ¢µÄÊµÌåÀà
+ *åˆ›å»ºä¸€ä¸ªä¸‹è½½ä¿¡æ¯çš„å®ä½“ç±»
  */
 public class DownloadInfo {
-    private int threadId;//ÏÂÔØÆ÷id
-    private int startPos;//¿ªÊ¼µã
-    private int endPos;//½áÊøµã
-    private int compeleteSize;//Íê³É¶È
-    private String url;//ÏÂÔØÆ÷ÍøÂç±êÊ¶
+    private int threadId;//ä¸‹è½½å™¨id
+    private int startPos;//å¼€å§‹ç‚¹
+    private int endPos;//ç»“æŸç‚¹
+    private int compeleteSize;//å®Œæˆåº¦
+    private String url;//ä¸‹è½½å™¨ç½‘ç»œæ ‡è¯†
     public DownloadInfo(int threadId, int startPos, int endPos,
             int compeleteSize,String url) {
         this.threadId = threadId;

@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.baidu.mapapi.BMapManager;
 import com.baidu.mapapi.MKGeneralListener;
 import com.baidu.mapapi.map.MKEvent;
+import com.elegps.help.ACache;
 
 
 public class DemoApplication extends Application {
@@ -16,17 +17,22 @@ public class DemoApplication extends Application {
     public boolean m_bKeyRight = true;
     BMapManager mBMapManager = null;
 
+    public  static ACache ACACHE;
+
     public static final String strKey = "hG6CPTq2QeMmU09k6WVq9WzE";
     /*
-    	×¢Òâ£ºÎªÁË¸øÓÃ»§Ìá¹©¸ü°²È«µÄ·şÎñ£¬Android SDK×Ôv2.1.3°æ±¾¿ªÊ¼²ÉÓÃÁËÈ«ĞÂµÄKeyÑéÖ¤ÌåÏµ¡£
-    	Òò´Ë£¬µ±ÄúÑ¡ÔñÊ¹ÓÃv2.1.3¼°Ö®ºó°æ±¾µÄSDKÊ±£¬ĞèÒªµ½ĞÂµÄKeyÉêÇëÒ³Ãæ½øĞĞÈ«ĞÂKeyµÄÉêÇë£¬
-    	ÉêÇë¼°ÅäÖÃÁ÷³ÌÇë²Î¿¼¿ª·¢Ö¸ÄÏµÄ¶ÔÓ¦ÕÂ½Ú
+    	æ³¨æ„ï¼šä¸ºäº†ç»™ç”¨æˆ·æä¾›æ›´å®‰å…¨çš„æœåŠ¡ï¼ŒAndroid SDKè‡ªv2.1.3ç‰ˆæœ¬å¼€å§‹é‡‡ç”¨äº†å…¨æ–°çš„KeyéªŒè¯ä½“ç³»ã€‚
+    	å› æ­¤ï¼Œå½“æ‚¨é€‰æ‹©ä½¿ç”¨v2.1.3åŠä¹‹åç‰ˆæœ¬çš„SDKæ—¶ï¼Œéœ€è¦åˆ°æ–°çš„Keyç”³è¯·é¡µé¢è¿›è¡Œå…¨æ–°Keyçš„ç”³è¯·ï¼Œ
+    	ç”³è¯·åŠé…ç½®æµç¨‹è¯·å‚è€ƒå¼€å‘æŒ‡å—çš„å¯¹åº”ç« èŠ‚
     */
     @Override
     public void onCreate() {
 	    super.onCreate();
 		mInstance = this;
-		initEngineManager(this);
+
+        ACACHE =   ACache.getContext(getApplicationContext());
+
+        initEngineManager(this);
 	}
 	
 	public void initEngineManager(Context context) {
@@ -35,7 +41,7 @@ public class DemoApplication extends Application {
         }
         if (!mBMapManager.init(strKey,new MyGeneralListener())) {
             Toast.makeText(DemoApplication.getInstance().getApplicationContext(), 
-                    "BMapManager  ³õÊ¼»¯´íÎó!", Toast.LENGTH_LONG).show();
+                    "BMapManager  åˆå§‹åŒ–é”™è¯¯!", Toast.LENGTH_LONG).show();
         }
 	}
 	public static DemoApplication getInstance() {
@@ -43,26 +49,26 @@ public class DemoApplication extends Application {
 	}
 	
 	
-	// ³£ÓÃÊÂ¼ş¼àÌı£¬ÓÃÀ´´¦ÀíÍ¨³£µÄÍøÂç´íÎó£¬ÊÚÈ¨ÑéÖ¤´íÎóµÈ
+	// å¸¸ç”¨äº‹ä»¶ç›‘å¬ï¼Œç”¨æ¥å¤„ç†é€šå¸¸çš„ç½‘ç»œé”™è¯¯ï¼ŒæˆæƒéªŒè¯é”™è¯¯ç­‰
     static class MyGeneralListener implements MKGeneralListener {
         
         @Override
         public void onGetNetworkState(int iError) {
             if (iError == MKEvent.ERROR_NETWORK_CONNECT) {
-                Toast.makeText(DemoApplication.getInstance().getApplicationContext(), "ÄúµÄÍøÂç³ö´íÀ²£¡",
+                Toast.makeText(DemoApplication.getInstance().getApplicationContext(), "æ‚¨çš„ç½‘ç»œå‡ºé”™å•¦ï¼",
                     Toast.LENGTH_LONG).show();
             }
             else if (iError == MKEvent.ERROR_NETWORK_DATA) {
-                Toast.makeText(DemoApplication.getInstance().getApplicationContext(), "ÊäÈëÕıÈ·µÄ¼ìË÷Ìõ¼ş£¡",
+                Toast.makeText(DemoApplication.getInstance().getApplicationContext(), "è¾“å…¥æ­£ç¡®çš„æ£€ç´¢æ¡ä»¶ï¼",
                         Toast.LENGTH_LONG).show();
             }
         }
         @Override
         public void onGetPermissionState(int iError) {
             if (iError ==  MKEvent.ERROR_PERMISSION_DENIED) {
-                //ÊÚÈ¨Key´íÎó£º
+                //æˆæƒKeyé”™è¯¯ï¼š
       /*          Toast.makeText(DemoApplication.getInstance().getApplicationContext(), 
-                        "ÇëÔÚ DemoApplication.javaÎÄ¼şÊäÈëÕıÈ·µÄÊÚÈ¨Key£¡", Toast.LENGTH_LONG).show();*/
+                        "è¯·åœ¨ DemoApplication.javaæ–‡ä»¶è¾“å…¥æ­£ç¡®çš„æˆæƒKeyï¼", Toast.LENGTH_LONG).show();*/
                 DemoApplication.getInstance().m_bKeyRight = false;
             }
         }
